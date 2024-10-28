@@ -16,13 +16,13 @@ export const icebreakers: Icebreaker[] = [
     id: '2',
     question: "What's the most interesting documentary you've ever watched?",
     category: 'fun',
-    mode: 'popcorn'
+    mode: 'journal'
   },
   {
     id: '3',
     question: "If you could have dinner with any historical figure, who would it be?",
     category: 'creative',
-    mode: 'popcorn'
+    mode: 'journal'
   },
   {
     id: '4',
@@ -39,759 +39,767 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '6',
     question: "What's the most beautiful place you've ever visited?",
-    category: 'deep'
+    category: 'deep',
+    mode: 'journal'
   },
   {
     id: '7',
     question: "If you could instantly become an expert in one subject, what would it be?",
-    category: 'professional'
+    category: 'professional',
+    mode: 'journal'
   },
   {
     id: '8',
     question: "What's a small act of kindness you'll never forget?",
-    category: 'deep'
+    category: 'deep',
+    mode: 'journal'
   },
   {
     id: '9',
     question: "If you could trade lives with anyone for a day, who would it be?",
-    category: 'creative'
+    category: 'creative',
+    mode: 'journal'
   },
   {
     id: '10',
     question: "What's the most valuable life lesson you learned the hard way?",
-    category: 'deep'
+    category: 'deep',
+    mode: 'journal'
   },
   {
     id: '11',
-    question: "Sweet or savory breakfast?",
-    category: 'fun'
-  },
-  {
-    id: '12',
-    question: "Morning person or night owl?",
-    category: 'fun'
-  },
-  {
-    id: '13',
-    question: "What's the best piece of professional advice you've ever received?",
-    category: 'professional'
-  },
-  {
-    id: '6',
     question: "Sweet or savory breakfast?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '7',
+    id: '12',
+    question: "Morning person or night owl?",
+    category: 'fun',
+    mode: 'popcorn'
+  },
+  {
+    id: '13',
+    question: "What's the best piece of professional advice you've ever received?",
+    category: 'professional',
+    mode: 'journal'
+  },
+  {
+    id: '14',
+    question: "Sweet or savory breakfast?",
+    category: 'fun',
+    mode: 'popcorn'
+  },
+  {
+    id: '15',
     question: "What's one habit you've adopted recently that's improved your life?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '8',
+    id: '16',
     question: "Mountains or beach?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '9',
+    id: '17',
     question: "If you could design your perfect day, what would it look like?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '10',
+    id: '18',
     question: "Cats or dogs?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '11',
+    id: '19',
     question: "What's a small act of kindness you'll never forget?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '12',
+    id: '20',
     question: "Books or movies?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '13',
+    id: '21',
     question: "What's a dream you're currently working toward?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '14',
+    id: '22',
     question: "If you could instantly become an expert in any subject, what would it be?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '15',
+    id: '23',
     question: "Summer or winter?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '16',
+    id: '24',
     question: "What's your go-to karaoke song?",
     category: 'fun',
-    mode: 'popcorn'
+    mode: 'journal'
   },
   {
-    id: '17',
+    id: '25',
     question: "If you could master any creative skill instantly, what would it be?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '18',
+    id: '26',
     question: "Pancakes or waffles?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '19',
+    id: '27',
     question: "What's a life lesson you learned the hard way?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '20',
+    id: '28',
     question: "City life or countryside?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '21',
+    id: '29',
     question: "What's a book that changed your perspective on life?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '22',
+    id: '30',
     question: "If you could design a new holiday, what would it celebrate?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '23',
+    id: '31',
     question: "Sunrise or sunset?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '24',
+    id: '32',
     question: "What's a memory that always makes you smile?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '25',
+    id: '33',
     question: "Movie theater or home streaming?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '26',
+    id: '34',
     question: "What's a tradition you'd like to start?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '27',
+    id: '35',
     question: "Tea or coffee?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '28',
+    id: '36',
     question: "What's something you're proud of but rarely get to talk about?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '29',
+    id: '37',
     question: "If you could invent anything, what would it be?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '30',
+    id: '38',
     question: "Beach day or ski trip?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '31',
+    id: '39',
     question: "What's your favorite ice cream flavor?",
     category: 'fun',
     mode: 'journal'
   },
   {
-    id: '32',
+    id: '40',
     question: "What's a moment that completely changed your perspective?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '33',
+    id: '41',
     question: "If you could create your own planet, what would it be like?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '34',
+    id: '42',
     question: "Netflix or YouTube?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '35',
+    id: '43',
     question: "What's a life goal that excites you the most?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '36',
+    id: '44',
     question: "Pizza or burgers?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '37',
+    id: '45',
     question: "If you could design a new language, what would be its most unique feature?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '38',
+    id: '46',
     question: "What's your go-to comfort show?",
     category: 'fun',
     mode: 'journal'
   },
   {
-    id: '39',
+    id: '47',
     question: "What's a belief you had that completely changed?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '40',
+    id: '48',
     question: "Indoor or outdoor activities?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '41',
+    id: '49',
     question: "If you could create any new technology, what would it do?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '42',
+    id: '50',
     question: "What's your favorite way to spend a rainy day?",
     category: 'fun',
     mode: 'journal'
   },
   {
-    id: '43',
+    id: '51',
     question: "What's a challenge that made you stronger?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '44',
+    id: '52',
     question: "Text messages or phone calls?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '45',
+    id: '53',
     question: "If you could design your dream home, what's one unique feature it would have?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '46',
+    id: '54',
     question: "What's your opinion on AI in everyday life?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '47',
+    id: '55',
     question: "Spotify or Apple Music?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '48',
+    id: '56',
     question: "If you could design a video game, what would it be about?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '49',
+    id: '57',
     question: "Digital books or physical books?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '50',
+    id: '58',
     question: "What's a technology that changed your life?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '51',
+    id: '59',
     question: "Instagram or TikTok?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '52',
+    id: '60',
     question: "If you could create a new social media platform, what would make it unique?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '53',
+    id: '61',
     question: "Voice messages or text messages?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '54',
+    id: '62',
     question: "What's a digital habit you're trying to change?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '55',
+    id: '63',
     question: "Gaming PC or Console?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '56',
+    id: '64',
     question: "If you could create an app, what would it do?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '57',
+    id: '65',
     question: "Remote work or office work?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '58',
+    id: '66',
     question: "What's your take on cryptocurrency?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '59',
+    id: '67',
     question: "Touchscreen or physical buttons?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '60',
+    id: '68',
     question: "If you could design a robot assistant, what would be its main feature?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '61',
+    id: '69',
     question: "What's your favorite emoji to use?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '62',
+    id: '70',
     question: "If you could design the future of social media, what would you change?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '63',
+    id: '71',
     question: "Dark mode or light mode?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '64',
+    id: '72',
     question: "What's a digital tool that's transformed how you work?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '65',
+    id: '73',
     question: "If you could create a new streaming service, what would make it special?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '66',
+    id: '74',
     question: "Reddit or Twitter?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '67',
+    id: '75',
     question: "What's your relationship with social media?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '68',
+    id: '76',
     question: "Wireless earbuds or over-ear headphones?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '69',
+    id: '77',
     question: "If you could design a smart home feature, what would it do?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '70',
+    id: '78',
     question: "iOS or Android?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '71',
+    id: '79',
     question: "What's a piece of technology you wish existed?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '72',
+    id: '80',
     question: "Video calls or phone calls?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '73',
+    id: '81',
     question: "What's your most used app and why?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '74',
+    id: '82',
     question: "Laptop or desktop?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '75',
+    id: '83',
     question: "If you could create a new form of virtual reality, what would it be like?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '76',
+    id: '84',
     question: "What's your favorite way to learn new things online?",
     category: 'fun',
     mode: 'journal'
   },
   {
-    id: '77',
+    id: '85',
     question: "Subtitles on or off?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '78',
+    id: '86',
     question: "If you could create a new emoji, what would it be?",
     category: 'creative',
     mode: 'popcorn'
   },
   {
-    id: '79',
+    id: '87',
     question: "What's a YouTube rabbit hole you've fallen into recently?",
     category: 'fun',
     mode: 'journal'
   },
   {
-    id: '80',
+    id: '88',
     question: "How has technology changed your relationships?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '81',
+    id: '89',
     question: "Mechanical keyboard or silent keys?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '82',
+    id: '90',
     question: "If you could design a perfect online learning platform, what would it include?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '83',
+    id: '91',
     question: "What's your favorite meme format?",
     category: 'fun',
     mode: 'journal'
   },
   {
-    id: '84',
+    id: '92',
     question: "What's a digital skill you want to master?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '85',
+    id: '93',
     question: "Notifications on or off?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '86',
+    id: '94',
     question: "If you could create a virtual pet, what would it be like?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '87',
+    id: '95',
     question: "What's your favorite digital art style?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '88',
+    id: '96',
     question: "What's a technology you miss from the past?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '89',
+    id: '97',
     question: "Touch typing or hunt and peck?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '90',
+    id: '98',
     question: "If you could design a futuristic transportation method, what would it be?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '91',
+    id: '99',
     question: "What's your favorite filter to use on photos?",
     category: 'fun',
     mode: 'journal'
   },
   {
-    id: '92',
+    id: '100',
     question: "How do you think AI will change education in the future?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '93',
+    id: '101',
     question: "If you could create a new type of music genre, what would it sound like?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '94',
+    id: '102',
     question: "Digital art or traditional art?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '95',
+    id: '103',
     question: "What's a piece of advice you'd give to your younger online self?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '96',
+    id: '104',
     question: "Gaming mouse or regular mouse?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '97',
+    id: '105',
     question: "If you could design a new type of social gathering app, what would it do?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '98',
+    id: '106',
     question: "Do you prefer voice typing or keyboard typing?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '99',
+    id: '107',
     question: "What's a digital achievement you're proud of?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '100',
+    id: '108',
     question: "Vertical or horizontal video?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '101',
+    id: '109',
     question: "If you could create any AR filter, what would it do?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '102',
+    id: '110',
     question: "What's your favorite type of YouTube content?",
     category: 'fun',
     mode: 'journal'
   },
   {
-    id: '103',
+    id: '111',
     question: "How has the internet changed how you learn?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '104',
+    id: '112',
     question: "Wireless charging or cable charging?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '105',
+    id: '113',
     question: "If you could design a new type of digital art tool, what would it do?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '106',
+    id: '114',
     question: "What's your favorite video game memory?",
     category: 'fun',
     mode: 'journal'
   },
   {
-    id: '107',
+    id: '115',
     question: "How do you think VR will change how we connect with others?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '108',
+    id: '116',
     question: "If you could design a hologram feature, what would it be?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '109',
+    id: '117',
     question: "Discord or Slack?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '110',
+    id: '118',
     question: "What's a digital space that makes you feel most comfortable?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '111',
+    id: '119',
     question: "Pixel art or 3D graphics?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '112',
+    id: '120',
     question: "If you could create any digital pet, what abilities would it have?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '113',
+    id: '121',
     question: "Do you prefer group chats or one-on-one messages?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '121',
+    id: '122',
     question: "What's your favorite video editing effect?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '122',
+    id: '123',
     question: "How do you think AI art will impact creativity?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '123',
+    id: '124',
     question: "If you could design a new type of smartphone, what feature would you add?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '124',
+    id: '125',
     question: "GIFs or Stickers?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '125',
+    id: '126',
     question: "What's a digital skill that's become essential in your life?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '126',
+    id: '127',
     question: "Podcast or audiobook?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '136',
+    id: '128',
     question: "What's your favorite mobile game genre?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '137',
+    id: '129',
     question: "How do you think the metaverse will change social interaction?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '138',
+    id: '130',
     question: "If you could design a new emoji reaction, what would it express?",
     category: 'creative',
     mode: 'journal'
   },
   {
-    id: '139',
+    id: '131',
     question: "Touch ID or Face ID?",
     category: 'fun',
     mode: 'popcorn'
   },
   {
-    id: '140',
+    id: '132',
     question: "What's a digital habit you're proud of developing?",
     category: 'deep',
     mode: 'journal'
   },
   {
-    id: '141',
+    id: '133',
     question: "Physical gift cards or digital gift cards?",
     category: 'fun',
     mode: 'popcorn'
@@ -1710,7 +1718,7 @@ export const icebreakers: Icebreaker[] = [
   },
   {
     id: '321',
-    question: "If you could create a new kind of holiday, what would people do?",
+    question: "If you could create a new kind of holiday, what would people celebrate?",
     category: 'creative',
     mode: 'journal'
   },
