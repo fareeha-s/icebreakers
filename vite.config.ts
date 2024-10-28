@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/' : '/',  // Force root path for custom domain
+  base: '/',  // For custom domain
   plugins: [vue()],
   build: {
     assetsDir: 'assets',
