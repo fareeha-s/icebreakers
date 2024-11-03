@@ -2,23 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @layer base {
   body {
-    @apply antialiased text-gray-900 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 min-h-screen;
+    @apply min-h-screen font-['Inter'];
+    background: linear-gradient(
+      130deg,
+      #84A0FF 0%,    /* Soft blue */
+      #C57AFF 40%,   /* Gentle purple */
+      #FF7A9C 75%,   /* Soft pink */
+      #FFA385 100%   /* Warm peach */
+    );
   }
 }
 
 @layer components {
-  .glass {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  .glass-card {
+    @apply bg-white/15 border border-white/20 shadow-xl;
   }
   
-  .glass-card {
-    @apply glass shadow-xl;
+  .glass-button {
+    @apply bg-white/25 border border-white/30 shadow-md hover:bg-white/35 transition-colors duration-200;
   }
   
   .glass-sidebar {
-    @apply glass border-r border-white/20;
+    @apply bg-white/20 border-r border-white/20;
   }
 }
 

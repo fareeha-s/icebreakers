@@ -6,48 +6,69 @@ interface SidebarProps {
   history: Icebreaker[];
   favorites: Icebreaker[];
   onRemoveFromFavorites: (id: string) => void;
+  onCardClick: (icebreaker: Icebreaker) => void;
 }
 
-export default function Sidebar({ history, favorites, onRemoveFromFavorites }: SidebarProps) {
+export default function Sidebar({ history, favorites, onRemoveFromFavorites, onCardClick }: SidebarProps) {
   return (
-    <div className="h-full glass-sidebar p-6 overflow-y-auto">
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-4">
-          <Heart className="w-5 h-5 text-rose-300" />
-          <h2 className="text-lg font-semibold text-white">Favorites</h2>
-        </div>
-        <div className="space-y-3">
-          {favorites.map((item) => (
-            <div key={item.id} className="p-3 glass rounded-lg relative group">
-              <p className="text-sm text-white/90 pr-6">{item.question}</p>
-              <button
-                onClick={() => onRemoveFromFavorites(item.id)}
-                className="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity"
-              >
-                <X className="w-4 h-4 text-white/60 hover:text-white" />
-              </button>
+    <div className="h-full overflow-hidden">
+      <div className="px-6 pt-6 h-full">
+        {/* Split Layout Container */}
+        <div className="flex gap-6 h-[calc(100%-40px)]">
+          {/* Favorites Section - Left Side */}
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-4">
+              <Heart className="w-5 h-5 text-white" />
+              <h2 className="text-lg font-semibold text-white">Favorites</h2>
             </div>
-          ))}
-          {favorites.length === 0 && (
-            <p className="text-sm text-white/60 italic">No favorites yet</p>
-          )}
-        </div>
-      </div>
+            <div className="h-[calc(100%-40px)] overflow-y-auto scrollbar-hide">
+              {favorites.length === 0 ? (
+                <p className="text-white/70 italic">No favorites yet</p>
+              ) : (
+                <div className="space-y-2 pr-2">
+                  {/* Show newest favorites first */}
+                  {favorites.slice().reverse().map((favorite) => (
+                    <button
+                      key={favorite.id}
+                      onClick={() => onCardClick(favorite)}
+                      className="w-full text-left rounded-xl py-2 px-4 
+                        glass-button
+                        transition-all duration-300"
+                    >
+                      <p className="text-white text-sm">{favorite.question}</p>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
 
-      <div>
-        <div className="flex items-center gap-2 mb-4">
-          <Clock className="w-5 h-5 text-blue-300" />
-          <h2 className="text-lg font-semibold text-white">History</h2>
-        </div>
-        <div className="space-y-3">
-          {history.map((item) => (
-            <div key={item.id} className="p-3 glass rounded-lg">
-              <p className="text-sm text-white/90">{item.question}</p>
+          {/* Divider */}
+          <div className="w-px bg-white/20" />
+
+          {/* History Section - Right Side */}
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-4">
+              <Clock className="w-5 h-5 text-white" />
+              <h2 className="text-lg font-semibold text-white">History</h2>
             </div>
-          ))}
-          {history.length === 0 && (
-            <p className="text-sm text-white/60 italic">No history yet</p>
-          )}
+            <div className="h-[calc(100%-40px)] overflow-y-auto scrollbar-hide">
+              <div className="space-y-2 pr-2">
+                {/* Show last 10 history items, newest first */}
+                {history.slice(-10).reverse().map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => onCardClick(item)}
+                    className="w-full text-left rounded-xl py-2 px-4 
+                      glass-button
+                      transition-all duration-300"
+                  >
+                    <p className="text-white text-sm">{item.question}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
