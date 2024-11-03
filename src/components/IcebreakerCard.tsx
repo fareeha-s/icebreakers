@@ -15,8 +15,13 @@ export default function IcebreakerCard({
   isFavorite,
 }: IcebreakerCardProps) {
   return (
-    <div className="w-[90vw] max-w-[1200px] h-[400px] sm:h-[400px] @media (max-height: 667px) { h-[250px] }">
-      <div className="glass-card w-full h-full px-8 pt-8 pb-8 md:px-12 md:pt-12 md:pb-10 lg:px-16 lg:pt-16 lg:pb-12 relative @media (max-height: 667px) { px-6 pt-6 pb-6 }">
+    <div className="w-[90vw] max-w-[1200px] 
+      h-[250px]
+      sm:h-[300px]
+      md:h-[400px]">
+      <div className="glass-card w-full h-full 
+        px-6 pt-6 pb-6
+        sm:px-8 sm:pt-8 sm:pb-8">
         <div>
           <span className="text-base text-white/80 uppercase tracking-wider font-medium">
             {icebreaker.category}
@@ -60,17 +65,6 @@ export default function IcebreakerCard({
             next →
           </button>
         </div>
-      </div>
-
-      <div className="w-[90vw] md:w-[1200px] flex justify-end mt-2">
-        <a 
-          href="https://www.linkedin.com/in/fareehas" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="text-xs [text-shadow:_0_1px_1px_rgba(0,0,0,0.05)] text-white/90 hover:text-white transition-colors duration-200"
-        >
-          sincerely, Fareeha
-        </a>
       </div>
     </div>
   );

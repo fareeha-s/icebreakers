@@ -4,6 +4,7 @@ import { icebreakers, type Icebreaker } from './data/icebreakers';
 import IcebreakerCard from './components/IcebreakerCard';
 import Sidebar from './components/Sidebar';
 import { ThemePicker } from './components/ThemePicker';
+import Signature from './components/Signature';
 
 function App() {
   const [currentIcebreaker, setCurrentIcebreaker] = useState<Icebreaker>(() => {
@@ -145,9 +146,10 @@ function App() {
         </h1>
 
         {/* Card container moves up smoothly but not centered anymore */}
-        <div className={`flex justify-center transition-all duration-300 ease-in-out
+        <div className={`flex flex-col items-center transition-all duration-300 ease-in-out
           ${isSidebarOpen ? 'mt-[20vh]' : 'mt-[30vh]'}
         `}>
+          <Signature />
           <IcebreakerCard 
             icebreaker={currentIcebreaker}
             isFavorite={favorites.some((fav) => fav.id === currentIcebreaker.id)}
@@ -158,10 +160,11 @@ function App() {
 
         {/* Sidebar slides up */}
         <div 
-          className={`fixed bottom-0 left-0 right-0 h-[35vh] glass-sidebar 
+          className={`fixed bottom-0 left-0 right-0 
+            ${isSidebarOpen ? 'h-[30vh] translate-y-0' : 'h-[30vh] translate-y-full'} 
+            glass-sidebar 
             transition-transform duration-300 ease-in-out z-40
-            ${isSidebarOpen ? 'translate-y-0' : 'translate-y-full'}
-            ${!hasAnimatedOnce && isSidebarOpen ? '[animation:slideUp_0.3s_ease-out]' : ''}`}
+            max-h-[calc(100vh-45vh)]`}
         >
           <Sidebar
             history={history}
