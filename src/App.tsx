@@ -137,16 +137,64 @@ function App() {
     return localStorage.getItem('has-animated-sidebar') === 'true';
   });
 
+  const captureCard = async () => {
+    const cardElement = document.querySelector('.glass-card');
+    if (!cardElement) return;
+
+    try {
+      const canvas = await html2canvas(cardElement, {
+        backgroundColor: null,
+        scale: 2,
+      });
+
+      const image = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = image;
+      link.download = 'icebreaker-card.png';
+      link.click();
+    } catch (error) {
+      console.error('Failed to capture card:', error);
+    }
+  };
+
   return (
     <>
       <main className="flex flex-col min-h-screen">
+        {/* Download button */}
+        <button
+          onClick={captureCard}
+          className="fixed top-8 right-8 z-50 
+            p-3.5
+            bg-white/8
+            backdrop-blur-md
+            border border-white/20
+            shadow-[0_2px_8px_rgba(0,0,0,0.08)]
+            rounded-full
+            transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
+            hover:bg-white/15
+            active:scale-95"
+          aria-label="Download card as image"
+        >
+          <svg 
+            viewBox="0 0 24 24" 
+            className="w-5 h-5 text-white/80"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            fill="none"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+        </button>
+
         {/* Header - changed to bold */}
         <h1 className="fixed top-16 left-1/2 -translate-x-1/2 text-3xl md:text-5xl text-white z-50 font-bold tracking-wide">
           icebreakers
         </h1>
 
         {/* Card container moves up smoothly but not centered anymore */}
-        <div className={`flex flex-col items-center transition-all duration-300 ease-in-out
+        <div className={`flex justify-center transition-all duration-300 ease-in-out
           ${isSidebarOpen ? 'mt-[20vh]' : 'mt-[30vh]'}
         `}>
           <Signature />
