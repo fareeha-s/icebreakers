@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  body {
+    @apply min-h-screen;
+    background: linear-gradient(
+      140deg,
+      #BFB8E2 0%,      /* Muted dusty purple */
+      #BFB8E2 15%,     
+      #D1C2E0 25%,     /* Soft dusty lavender */
+      #E2C8D8 35%,     /* Muted rose */
+      #E2C8D8 45%,     
+      #C2E2D8 55%,     /* Soft sage */
+      #C2E2D8 65%,     
+      #B8D8E2 75%,     /* Muted sky */
+      #E2D1C2 85%,     /* Soft sand */
+      #E2C8C8 95%,     /* Muted rose */
+      #BFB8E2 100%     /* Back to start */
+    );
+    animation: gradientShift 100s ease infinite;
+    background-size: 300% 300%;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-3xl relative;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      8px 8px 24px -8px rgba(0, 0, 0, 0.2);  /* Single shadow, offset to right and bottom */
+  }
+
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+  }
+
+  .glass-button {
+    @apply bg-white/10
+      border border-white/20 
+      transition-all 
+      duration-200
+      select-none
+      outline-none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .glass-button:hover {
+    @apply bg-white/15;  /* Slightly brighter on hover */
+  }
+
+  .glass-button:active {
+    @apply bg-white/25;  /* Even brighter when clicked */
+    transform: scale(0.97);  /* Optional: slight scale down for click feedback */
+  }
+  
+  .glass-sidebar {
+    @apply bg-white/20 border-r border-white/20;
+  }
+  
+  .sidebar-item {
+    @apply bg-white/25 
+      border border-white/30 
+      hover:bg-white/35 
+      transition-colors 
+      duration-200;
+  }
+
+  .light-glass-card {
+    @apply rounded-3xl shadow-lg;
+    background: rgba(255, 255, 255, 0.8);  /* More opaque white */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);  /* Darker border */
+  }
+
+  /* Update button styles for light mode */
+  .theme-light .glass-button {
+    @apply bg-gray-100 text-gray-800 border-gray-200;
+  }
+
+  /* Update other elements for light mode */
+  .theme-light .category-tag {
+    @apply text-gray-600 bg-gray-100;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.floating-arrow-button {
+  @apply text-white/80 
+    hover:text-white 
+    hover:scale-105
+    active:scale-105
+    transition-all 
+    duration-200;
+}
+
+.engraved-text {
+  @apply font-medium tracking-wide;
+  color: transparent;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-shadow: 
+    1px 1px 1px rgba(255, 255, 255, 0.15),
+    -1px -1px 1px rgba(0, 0, 0, 0.4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Add this to prevent any default button behavior */
+button {
+  -webkit-tap-highlight-color: transparent;  /* Remove mobile tap highlight */
+  user-select: none;                         /* Prevent text selection */
+  -webkit-user-select: none;                 /* For Safari */
+}
+
+.text-shadow {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+/* Or for stronger visibility */
+.text-shadow-strong {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
