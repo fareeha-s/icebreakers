@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Sparkles } from 'lucide-react';
 import { icebreakers, type Icebreaker } from './data/icebreakers';
 import IcebreakerCard from './components/IcebreakerCard';
 import Sidebar from './components/Sidebar';
-import { Sparkles, ChevronRight, Heart, Clock } from 'lucide-react';
 import { ThemePicker } from './components/ThemePicker';
 
 function App() {
@@ -41,24 +41,30 @@ function App() {
 
   // Get next icebreaker
   const getNextIcebreaker = () => {
-    // If we've shown all questions, reset the used questions
-    if (usedQuestions.length === icebreakers.length) {
-      setUsedQuestions([]);
+    if (usedQuestions.length >= icebreakers.length) {
+      setUsedQuestions([currentIcebreaker.id]); // Keep current one in used
     }
 
-    // Filter out used questions
     const availableIcebreakers = icebreakers.filter(
       ib => !usedQuestions.includes(ib.id)
     );
 
-    // Get random question from available ones
+    // Safety check
+    if (availableIcebreakers.length === 0) {
+      console.error('No available icebreakers');
+      return;
+    }
+
     const randomIndex = Math.floor(Math.random() * availableIcebreakers.length);
     const nextIcebreaker = availableIcebreakers[randomIndex];
 
+    if (!nextIcebreaker) {
+      console.error('Failed to get next icebreaker');
+      return;
+    }
+
     setCurrentIcebreaker(nextIcebreaker);
     setUsedQuestions(prev => [...prev, nextIcebreaker.id]);
-    
-    // Simplified history update
     setHistory(prev => [...prev, nextIcebreaker].slice(-10));
   };
 
@@ -112,64 +118,52 @@ function App() {
     });
   };
 
+  // Add clearFavorites function
+  const clearFavorites = () => {
+    setFavorites([]);
+    // Also clear from localStorage
+    localStorage.setItem('favorites', JSON.stringify([]));
+  };
+
+  const clearHistory = () => {
+    setHistory([]);
+  };
+
   return (
-    <div className="flex min-h-screen overflow-hidden">
-      <ThemePicker />
-      {/* Header - Remove toggle, keep just the title */}
-      <header className="fixed top-0 left-0 right-0 z-40 p-4 landscape:p-2 md:p-6">
-        <div className="max-w-2xl mx-auto">
-          <div className="flex items-center justify-center gap-2">
-            <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-white" />
-            <h1 className="text-xl landscape:text-lg md:text-2xl font-bold text-white">icebreakers.wiki</h1>
-          </div>
-        </div>
-      </header>
+    <>
+      <main className="flex flex-col min-h-screen">
+        {/* Header - changed to bold */}
+        <h1 className="fixed top-16 left-1/2 -translate-x-1/2 text-3xl md:text-5xl text-white z-50 font-bold tracking-wide">
+          icebreakers
+        </h1>
 
-      {/* Main Content with Credit Line */}
-      <div className={`fixed left-1/2 transform transition-all duration-200 
-        ${isSidebarOpen
-          ? 'top-20 -translate-x-1/2 translate-y-0' 
-          : 'top-1/2 -translate-x-1/2 -translate-y-1/2'
-        }`
-      }>
-        <IcebreakerCard
-          icebreaker={currentIcebreaker}
-          onNext={getNextIcebreaker}
-          onToggleFavorite={toggleFavorite}
-          isFavorite={favorites.some((fav) => fav.id === currentIcebreaker.id)}
-        />
-        
-        {/* Credit Line with LinkedIn Link */}
-        <div className="flex justify-end mt-2">
-          <a 
-            href="https://www.linkedin.com/in/fareehas" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-xs text-white/40 hover:text-white/60 transition-colors duration-200 font-medium tracking-wide"
-          >
-            sincerely, Fareeha
-          </a>
+        {/* Card container moves up smoothly but not centered anymore */}
+        <div className={`flex justify-center transition-all duration-300 ease-in-out
+          ${isSidebarOpen ? 'mt-[15vh]' : 'mt-[30vh]'}`}>
+          <IcebreakerCard 
+            icebreaker={currentIcebreaker}
+            isFavorite={favorites.some((fav) => fav.id === currentIcebreaker.id)}
+            onToggleFavorite={toggleFavorite}
+            onNext={getNextIcebreaker}
+          />
         </div>
-      </div>
 
-      {/* Sidebar - Bottom sheet */}
-      <div 
-        className={`fixed z-40 glass-sidebar transition-all duration-200 ease-in-out
-          bottom-0 left-0 right-0 
-          h-[50vh] 
-          rounded-t-3xl
-          ${isSidebarOpen 
-            ? 'translate-y-0' 
-            : 'translate-y-full'
-          }`}
-      >
-        <Sidebar
-          history={history}
-          favorites={favorites}
-          onRemoveFromFavorites={removeFromFavorites}
-          onCardClick={handleCardClick}
-        />
-      </div>
+        {/* Sidebar slides up */}
+        <div 
+          className={`fixed bottom-0 left-0 right-0 h-[35vh] glass-sidebar 
+            transition-transform duration-300 ease-in-out z-40
+            ${isSidebarOpen ? 'translate-y-0' : 'translate-y-full'}`}
+        >
+          <Sidebar
+            history={history}
+            favorites={favorites}
+            onRemoveFromFavorites={removeFromFavorites}
+            onCardClick={handleCardClick}
+            onClearFavorites={clearFavorites}
+            onClearHistory={clearHistory}
+          />
+        </div>
+      </main>
 
       {/* Apple-style Minimal Button */}
       <button
@@ -197,7 +191,7 @@ function App() {
           <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </button>
-    </div>
+    </>
   );
 }
 

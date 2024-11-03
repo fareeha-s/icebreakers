@@ -3,28 +3,17 @@ import { useState } from 'react';
 const themes = [
   {
     id: 'default',
-    name: 'Twilight',
-    gradient: 'from-sky-300 via-violet-300 to-rose-200'
+    name: 'Color',
+    gradient: 'bg-gradient-to-br from-[#BFB8E2] via-[#C2E2D8] to-[#E2C8C8]',
+    textColor: 'text-white',
+    glassClass: 'glass-card'
   },
   {
-    id: 'ocean',
-    name: 'Ocean',
-    gradient: 'from-blue-300 via-cyan-300 to-teal-200'
-  },
-  {
-    id: 'sunset',
-    name: 'Sunset',
-    gradient: 'from-orange-200 via-rose-300 to-purple-300'
-  },
-  {
-    id: 'forest',
-    name: 'Forest',
-    gradient: 'from-green-200 via-emerald-300 to-teal-300'
-  },
-  {
-    id: 'lavender',
-    name: 'Lavender',
-    gradient: 'from-purple-200 via-violet-300 to-pink-200'
+    id: 'dark',
+    name: 'Dark',
+    gradient: 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900',
+    textColor: 'text-white',
+    glassClass: 'glass-card'
   }
 ];
 

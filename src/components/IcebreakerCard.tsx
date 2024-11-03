@@ -1,4 +1,3 @@
-import React from 'react';
 import { Heart, RefreshCw } from 'lucide-react';
 import type { Icebreaker } from '../data/icebreakers';
 
@@ -16,48 +15,68 @@ export default function IcebreakerCard({
   isFavorite,
 }: IcebreakerCardProps) {
   return (
-    <div className="w-[90vw] md:w-[600px] h-auto min-h-[250px] landscape:min-h-[200px] glass-card rounded-2xl p-4 md:p-8 relative overflow-hidden transition-all duration-300 hover:scale-[1.02]">
-      <div className="absolute top-0 left-0 w-full h-1">
-        <div className={`h-full ${getCategoryColor(icebreaker.category)} shadow-lg`} />
-      </div>
-      
-      <div className="mb-2 landscape:mb-1 md:mb-6">
-        <span className="text-xs md:text-sm font-medium text-white uppercase tracking-wider font-sans">
-          {icebreaker.category}
-        </span>
+    <div className="w-[90vw] md:w-[1200px] h-[400px]">
+      <div className="glass-card w-full h-full px-8 pt-8 pb-8 md:px-12 md:pt-12 md:pb-10 lg:px-16 lg:pt-16 lg:pb-12 relative">
+        <div>
+          <span className="text-base text-white/80 uppercase tracking-wider font-medium">
+            {icebreaker.category}
+          </span>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.08)]">
+            {icebreaker.question}
+          </h2>
+        </div>
+        <div className="absolute bottom-8 md:bottom-10 lg:bottom-12 right-8 md:right-12 lg:right-16 
+          flex items-center gap-3 md:gap-4">
+          <button
+            onClick={onToggleFavorite}
+            className="glass-button p-3.5 rounded-full
+              transition-all duration-200
+              hover:bg-white/15
+              active:scale-95
+              transform-gpu"
+          >
+            <Heart 
+              className={`
+                w-5 h-5 
+                transition-all duration-200
+                hover:text-pink-100/90
+                active:fill-pink-200 active:text-pink-200
+                ${isFavorite 
+                  ? 'fill-white text-white' 
+                  : 'text-white/80'
+                }
+              `}
+            />
+          </button>
+
+          <button
+            onClick={onNext}
+            className="glass-button px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-white text-base
+              transition-all duration-200
+              hover:bg-white/15 hover:scale-[1.02] hover:shadow-lg
+              active:scale-95 active:bg-white/20
+              transform-gpu"
+          >
+            next →
+          </button>
+        </div>
       </div>
 
-      <div className="h-[100px] landscape:h-[80px] md:h-[120px]">
-        <h1 className="text-lg landscape:text-xl md:text-2xl font-semibold text-white font-sans">
-          {icebreaker.question}
-        </h1>
-      </div>
-
-      <div className="flex justify-end items-center gap-3 md:gap-4 mt-2 landscape:mt-1 md:mt-auto">
-        <button
-          onClick={onToggleFavorite}
-          className={`p-2 md:p-3 rounded-full transition-colors duration-200 glass-button ${
-            isFavorite
-              ? 'text-rose-300'
-              : 'text-white'
-          }`}
+      <div className="w-[90vw] md:w-[1200px] flex justify-end mt-2">
+        <a 
+          href="https://www.linkedin.com/in/fareehas" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-xs [text-shadow:_0_1px_1px_rgba(0,0,0,0.05)] text-white/90 hover:text-white transition-colors duration-200"
         >
-          <Heart className="w-5 h-5 md:w-6 md:h-6" fill={isFavorite ? "currentColor" : "none"} />
-        </button>
-
-        <button
-          onClick={onNext}
-          className="px-4 md:px-6 py-2 md:py-3 glass-button rounded-full flex items-center gap-2 text-white"
-        >
-          <span className="font-sans">Next</span>
-          <RefreshCw className="w-3 h-3 md:w-4 md:h-4" />
-        </button>
+          sincerely, Fareeha
+        </a>
       </div>
     </div>
   );
 }
 
-function getCategoryColor(category: Icebreaker['category']) {
+function getCategoryColor(category: 'fun' | 'professional' | 'deep' | 'creative') {
   switch (category) {
     case 'fun':
       return 'bg-emerald-400';
