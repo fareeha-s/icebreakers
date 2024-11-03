@@ -15,8 +15,8 @@ export default function IcebreakerCard({
   isFavorite,
 }: IcebreakerCardProps) {
   return (
-    <div className="w-[90vw] md:w-[1200px] h-[400px]">
-      <div className="glass-card w-full h-full px-8 pt-8 pb-8 md:px-12 md:pt-12 md:pb-10 lg:px-16 lg:pt-16 lg:pb-12 relative">
+    <div className="w-[90vw] max-w-[1200px] h-[400px] sm:h-[400px] @media (max-height: 667px) { h-[250px] }">
+      <div className="glass-card w-full h-full px-8 pt-8 pb-8 md:px-12 md:pt-12 md:pb-10 lg:px-16 lg:pt-16 lg:pb-12 relative @media (max-height: 667px) { px-6 pt-6 pb-6 }">
         <div>
           <span className="text-base text-white/80 uppercase tracking-wider font-medium">
             {icebreaker.category}

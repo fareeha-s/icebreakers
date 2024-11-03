@@ -87,11 +87,13 @@ function App() {
     } else {
       setFavorites([...favorites, currentIcebreaker]);
       
-      // If this is their first favorite, show sidebar and mark as favorited
+      // If this is their first favorite
       if (!hasEverFavorited) {
         setIsSidebarOpen(true);
         setHasEverFavorited(true);
+        setHasAnimatedOnce(true);
         localStorage.setItem('has-ever-favorited', 'true');
+        localStorage.setItem('has-animated-sidebar', 'true');
       }
     }
   };
@@ -129,6 +131,11 @@ function App() {
     setHistory([]);
   };
 
+  // Add this with your other state declarations at the top
+  const [hasAnimatedOnce, setHasAnimatedOnce] = useState(() => {
+    return localStorage.getItem('has-animated-sidebar') === 'true';
+  });
+
   return (
     <>
       <main className="flex flex-col min-h-screen">
@@ -139,7 +146,8 @@ function App() {
 
         {/* Card container moves up smoothly but not centered anymore */}
         <div className={`flex justify-center transition-all duration-300 ease-in-out
-          ${isSidebarOpen ? 'mt-[15vh]' : 'mt-[30vh]'}`}>
+          ${isSidebarOpen ? 'mt-[20vh]' : 'mt-[30vh]'}
+        `}>
           <IcebreakerCard 
             icebreaker={currentIcebreaker}
             isFavorite={favorites.some((fav) => fav.id === currentIcebreaker.id)}
@@ -152,7 +160,8 @@ function App() {
         <div 
           className={`fixed bottom-0 left-0 right-0 h-[35vh] glass-sidebar 
             transition-transform duration-300 ease-in-out z-40
-            ${isSidebarOpen ? 'translate-y-0' : 'translate-y-full'}`}
+            ${isSidebarOpen ? 'translate-y-0' : 'translate-y-full'}
+            ${!hasAnimatedOnce && isSidebarOpen ? '[animation:slideUp_0.3s_ease-out]' : ''}`}
         >
           <Sidebar
             history={history}
