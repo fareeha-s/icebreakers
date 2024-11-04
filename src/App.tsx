@@ -49,7 +49,7 @@ function App() {
       setUsedQuestions([currentIcebreaker.id]); // Keep current one in used
     }
 
-    const availableIcebreakers = icebreakers.filter(
+    const availableIce = icebreakers.filter(
       ib => !usedQuestions.includes(ib.id)
     );
 
