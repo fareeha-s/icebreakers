@@ -278,7 +278,7 @@ export const icebreakers: Icebreaker[] = [
   },
   {
     id: '46',
-    question: "Superior way to eat potatoes?\n(mashed, roasted, hashed, 🍟...)",
+    question: "Potatoes! Mashed, roasted, hashed, 🍟...?",
     category: 'fun',
     mode: 'journal'
   },

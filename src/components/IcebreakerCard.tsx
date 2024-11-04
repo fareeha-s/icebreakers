@@ -30,9 +30,10 @@ export default function IcebreakerCard({
           <span className="text-base text-white/80 uppercase tracking-wider font-medium">
             {icebreaker.category}
           </span>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.08)]">
-            {icebreaker.question}
-          </h2>
+          <h2 
+            className="text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.08)]"
+            dangerouslySetInnerHTML={{ __html: icebreaker.question }}
+          />
         </div>
         <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 
           flex items-center gap-3 md:gap-4
