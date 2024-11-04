@@ -8,39 +8,56 @@
   body {
     @apply min-h-screen overflow-x-hidden;
     background: 
+      /* Top right blue pool */
+      radial-gradient(
+        circle at 85% 15%,
+        #CCDDFF 0%,
+        transparent 45%
+      ),
+      /* Top left blue area */
+      radial-gradient(
+        circle at 15% 25%,
+        #DDEEFF 0%,
+        transparent 40%
+      ),
+      /* Bottom right green pool - softened */
+      radial-gradient(
+        circle at 75% 85%,
+        #66CCAA 0%,      /* Lighter green */
+        transparent 60%   /* More gradual fade */
+      ),
+      /* Center-left green area - softened */
+      radial-gradient(
+        circle at 25% 65%,
+        #88CCBB 0%,      /* Much lighter green */
+        transparent 65%   /* More gradual fade */
+      ),
+      /* Main moving gradient - smoother transitions */
       linear-gradient(
-        180deg,                /* Main ice melting gradient top to bottom */
-        #0066BB 0%,           /* Deep glacier blue */
-        #2288DD 8%,           /* Dense ice blue */
-        #44AAFF 16%,          /* Lighter ice */
-        #77CCFF 24%,          /* Melting ice */
-        #99DDFF 32%,          /* Crystal clear ice */
-        #AADDEE 40%,          /* Ice water */
-        #BBDDDD 48%,          /* Cool water */
-        #CCDDBB 56%,          /* Soft sage */
-        #DDDDAA 64%,          /* Warm mint */
-        #DDCCBB 72%,          /* Warm coral */
-        #EEBBAA 80%,          /* Soft peach */
-        #FFAAAA 88%,          /* Gentle coral pink */
-        #EEAACC 92%,          /* Warm rose */
-        #CCAAEE 96%,          /* Twilight purple */
-        #0066BB 100%          /* Back to deep glacier */
-      ),
-      radial-gradient(
-        circle at 15% 25%,     /* Imperfect frost spot top left */
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(255, 255, 255, 0.1) 35%,
-        transparent 60%
-      ),
-      radial-gradient(
-        circle at 85% 15%,     /* Imperfect frost spot top right */
-        rgba(255, 255, 255, 0.3) 0%,
-        rgba(255, 255, 255, 0.1) 40%,
-        transparent 70%
+        145deg,
+        #CCDDFF 0%,
+        #AADDEE 4%,      /* Softer transition */
+        #99DDCC 8%,      /* Gentler green */
+        #88CCBB 12%,     /* Lighter green */
+        #66CCAA 16%,     /* Removed dark green */
+        #88CCBB 24%,     /* Back to lighter */
+        #DDDDAA 60%,
+        #DDCCBB 72%,
+        #EEBBAA 80%,
+        #FFAAAA 88%,     /* Warm pinks instead of purples */
+        #FFBBBB 92%,     /* More pink */
+        #FFCCCC 96%,     /* Light pink */
+        #DDDDAA 100%     /* Back to blue */
       );
-    animation: gradientShift 100s ease infinite;
-    background-size: 300% 300%, 200% 200%, 200% 200%;
-    background-blend-mode: soft-light;
+    animation: 
+      gradientShift 120s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
+      gradientPulse 90s ease infinite;
+    background-size: 
+      300% 300%,
+      200% 200%,
+      200% 200%,
+      200% 200%;
+    background-blend-mode: soft-light, overlay, overlay, normal;
   }
 
   html {
@@ -50,19 +67,13 @@
 
 @keyframes gradientShift {
   0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 100%;
+    background-position: 0% 0%;
   }
   50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 0%;
+    background-position: 100% 100%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
   }
 }
 
@@ -190,4 +201,16 @@ button {
 
 @media screen and (max-height: 600px) {
   /* Add your small-screen adjustments here */
+}
+
+@keyframes gradientPulse {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%, 100% 0%, 0% 100%, 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
 }
