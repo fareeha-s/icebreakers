@@ -67,17 +67,16 @@ Error generating stack: `+i.message+`
         sm:px-8 sm:pt-8 sm:pb-8\r
         max-w-[90vw] mx-auto`,children:[k.jsxs("div",{children:[k.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),k.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.08)]",children:e.question})]}),k.jsxs("div",{className:`absolute bottom-8 md:bottom-10 lg:bottom-12 right-8 md:right-12 lg:right-16 \r
           flex items-center gap-3 md:gap-4`,children:[k.jsx("button",{onClick:n,className:`glass-button p-3.5 rounded-full\r
-              bg-white/10\r
-              backdrop-blur-md\r
-              border border-white/20\r
-              shadow-[0_0_15px_rgba(255,255,255,0.15)]\r
-              hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]\r
-              hover:bg-pink-200/50\r
+              bg-white/5\r
+              backdrop-blur-[8px]\r
+              border border-white/10\r
+              shadow-[0_0_15px_rgba(255,255,255,0.1)]\r
+              hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]\r
+              hover:bg-pink-200/20\r
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]\r
               hover:scale-105\r
               active:scale-100\r
-              transform-gpu\r
-              after:absolute after:inset-0 after:rounded-full after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity`,children:k.jsx(oc,{className:`
+              transform-gpu`,children:k.jsx(oc,{className:`
                 w-5 h-5 
                 transition-all duration-700
                 hover:fill-rose-200 hover:text-rose-200
@@ -90,8 +89,8 @@ Error generating stack: `+i.message+`
               hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]\r
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]\r
               hover:bg-white/20\r
-              hover:scale-104\r
-              active:scale-104\r
+              hover:scale-105\r
+              active:scale-100\r
               transform-gpu\r
               after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity`,children:"next →"})]})]})})}const Hu=e=>e.includes("Superior way to eat potatoes?")?k.jsxs(k.Fragment,{children:["Superior way to eat potatoes?",k.jsx("br",{}),"(mashed, roasted, hashed, 🍟...)"]}):e;function Ff({history:e,favorites:t,onRemoveFromFavorites:n,onCardClick:r,onClearFavorites:o,onClearHistory:i}){return k.jsx("div",{className:"h-full max-h-full overflow-hidden",children:k.jsx("div",{className:"px-6 pt-6 pb-4 h-full flex flex-col",children:k.jsxs("div",{className:"flex h-full overflow-hidden",children:[k.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[k.jsx("div",{className:"shrink-0 mb-4",children:k.jsxs("div",{className:"flex items-center justify-between",children:[k.jsxs("div",{className:"flex items-center gap-2",children:[k.jsx(oc,{className:"w-5 h-5 text-white/80"}),k.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"Favorites"})]}),t.length>0&&k.jsx("span",{onClick:o,className:"text-sm text-white/70 cursor-pointer hover:text-white/90",children:"clear"})]})}),k.jsx("div",{className:"flex-1 overflow-y-auto scrollbar-hide",children:k.jsx("div",{className:"space-y-2",children:t.map(l=>k.jsx("button",{onClick:()=>r(l),className:`w-full text-left rounded-xl py-2 px-4\r
                       glass-button\r

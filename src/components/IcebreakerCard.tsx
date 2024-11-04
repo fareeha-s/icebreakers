@@ -33,37 +33,29 @@ export default function IcebreakerCard({
           </h2>
         </div>
         <div className="absolute bottom-8 md:bottom-10 lg:bottom-12 right-8 md:right-12 lg:right-16 
-          flex items-center gap-3 md:gap-4">
+          flex items-center gap-3 md:gap-4
+          z-10">
           <button
             onClick={onToggleFavorite}
-            className="glass-button p-3.5 rounded-full
-              bg-white/5
-              backdrop-blur-[8px]
-              border border-white/10
-              shadow-[0_0_15px_rgba(255,255,255,0.1)]
-              hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]
-              hover:bg-pink-200/20
+            className="p-3.5 rounded-full
+              bg-white/10
+              backdrop-blur-md
+              border border-white/20
+              shadow-[0_0_15px_rgba(255,255,255,0.15)]
+              hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
+              hover:bg-white/20
               hover:scale-105
               active:scale-100
-              transform-gpu"
+              transform-gpu
+              after:absolute after:inset-0 after:rounded-full after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity"
           >
-            <Heart 
-              className={`
-                w-5 h-5 
-                transition-all duration-700
-                hover:fill-rose-200 hover:text-rose-200
-                ${isFavorite 
-                  ? 'fill-white text-white' 
-                  : 'text-white/80'
-                }
-              `}
-            />
+            <Heart className={`w-5 h-5 ${isFavorite ? 'text-white fill-white' : 'text-white/80'}`} />
           </button>
 
           <button
             onClick={onNext}
-            className="glass-button px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-white text-base
+            className="px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-white text-base
               bg-white/10
               backdrop-blur-md
               border border-white/20
