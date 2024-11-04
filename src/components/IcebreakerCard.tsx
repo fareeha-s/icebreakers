@@ -65,28 +65,20 @@ export default function IcebreakerCard({
           </button>
 
           <button
-            onClick={(e) => {
-              e.preventDefault();
-              try {
-                onNext();
-              } catch (error) {
-                console.error('Error in next button:', error);
-              }
-            }}
+            onClick={onNext}
             className="relative px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-white text-base
               glass-button-fallback
               bg-white/10 backdrop-blur-md
+              hover:bg-white/20
               border border-white/20
               shadow-[0_0_15px_rgba(255,255,255,0.15)]
               hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-              hover:bg-white/20
               hover:scale-105
               active:scale-100
               transform-gpu
               isolate
-              z-[999]
-            "
+              z-[999]"
           >
             next →
           </button>

@@ -1,4 +1,4 @@
-import { Heart, History } from 'lucide-react';
+import { Heart, History, Trash2 } from 'lucide-react';
 import type { Icebreaker } from '../data/icebreakers';
 
 interface SidebarProps {
@@ -47,12 +47,13 @@ export default function Sidebar({
                   </h2>
                 </div>
                 {favorites.length > 0 && (
-                  <span 
+                  <button 
                     onClick={onClearFavorites} 
                     className="text-sm text-white/70 cursor-pointer hover:text-white/90"
                   >
-                    clear
-                  </span>
+                    <span className="hidden sm:inline">clear</span>
+                    <Trash2 className="w-4 h-4 inline sm:hidden" />
+                  </button>
                 )}
               </div>
             </div>
@@ -89,12 +90,13 @@ export default function Sidebar({
                   </h2>
                 </div>
                 {history.length > 0 && (
-                  <span 
+                  <button 
                     onClick={onClearHistory} 
                     className="text-sm text-white/70 cursor-pointer hover:text-white/90"
                   >
-                    clear
-                  </span>
+                    <span className="hidden sm:inline">clear</span>
+                    <Trash2 className="w-4 h-4 inline sm:hidden" />
+                  </button>
                 )}
               </div>
             </div>
