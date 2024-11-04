@@ -6,23 +6,58 @@
 
 @layer base {
   body {
-    @apply min-h-screen;
-    background: linear-gradient(
-      140deg,
-      #BFB8E2 0%,      /* Muted dusty purple */
-      #BFB8E2 15%,     
-      #D1C2E0 25%,     /* Soft dusty lavender */
-      #E2C8D8 35%,     /* Muted rose */
-      #E2C8D8 45%,     
-      #C2E2D8 55%,     /* Soft sage */
-      #C2E2D8 65%,     
-      #B8D8E2 75%,     /* Muted sky */
-      #E2D1C2 85%,     /* Soft sand */
-      #E2C8C8 95%,     /* Muted rose */
-      #BFB8E2 100%     /* Back to start */
-    );
-    animation: gradientShift 100s ease infinite;
-    background-size: 300% 300%;
+    @apply min-h-screen overflow-x-hidden;
+    background: 
+      /* Top right blue pool */
+      radial-gradient(
+        circle at 85% 15%,
+        #CCDDFF 0%,
+        transparent 45%
+      ),
+      /* Top left blue area */
+      radial-gradient(
+        circle at 15% 25%,
+        #DDEEFF 0%,
+        transparent 40%
+      ),
+      /* Bottom right green pool - softened */
+      radial-gradient(
+        circle at 75% 85%,
+        #66CCAA 0%,      /* Lighter green */
+        transparent 60%   /* More gradual fade */
+      ),
+      /* Center-left green area - softened */
+      radial-gradient(
+        circle at 25% 65%,
+        #88CCBB 0%,      /* Much lighter green */
+        transparent 65%   /* More gradual fade */
+      ),
+      /* Main moving gradient - smoother transitions */
+      linear-gradient(
+        145deg,
+        #CCDDFF 0%,
+        #AADDEE 4%,      /* Softer transition */
+        #99DDCC 8%,      /* Gentler green */
+        #88CCBB 12%,     /* Lighter green */
+        #66CCAA 16%,     /* Removed dark green */
+        #88CCBB 24%,     /* Back to lighter */
+        #DDDDAA 60%,
+        #DDCCBB 72%,
+        #EEBBAA 80%,
+        #FFAAAA 88%,     /* Warm pinks instead of purples */
+        #FFBBBB 92%,     /* More pink */
+        #FFCCCC 96%,     /* Light pink */
+        #DDDDAA 100%     /* Back to blue */
+      );
+    animation: 
+      gradientShift 120s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
+      gradientPulse 90s ease infinite;
+    background-size: 
+      300% 300%,
+      200% 200%,
+      200% 200%,
+      200% 200%;
+    background-blend-mode: soft-light, overlay, overlay, normal;
   }
 
   html {
@@ -32,19 +67,13 @@
 
 @keyframes gradientShift {
   0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 100%;
+    background-position: 0% 0%;
   }
   50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 0%;
+    background-position: 100% 100%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
   }
 }
 
@@ -68,21 +97,6 @@
     border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 
       8px 8px 24px -8px rgba(0, 0, 0, 0.2);  /* Single shadow, offset to right and bottom */
-  }
-
-  .glass-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0.5) 50%,
-      rgba(255, 255, 255, 0.2) 100%
-    );
   }
 
   .glass-button {
@@ -161,8 +175,8 @@
   color: transparent;
   background-color: rgba(255, 255, 255, 0.2);
   text-shadow: 
-    1px 1px 1px rgba(255, 255, 255, 0.15),
-    -1px -1px 1px rgba(0, 0, 0, 0.4);
+    0 1px 0 rgba(255, 255, 255, 0.15),
+    0 -1px 0 rgba(0, 0, 0, 0.4);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-font-smoothing: antialiased;
@@ -183,4 +197,27 @@ button {
 /* Or for stronger visibility */
 .text-shadow-strong {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-height: 600px) {
+  /* Add your small-screen adjustments here */
+}
+
+@keyframes gradientPulse {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%, 100% 0%, 0% 100%, 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+/* Add this to your existing CSS */
+@supports not (backdrop-filter: blur()) {
+  .glass-button-fallback {
+    @apply bg-black/20 !important;
+  }
 }

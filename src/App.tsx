@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Sparkles } from 'lucide-react';
+import { useState, useEffect } from 'react'; 
 import { icebreakers, type Icebreaker } from './data/icebreakers';
 import IcebreakerCard from './components/IcebreakerCard';
 import Sidebar from './components/Sidebar';
-import { ThemePicker } from './components/ThemePicker';
+import ThemeToggle from './components/ThemeToggle';
+import Signature from './components/Signature';
 
 function App() {
   const [currentIcebreaker, setCurrentIcebreaker] = useState<Icebreaker>(() => {
@@ -39,29 +39,32 @@ function App() {
     return savedUsed ? JSON.parse(savedUsed) : [currentIcebreaker.id];
   });
 
+  // Add monochrome state
+  const [isMonochrome, setIsMonochrome] = useState(false);
+
   // Get next icebreaker
   const getNextIcebreaker = () => {
+    // Reset used questions if we've used them all
     if (usedQuestions.length >= icebreakers.length) {
-      setUsedQuestions([currentIcebreaker.id]); // Keep current one in used
+      console.log('Resetting used questions');
+      setUsedQuestions([]);
+      return;
     }
 
     const availableIcebreakers = icebreakers.filter(
       ib => !usedQuestions.includes(ib.id)
     );
 
-    // Safety check
+    console.log('Available icebreakers:', availableIcebreakers.length);
+
     if (availableIcebreakers.length === 0) {
-      console.error('No available icebreakers');
+      console.log('No available icebreakers, resetting');
+      setUsedQuestions([]);
       return;
     }
 
     const randomIndex = Math.floor(Math.random() * availableIcebreakers.length);
     const nextIcebreaker = availableIcebreakers[randomIndex];
-
-    if (!nextIcebreaker) {
-      console.error('Failed to get next icebreaker');
-      return;
-    }
 
     setCurrentIcebreaker(nextIcebreaker);
     setUsedQuestions(prev => [...prev, nextIcebreaker.id]);
@@ -87,11 +90,13 @@ function App() {
     } else {
       setFavorites([...favorites, currentIcebreaker]);
       
-      // If this is their first favorite, show sidebar and mark as favorited
+      // If this is their first favorite ever, show the sidebar
       if (!hasEverFavorited) {
-        setIsSidebarOpen(true);
-        setHasEverFavorited(true);
-        localStorage.setItem('has-ever-favorited', 'true');
+        setTimeout(() => {  // Add a small delay so the heart animation finishes first
+          setIsSidebarOpen(true);
+          setHasEverFavorited(true);
+          localStorage.setItem('has-ever-favorited', 'true');
+        }, 300);
       }
     }
   };
@@ -129,30 +134,56 @@ function App() {
     setHistory([]);
   };
 
+  const handleThemeChange = (isDark: boolean) => {
+    setIsMonochrome(isDark);
+  };
+
   return (
     <>
-      <main className="flex flex-col min-h-screen">
-        {/* Header - changed to bold */}
-        <h1 className="fixed top-16 left-1/2 -translate-x-1/2 text-3xl md:text-5xl text-white z-50 font-bold tracking-wide">
-          icebreakers
+      <ThemeToggle onThemeChange={handleThemeChange} isDarkMode={isMonochrome} />
+      <main className={`fixed inset-0 overflow-hidden min-h-[600px] ${
+        isMonochrome 
+          ? 'bg-black' 
+          : 'bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20'
+      }`}>
+        {/* Title */}
+        <h1 className="fixed top-16 left-1/2 -translate-x-1/2 text-3xl md:text-5xl text-white z-50 font-bold tracking-[0.15em] [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] flex items-center">
+          <div className="flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards]">
+            <span className="animate-[wordLeft_2s_ease_forwards]">ice</span>
+            <span 
+              className="relative text-white text-5xl font-black animate-slash-drop"
+            >
+              /
+            </span>
+            <span className="animate-[wordRight_2s_ease_forwards]">breakerrr</span>
+          </div>
         </h1>
 
-        {/* Card container moves up smoothly but not centered anymore */}
-        <div className={`flex justify-center transition-all duration-300 ease-in-out
-          ${isSidebarOpen ? 'mt-[15vh]' : 'mt-[30vh]'}`}>
-          <IcebreakerCard 
-            icebreaker={currentIcebreaker}
-            isFavorite={favorites.some((fav) => fav.id === currentIcebreaker.id)}
-            onToggleFavorite={toggleFavorite}
-            onNext={getNextIcebreaker}
-          />
+        {/* Card container */}
+        <div className={`w-full transition-all duration-300 ease-in-out
+          ${isSidebarOpen ? 'h-[80vh] min-h-[400px]' : 'h-screen min-h-[600px]'}
+          flex items-center justify-center`}
+        >
+          <div className="w-full flex flex-col opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]">
+            <Signature />
+            <div className="w-[90vw] max-w-[1200px] mx-auto">
+              <IcebreakerCard
+                icebreaker={currentIcebreaker}
+                isFavorite={favorites.some((fav) => fav.id === currentIcebreaker.id)}
+                onToggleFavorite={toggleFavorite}
+                onNext={getNextIcebreaker}
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Sidebar slides up */}
-        <div 
-          className={`fixed bottom-0 left-0 right-0 h-[35vh] glass-sidebar 
-            transition-transform duration-300 ease-in-out z-40
-            ${isSidebarOpen ? 'translate-y-0' : 'translate-y-full'}`}
+        {/* Sidebar */}
+        <div className={`fixed bottom-0 left-0 right-0 
+          h-[30vh] min-h-[200px]
+          ${isSidebarOpen ? 'translate-y-0' : 'translate-y-full'} 
+          glass-sidebar 
+          transition-transform duration-300 ease-in-out 
+          z-40`}
         >
           <Sidebar
             history={history}
@@ -165,19 +196,24 @@ function App() {
         </div>
       </main>
 
-      {/* Apple-style Minimal Button */}
+      {/* Plus Button */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className={`fixed z-50 bottom-8 left-1/2 -translate-x-1/2 
-          p-3.5
-          bg-white/8
+          px-3 py-3
+          bg-white/10
           backdrop-blur-md
           border border-white/20
-          shadow-[0_2px_8px_rgba(0,0,0,0.08)]
-          rounded-full
+          shadow-[0_0_15px_rgba(255,255,255,0.15)]
+          hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
+          rounded-xl
           transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-          hover:bg-white/15
-          active:scale-95
+          hover:bg-white/20
+          hover:scale-105
+          active:scale-100
+          transform-gpu
+          after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity
+          opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]
           ${isSidebarOpen ? 'rotate-45' : 'rotate-0'}`}
       >
         <svg 

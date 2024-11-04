@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',  // This ensures relative paths are used
+  base: '/',  // Change to '/' instead of './'
   plugins: [react()],
   build: {
     assetsDir: 'assets',
@@ -13,6 +13,7 @@ export default defineConfig({
         chunkFileNames: 'assets/[name].js',
         entryFileNames: 'assets/[name].js'
       }
-    }
+    },
+    sourcemap: true  // Add this for debugging
   }
 });
