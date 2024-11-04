@@ -3,7 +3,7 @@ import { Sparkles } from 'lucide-react';
 import { icebreakers, type Icebreaker } from './data/icebreakers';
 import IcebreakerCard from './components/IcebreakerCard';
 import Sidebar from './components/Sidebar';
-import { ThemePicker } from './components/ThemePicker';
+import ThemeToggle from './components/ThemeToggle';
 import Signature from './components/Signature';
 
 function App() {
@@ -39,6 +39,9 @@ function App() {
     const savedUsed = localStorage.getItem('icebreaker-used');
     return savedUsed ? JSON.parse(savedUsed) : [currentIcebreaker.id];
   });
+
+  // Add monochrome state
+  const [isMonochrome, setIsMonochrome] = useState(false);
 
   // Get next icebreaker
   const getNextIcebreaker = () => {
@@ -88,13 +91,13 @@ function App() {
     } else {
       setFavorites([...favorites, currentIcebreaker]);
       
-      // If this is their first favorite
+      // If this is their first favorite ever, show the sidebar
       if (!hasEverFavorited) {
-        setIsSidebarOpen(true);
-        setHasEverFavorited(true);
-        setHasAnimatedOnce(true);
-        localStorage.setItem('has-ever-favorited', 'true');
-        localStorage.setItem('has-animated-sidebar', 'true');
+        setTimeout(() => {  // Add a small delay so the heart animation finishes first
+          setIsSidebarOpen(true);
+          setHasEverFavorited(true);
+          localStorage.setItem('has-ever-favorited', 'true');
+        }, 300);
       }
     }
   };
@@ -132,87 +135,56 @@ function App() {
     setHistory([]);
   };
 
-  // Add this with your other state declarations at the top
-  const [hasAnimatedOnce, setHasAnimatedOnce] = useState(() => {
-    return localStorage.getItem('has-animated-sidebar') === 'true';
-  });
-
-  const captureCard = async () => {
-    const cardElement = document.querySelector('.glass-card');
-    if (!cardElement) return;
-
-    try {
-      const canvas = await html2canvas(cardElement, {
-        backgroundColor: null,
-        scale: 2,
-      });
-
-      const image = canvas.toDataURL('image/png');
-      const link = document.createElement('a');
-      link.href = image;
-      link.download = 'icebreaker-card.png';
-      link.click();
-    } catch (error) {
-      console.error('Failed to capture card:', error);
-    }
+  const handleThemeChange = (isDark: boolean) => {
+    setIsMonochrome(isDark);
   };
 
   return (
     <>
-      <main className="flex flex-col min-h-screen">
-        {/* Download button */}
-        <button
-          onClick={captureCard}
-          className="fixed top-8 right-8 z-50 
-            p-3.5
-            bg-white/8
-            backdrop-blur-md
-            border border-white/20
-            shadow-[0_2px_8px_rgba(0,0,0,0.08)]
-            rounded-full
-            transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-            hover:bg-white/15
-            active:scale-95"
-          aria-label="Download card as image"
-        >
-          <svg 
-            viewBox="0 0 24 24" 
-            className="w-5 h-5 text-white/80"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            fill="none"
-          >
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-          </svg>
-        </button>
-
-        {/* Header - changed to bold */}
-        <h1 className="fixed top-16 left-1/2 -translate-x-1/2 text-3xl md:text-5xl text-white z-50 font-bold tracking-wide">
-          icebreakers
+      <ThemeToggle onThemeChange={handleThemeChange} isDarkMode={isMonochrome} />
+      <main className={`fixed inset-0 overflow-hidden min-h-[600px] ${
+        isMonochrome 
+          ? 'bg-black' 
+          : 'bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20'
+      }`}>
+        {/* Title */}
+        <h1 className="fixed top-16 left-1/2 -translate-x-1/2 text-3xl md:text-5xl text-white z-50 font-bold tracking-[0.15em] [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] flex items-center">
+          <div className="flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards]">
+            <span className="animate-[wordLeft_2s_ease_forwards]">ice</span>
+            <span 
+              className="relative text-white text-5xl font-black animate-slash-drop"
+            >
+              /
+            </span>
+            <span className="animate-[wordRight_2s_ease_forwards]">breakers</span>
+          </div>
         </h1>
 
-        {/* Card container moves up smoothly but not centered anymore */}
-        <div className={`flex justify-center transition-all duration-300 ease-in-out
-          ${isSidebarOpen ? 'mt-[20vh]' : 'mt-[30vh]'}
-        `}>
-          <Signature />
-          <IcebreakerCard 
-            icebreaker={currentIcebreaker}
-            isFavorite={favorites.some((fav) => fav.id === currentIcebreaker.id)}
-            onToggleFavorite={toggleFavorite}
-            onNext={getNextIcebreaker}
-          />
+        {/* Card container */}
+        <div className={`w-full transition-all duration-300 ease-in-out
+          ${isSidebarOpen ? 'h-[80vh] min-h-[400px]' : 'h-screen min-h-[600px]'}
+          flex items-center justify-center`}
+        >
+          <div className="w-full flex flex-col opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]">
+            <Signature />
+            <div className="w-[90vw] max-w-[1200px] mx-auto">
+              <IcebreakerCard
+                icebreaker={currentIcebreaker}
+                isFavorite={favorites.some((fav) => fav.id === currentIcebreaker.id)}
+                onToggleFavorite={toggleFavorite}
+                onNext={getNextIcebreaker}
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Sidebar slides up */}
-        <div 
-          className={`fixed bottom-0 left-0 right-0 
-            ${isSidebarOpen ? 'h-[30vh] translate-y-0' : 'h-[30vh] translate-y-full'} 
-            glass-sidebar 
-            transition-transform duration-300 ease-in-out z-40
-            max-h-[calc(100vh-45vh)]`}
+        {/* Sidebar */}
+        <div className={`fixed bottom-0 left-0 right-0 
+          h-[30vh] min-h-[200px]
+          ${isSidebarOpen ? 'translate-y-0' : 'translate-y-full'} 
+          glass-sidebar 
+          transition-transform duration-300 ease-in-out 
+          z-40`}
         >
           <Sidebar
             history={history}
@@ -225,19 +197,23 @@ function App() {
         </div>
       </main>
 
-      {/* Apple-style Minimal Button */}
+      {/* Plus Button */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className={`fixed z-50 bottom-8 left-1/2 -translate-x-1/2 
-          p-3.5
-          bg-white/8
+          px-3 py-3
+          bg-white/10
           backdrop-blur-md
           border border-white/20
-          shadow-[0_2px_8px_rgba(0,0,0,0.08)]
-          rounded-full
+          shadow-[0_0_15px_rgba(255,255,255,0.15)]
+          hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
+          rounded-xl
           transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-          hover:bg-white/15
-          active:scale-95
+          hover:bg-white/20
+          hover:scale-105
+          active:scale-100
+          transform-gpu
+          after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity
           ${isSidebarOpen ? 'rotate-45' : 'rotate-0'}`}
       >
         <svg 

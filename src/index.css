@@ -6,23 +6,41 @@
 
 @layer base {
   body {
-    @apply min-h-screen;
-    background: linear-gradient(
-      140deg,
-      #BFB8E2 0%,      /* Muted dusty purple */
-      #BFB8E2 15%,     
-      #D1C2E0 25%,     /* Soft dusty lavender */
-      #E2C8D8 35%,     /* Muted rose */
-      #E2C8D8 45%,     
-      #C2E2D8 55%,     /* Soft sage */
-      #C2E2D8 65%,     
-      #B8D8E2 75%,     /* Muted sky */
-      #E2D1C2 85%,     /* Soft sand */
-      #E2C8C8 95%,     /* Muted rose */
-      #BFB8E2 100%     /* Back to start */
-    );
+    @apply min-h-screen overflow-x-hidden;
+    background: 
+      linear-gradient(
+        180deg,                /* Main ice melting gradient top to bottom */
+        #0066BB 0%,           /* Deep glacier blue */
+        #2288DD 8%,           /* Dense ice blue */
+        #44AAFF 16%,          /* Lighter ice */
+        #77CCFF 24%,          /* Melting ice */
+        #99DDFF 32%,          /* Crystal clear ice */
+        #AADDEE 40%,          /* Ice water */
+        #BBDDDD 48%,          /* Cool water */
+        #CCDDBB 56%,          /* Soft sage */
+        #DDDDAA 64%,          /* Warm mint */
+        #DDCCBB 72%,          /* Warm coral */
+        #EEBBAA 80%,          /* Soft peach */
+        #FFAAAA 88%,          /* Gentle coral pink */
+        #EEAACC 92%,          /* Warm rose */
+        #CCAAEE 96%,          /* Twilight purple */
+        #0066BB 100%          /* Back to deep glacier */
+      ),
+      radial-gradient(
+        circle at 15% 25%,     /* Imperfect frost spot top left */
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.1) 35%,
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at 85% 15%,     /* Imperfect frost spot top right */
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.1) 40%,
+        transparent 70%
+      );
     animation: gradientShift 100s ease infinite;
-    background-size: 300% 300%;
+    background-size: 300% 300%, 200% 200%, 200% 200%;
+    background-blend-mode: soft-light;
   }
 
   html {
@@ -147,7 +165,7 @@
   background-color: rgba(255, 255, 255, 0.2);
   text-shadow: 
     0 1px 0 rgba(255, 255, 255, 0.15),
-    0 -1px 0 rgba(0, 0, 0, 0.3);
+    0 -1px 0 rgba(0, 0, 0, 0.4);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-font-smoothing: antialiased;

@@ -15,13 +15,15 @@ export default function IcebreakerCard({
   isFavorite,
 }: IcebreakerCardProps) {
   return (
-    <div className="w-[90vw] max-w-[1200px] 
+    <div className="w-full 
       h-[250px]
       sm:h-[300px]
-      md:h-[400px]">
+      md:h-[400px]
+      animate-card-entrance">
       <div className="glass-card w-full h-full 
         px-6 pt-6 pb-6
-        sm:px-8 sm:pt-8 sm:pb-8">
+        sm:px-8 sm:pt-8 sm:pb-8
+        max-w-[90vw] mx-auto">
         <div>
           <span className="text-base text-white/80 uppercase tracking-wider font-medium">
             {icebreaker.category}
@@ -35,17 +37,23 @@ export default function IcebreakerCard({
           <button
             onClick={onToggleFavorite}
             className="glass-button p-3.5 rounded-full
-              transition-all duration-200
-              hover:bg-white/15
-              active:scale-95
-              transform-gpu"
+              bg-white/10
+              backdrop-blur-md
+              border border-white/20
+              shadow-[0_0_15px_rgba(255,255,255,0.15)]
+              hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
+              hover:bg-pink-200/50
+              transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
+              hover:scale-105
+              active:scale-100
+              transform-gpu
+              after:absolute after:inset-0 after:rounded-full after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity"
           >
             <Heart 
               className={`
                 w-5 h-5 
-                transition-all duration-200
-                hover:text-pink-100/90
-                active:fill-pink-200 active:text-pink-200
+                transition-all duration-700
+                hover:fill-rose-200 hover:text-rose-200
                 ${isFavorite 
                   ? 'fill-white text-white' 
                   : 'text-white/80'
@@ -57,10 +65,17 @@ export default function IcebreakerCard({
           <button
             onClick={onNext}
             className="glass-button px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-white text-base
-              transition-all duration-200
-              hover:bg-white/15 hover:scale-[1.02] hover:shadow-lg
-              active:scale-95 active:bg-white/20
-              transform-gpu"
+              bg-white/10
+              backdrop-blur-md
+              border border-white/20
+              shadow-[0_0_15px_rgba(255,255,255,0.15)]
+              hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
+              transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
+              hover:bg-white/20
+              hover:scale-104
+              active:scale-104
+              transform-gpu
+              after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity"
           >
             next →
           </button>
