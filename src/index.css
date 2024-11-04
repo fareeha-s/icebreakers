@@ -236,9 +236,17 @@ button {
 /* Only target Safari on iOS */
 @supports (-webkit-touch-callout: none) and (backdrop-filter: none) {
   .glass-button-fallback {
-    @apply bg-black/20 !important;
-    background-color: rgba(0, 0, 0, 0.2) !important;
+    @apply bg-white/10 !important;  /* Changed from black/20 to white/10 */
+    background-color: rgba(255, 255, 255, 0.1) !important;  /* Lighter, more translucent */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;  /* Add subtle white border */
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1) !important;  /* Add subtle glow */
+  }
+
+  /* Add hover state */
+  .glass-button-fallback:active {
+    @apply bg-white/15 !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
   }
 }
