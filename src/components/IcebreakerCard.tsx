@@ -65,7 +65,14 @@ export default function IcebreakerCard({
           </button>
 
           <button
-            onClick={onNext}
+            onClick={(e) => {
+              e.preventDefault();
+              try {
+                onNext();
+              } catch (error) {
+                console.error('Error in next button:', error);
+              }
+            }}
             className="relative px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-white text-base
               glass-button-fallback
               bg-white/10 backdrop-blur-md

@@ -44,28 +44,36 @@ function App() {
 
   // Get next icebreaker
   const getNextIcebreaker = () => {
-    // Reset used questions if we've used them all
-    if (usedQuestions.length >= icebreakers.length) {
-      console.log('Resetting used questions');
+    // First, get current state
+    const currentUsedQuestions = [...usedQuestions];
+    
+    // Reset if we've used all questions
+    if (currentUsedQuestions.length >= icebreakers.length) {
       setUsedQuestions([]);
+      // Get a random icebreaker after reset
+      const randomIndex = Math.floor(Math.random() * icebreakers.length);
+      const nextIcebreaker = icebreakers[randomIndex];
+      setCurrentIcebreaker(nextIcebreaker);
+      setHistory(prev => [...prev, nextIcebreaker].slice(-10));
       return;
     }
 
+    // Get available icebreakers
     const availableIcebreakers = icebreakers.filter(
-      ib => !usedQuestions.includes(ib.id)
+      ib => !currentUsedQuestions.includes(ib.id)
     );
 
-    console.log('Available icebreakers:', availableIcebreakers.length);
-
-    if (availableIcebreakers.length === 0) {
-      console.log('No available icebreakers, resetting');
+    // Safety check
+    if (!availableIcebreakers.length) {
       setUsedQuestions([]);
       return;
     }
 
+    // Get next icebreaker
     const randomIndex = Math.floor(Math.random() * availableIcebreakers.length);
     const nextIcebreaker = availableIcebreakers[randomIndex];
 
+    // Update state
     setCurrentIcebreaker(nextIcebreaker);
     setUsedQuestions(prev => [...prev, nextIcebreaker.id]);
     setHistory(prev => [...prev, nextIcebreaker].slice(-10));
@@ -137,6 +145,24 @@ function App() {
   const handleThemeChange = (isDark: boolean) => {
     setIsMonochrome(isDark);
   };
+
+  // Add this near the top of your App component
+  const isLocalStorageAvailable = () => {
+    try {
+      localStorage.setItem('test', 'test');
+      localStorage.removeItem('test');
+      return true;
+    } catch (e) {
+      return false;
+    }
+  };
+
+  // Then modify your localStorage calls
+  useEffect(() => {
+    if (isLocalStorageAvailable()) {
+      localStorage.setItem('icebreaker-used', JSON.stringify(usedQuestions));
+    }
+  }, [usedQuestions]);
 
   return (
     <>
