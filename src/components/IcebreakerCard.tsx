@@ -37,17 +37,16 @@ export default function IcebreakerCard({
           <button
             onClick={onToggleFavorite}
             className="glass-button p-3.5 rounded-full
-              bg-white/10
-              backdrop-blur-md
-              border border-white/20
-              shadow-[0_0_15px_rgba(255,255,255,0.15)]
-              hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
-              hover:bg-pink-200/50
+              bg-white/5
+              backdrop-blur-[8px]
+              border border-white/10
+              shadow-[0_0_15px_rgba(255,255,255,0.1)]
+              hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]
+              hover:bg-pink-200/20
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
               hover:scale-105
               active:scale-100
-              transform-gpu
-              after:absolute after:inset-0 after:rounded-full after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity"
+              transform-gpu"
           >
             <Heart 
               className={`
@@ -72,8 +71,8 @@ export default function IcebreakerCard({
               hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
               hover:bg-white/20
-              hover:scale-104
-              active:scale-104
+              hover:scale-105
+              active:scale-100
               transform-gpu
               after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity"
           >
