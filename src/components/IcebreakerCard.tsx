@@ -1,4 +1,4 @@
-import { Heart, RefreshCw } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import type { Icebreaker } from '../data/icebreakers';
 
 interface IcebreakerCardProps {
@@ -36,12 +36,12 @@ export default function IcebreakerCard({
         </div>
         <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 
           flex items-center gap-3 md:gap-4
-          z-10">
+          z-[999]">
           <button
             onClick={onToggleFavorite}
-            className={`p-3.5 rounded-full
-              bg-white/10
-              backdrop-blur-md
+            className={`relative p-3.5 rounded-full
+              glass-button-fallback
+              bg-white/10 backdrop-blur-md
               border border-white/20
               shadow-[0_0_15px_rgba(255,255,255,0.15)]
               hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
@@ -50,24 +50,24 @@ export default function IcebreakerCard({
               hover:scale-105
               active:scale-100
               transform-gpu
-              after:absolute after:inset-0 after:rounded-full after:bg-gradient-to-b 
-              after:from-rose-200/20
-              after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity`}
+              isolate
+              z-[999]
+            `}
           >
             <Heart 
-              className={`w-5 h-5 transition-all duration-300
+              className={`w-5 h-5 transition-all duration-300 relative
                 ${isFavorite 
                   ? 'text-white fill-white' 
-                  : 'text-white/80 fill-none hover:text-rose-500 hover:fill-rose-500'
+                  : 'text-white fill-none hover:text-rose-200 hover:fill-red-200'
                 }`} 
             />
           </button>
 
           <button
             onClick={onNext}
-            className="px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-white text-base
-              bg-white/10
-              backdrop-blur-md
+            className="relative px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-white text-base
+              glass-button-fallback
+              bg-white/10 backdrop-blur-md
               border border-white/20
               shadow-[0_0_15px_rgba(255,255,255,0.15)]
               hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
@@ -76,7 +76,9 @@ export default function IcebreakerCard({
               hover:scale-105
               active:scale-100
               transform-gpu
-              after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity"
+              isolate
+              z-[999]
+            "
           >
             next →
           </button>

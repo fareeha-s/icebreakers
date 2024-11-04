@@ -214,3 +214,10 @@ button {
     background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
 }
+
+/* Add this to your existing CSS */
+@supports not (backdrop-filter: blur()) {
+  .glass-button-fallback {
+    @apply bg-black/20 !important;
+  }
+}
