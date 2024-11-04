@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Sparkles } from 'lucide-react';
+import { useState, useEffect } from 'react'; 
 import { icebreakers, type Icebreaker } from './data/icebreakers';
 import IcebreakerCard from './components/IcebreakerCard';
 import Sidebar from './components/Sidebar';
@@ -49,7 +48,7 @@ function App() {
       setUsedQuestions([currentIcebreaker.id]); // Keep current one in used
     }
 
-    const availableIce = icebreakers.filter(
+    const availableIcebreakers = icebreakers.filter(
       ib => !usedQuestions.includes(ib.id)
     );
 
@@ -156,7 +155,7 @@ function App() {
             >
               /
             </span>
-            <span className="animate-[wordRight_2s_ease_forwards]">breakers</span>
+            <span className="animate-[wordRight_2s_ease_forwards]">breakerrr</span>
           </div>
         </h1>
 
@@ -214,6 +213,7 @@ function App() {
           active:scale-100
           transform-gpu
           after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity
+          opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]
           ${isSidebarOpen ? 'rotate-45' : 'rotate-0'}`}
       >
         <svg 

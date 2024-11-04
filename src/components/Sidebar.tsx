@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { Heart, History } from 'lucide-react';
 import type { Icebreaker } from '../data/icebreakers';
 
@@ -59,7 +58,7 @@ export default function Sidebar({
             </div>
             <div className="flex-1 overflow-y-auto scrollbar-hide">
               <div className="space-y-2">
-                {favorites.map((item) => (
+                {favorites.slice().reverse().map((item) => (
                   <button
                     key={item.id}
                     onClick={() => onCardClick(item)}
