@@ -62,17 +62,17 @@ Error generating stack: `+l.message+`
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const Vu=Li("Trash2",[["path",{d:"M3 6h18",key:"d0wm0j"}],["path",{d:"M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6",key:"4alrt4"}],["path",{d:"M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2",key:"v07s0e"}],["line",{x1:"10",x2:"10",y1:"11",y2:"17",key:"1uufr5"}],["line",{x1:"14",x2:"14",y1:"11",y2:"17",key:"xtxkd"}]]);function Of({icebreaker:e,onNext:t,onToggleFavorite:n,isFavorite:r}){return v.jsx("div",{className:`w-full 
-      h-[250px]
-      sm:h-[300px]
-      md:h-[400px]
-      animate-card-entrance`,children:v.jsxs("div",{className:`glass-card w-full h-full 
-        px-6 pt-6 pb-24
-        sm:px-8 sm:pt-8 sm:pb-28
-        md:pb-32
-        max-w-[90vw] mx-auto
-        relative`,children:[v.jsxs("div",{className:"mb-4 sm:mb-8",children:[v.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),v.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.08)]",dangerouslySetInnerHTML:{__html:e.question}})]}),v.jsxs("div",{className:`absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 
-          flex items-center gap-3 md:gap-4
+ */const Vu=Li("Trash2",[["path",{d:"M3 6h18",key:"d0wm0j"}],["path",{d:"M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6",key:"4alrt4"}],["path",{d:"M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2",key:"v07s0e"}],["line",{x1:"10",x2:"10",y1:"11",y2:"17",key:"1uufr5"}],["line",{x1:"14",x2:"14",y1:"11",y2:"17",key:"xtxkd"}]]);function Of({icebreaker:e,onNext:t,onToggleFavorite:n,isFavorite:r}){return v.jsx("div",{className:`w-full \r
+      h-[250px]\r
+      sm:h-[300px]\r
+      md:h-[400px]\r
+      animate-card-entrance`,children:v.jsxs("div",{className:`glass-card w-full h-full \r
+        px-6 pt-6 pb-24\r
+        sm:px-8 sm:pt-8 sm:pb-28\r
+        md:pb-32\r
+        max-w-[90vw] mx-auto\r
+        relative`,children:[v.jsxs("div",{className:"mb-4 sm:mb-8",children:[v.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),v.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.08)]",dangerouslySetInnerHTML:{__html:e.question}})]}),v.jsxs("div",{className:`absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 \r
+          flex items-center gap-3 md:gap-4\r
           z-[999]`,children:[v.jsx("button",{onClick:n,className:`relative p-3.5 rounded-full
               glass-button-fallback
               bg-white/10 backdrop-blur-md
@@ -87,37 +87,37 @@ Error generating stack: `+l.message+`
               isolate
               z-[999]
             `,children:v.jsx(lc,{className:`w-5 h-5 transition-all duration-300 relative
-                ${r?"text-white fill-white":"text-white fill-none hover:text-rose-200 hover:fill-red-200"}`})}),v.jsx("button",{onClick:t,className:`relative px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-white text-base
-              glass-button-fallback
-              bg-white/10 backdrop-blur-md
-              hover:bg-white/20
-              border border-white/20
-              shadow-[0_0_15px_rgba(255,255,255,0.15)]
-              hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
-              transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-              hover:scale-105
-              active:scale-100
-              transform-gpu
-              isolate
-              z-[999]`,children:"next →"})]})]})})}const Bu=e=>e.includes("Superior way to eat potatoes?")?v.jsxs(v.Fragment,{children:["Superior way to eat potatoes?",v.jsx("br",{}),"(mashed, roasted, hashed, 🍟...)"]}):e;function Ff({history:e,favorites:t,onRemoveFromFavorites:n,onCardClick:r,onClearFavorites:o,onClearHistory:l}){return v.jsx("div",{className:"h-full max-h-full overflow-hidden",children:v.jsx("div",{className:"px-6 pt-6 pb-4 h-full flex flex-col",children:v.jsxs("div",{className:"flex h-full overflow-hidden",children:[v.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[v.jsx("div",{className:"shrink-0 mb-4",children:v.jsxs("div",{className:"flex items-center justify-between",children:[v.jsxs("div",{className:"flex items-center gap-2",children:[v.jsx(lc,{className:"w-5 h-5 text-white/80"}),v.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"Favorites"})]}),t.length>0&&v.jsxs("button",{onClick:o,className:"text-sm text-white/70 cursor-pointer hover:text-white/90",children:[v.jsx("span",{className:"hidden sm:inline",children:"clear"}),v.jsx(Vu,{className:"w-4 h-4 inline sm:hidden"})]})]})}),v.jsx("div",{className:"flex-1 overflow-y-auto scrollbar-hide",children:v.jsx("div",{className:"space-y-2",children:t.slice().reverse().map(i=>v.jsx("button",{onClick:()=>r(i),className:`w-full text-left rounded-xl py-2 px-4
-                      glass-button
-                      transition-all duration-300`,children:v.jsx("p",{className:"text-white text-sm",children:Bu(i.question)})},i.id))})})]}),v.jsx("div",{className:"w-px bg-white/20 mx-6"}),v.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[v.jsx("div",{className:"mb-4 px-2",children:v.jsxs("div",{className:"flex items-center justify-between",children:[v.jsxs("div",{className:"flex items-center gap-2",children:[v.jsx(Rf,{className:"w-5 h-5 text-white/80"}),v.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"History"})]}),e.length>0&&v.jsxs("button",{onClick:l,className:"text-sm text-white/70 cursor-pointer hover:text-white/90",children:[v.jsx("span",{className:"hidden sm:inline",children:"clear"}),v.jsx(Vu,{className:"w-4 h-4 inline sm:hidden"})]})]})}),v.jsx("div",{className:"flex-1 overflow-y-auto scrollbar-hide",children:v.jsx("div",{className:"space-y-2",children:e.slice(-10).reverse().map(i=>v.jsx("button",{onClick:()=>r(i),className:`w-full text-left rounded-xl py-2 px-4
-                      glass-button
-                      transition-all duration-300`,children:v.jsx("p",{className:"text-white text-sm",children:Bu(i.question)})},i.id))})})]})]})})})}function Df({onThemeChange:e,isDarkMode:t}){const n=()=>{e==null||e(!t)};return v.jsx("button",{onClick:n,className:`fixed z-50 top-8 right-8
-        opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]
-        p-3
-        bg-white/10
-        backdrop-blur-md
-        border border-white/20
-        shadow-[0_0_15px_rgba(255,255,255,0.15)]
-        hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
-        rounded-xl
-        transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-        hover:bg-white/20
-        hover:scale-105
-        active:scale-100
-        transform-gpu
-        after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity
+                ${r?"text-white fill-white":"text-white fill-none hover:text-rose-200 hover:fill-red-200"}`})}),v.jsx("button",{onClick:t,className:`relative px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-white text-base\r
+              glass-button-fallback\r
+              bg-white/10 backdrop-blur-md\r
+              hover:bg-white/20\r
+              border border-white/20\r
+              shadow-[0_0_15px_rgba(255,255,255,0.15)]\r
+              hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]\r
+              transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]\r
+              hover:scale-105\r
+              active:scale-100\r
+              transform-gpu\r
+              isolate\r
+              z-[999]`,children:"next →"})]})]})})}const Bu=e=>e.includes("Superior way to eat potatoes?")?v.jsxs(v.Fragment,{children:["Superior way to eat potatoes?",v.jsx("br",{}),"(mashed, roasted, hashed, 🍟...)"]}):e;function Ff({history:e,favorites:t,onRemoveFromFavorites:n,onCardClick:r,onClearFavorites:o,onClearHistory:l}){return v.jsx("div",{className:"h-full max-h-full overflow-hidden",children:v.jsx("div",{className:"px-6 pt-6 pb-4 h-full flex flex-col",children:v.jsxs("div",{className:"flex h-full overflow-hidden",children:[v.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[v.jsx("div",{className:"shrink-0 mb-4",children:v.jsxs("div",{className:"flex items-center justify-between",children:[v.jsxs("div",{className:"flex items-center gap-2",children:[v.jsx(lc,{className:"w-5 h-5 text-white/80"}),v.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"Favorites"})]}),t.length>0&&v.jsxs("button",{onClick:o,className:"text-sm text-white/70 cursor-pointer hover:text-white/90",children:[v.jsx("span",{className:"hidden sm:inline",children:"clear"}),v.jsx(Vu,{className:"w-4 h-4 inline sm:hidden"})]})]})}),v.jsx("div",{className:"flex-1 overflow-y-auto scrollbar-hide",children:v.jsx("div",{className:"space-y-2",children:t.slice().reverse().map(i=>v.jsx("button",{onClick:()=>r(i),className:`w-full text-left rounded-xl py-2 px-4\r
+                      glass-button\r
+                      transition-all duration-300`,children:v.jsx("p",{className:"text-white text-sm",children:Bu(i.question)})},i.id))})})]}),v.jsx("div",{className:"w-px bg-white/20 mx-6"}),v.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[v.jsx("div",{className:"mb-4 px-2",children:v.jsxs("div",{className:"flex items-center justify-between",children:[v.jsxs("div",{className:"flex items-center gap-2",children:[v.jsx(Rf,{className:"w-5 h-5 text-white/80"}),v.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"History"})]}),e.length>0&&v.jsxs("button",{onClick:l,className:"text-sm text-white/70 cursor-pointer hover:text-white/90",children:[v.jsx("span",{className:"hidden sm:inline",children:"clear"}),v.jsx(Vu,{className:"w-4 h-4 inline sm:hidden"})]})]})}),v.jsx("div",{className:"flex-1 overflow-y-auto scrollbar-hide",children:v.jsx("div",{className:"space-y-2",children:e.slice(-10).reverse().map(i=>v.jsx("button",{onClick:()=>r(i),className:`w-full text-left rounded-xl py-2 px-4\r
+                      glass-button\r
+                      transition-all duration-300`,children:v.jsx("p",{className:"text-white text-sm",children:Bu(i.question)})},i.id))})})]})]})})})}function Df({onThemeChange:e,isDarkMode:t}){const n=()=>{e==null||e(!t)};return v.jsx("button",{onClick:n,className:`fixed z-50 top-8 right-8\r
+        opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]\r
+        p-3\r
+        bg-white/10\r
+        backdrop-blur-md\r
+        border border-white/20\r
+        shadow-[0_0_15px_rgba(255,255,255,0.15)]\r
+        hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]\r
+        rounded-xl\r
+        transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]\r
+        hover:bg-white/20\r
+        hover:scale-105\r
+        active:scale-100\r
+        transform-gpu\r
+        after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity\r
         animate-card-entrance`,children:v.jsx("svg",{viewBox:"0 0 24 24",className:"w-5 h-5 text-white/80",stroke:"currentColor",strokeWidth:"1.5",fill:"none",children:t?v.jsxs(v.Fragment,{children:[v.jsx("circle",{cx:"12",cy:"12",r:"4"}),v.jsx("line",{x1:"12",y1:"3",x2:"12",y2:"5"}),v.jsx("line",{x1:"12",y1:"19",x2:"12",y2:"21"}),v.jsx("line",{x1:"5",y1:"12",x2:"3",y2:"12"}),v.jsx("line",{x1:"21",y1:"12",x2:"19",y2:"12"}),v.jsx("line",{x1:"7.05",y1:"7.05",x2:"5.636",y2:"5.636"}),v.jsx("line",{x1:"18.364",y1:"18.364",x2:"16.95",y2:"16.95"}),v.jsx("line",{x1:"16.95",y1:"7.05",x2:"18.364",y2:"5.636"}),v.jsx("line",{x1:"5.636",y1:"18.364",x2:"7.05",y2:"16.95"})]}):v.jsx("path",{d:"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"})})})}function Uf(){return v.jsx("div",{className:"w-[90vw] max-w-[1225px] mx-auto px-4 mb-1",children:v.jsx("div",{className:"flex justify-end pr-4",children:v.jsx("a",{href:"https://www.linkedin.com/in/fareehas",target:"_blank",rel:"noopener noreferrer",className:"text-xs engraved-text hover:text-white/90 transition-colors duration-200",children:"sincerely, Fareeha"})})})}function $f(){const[e,t]=K.useState(()=>It.find(w=>w.id==="46")||It[0]);K.useEffect(()=>{localStorage.removeItem("icebreaker-history")},[]);const[n,r]=K.useState([]),[o,l]=K.useState(()=>{const w=localStorage.getItem("icebreaker-favorites");return w?JSON.parse(w):[]});K.useEffect(()=>{localStorage.setItem("icebreaker-favorites",JSON.stringify(o))},[o]),K.useEffect(()=>{localStorage.setItem("icebreaker-history",JSON.stringify(n))},[n]);const[i,u]=K.useState(!1),[a,c]=K.useState(()=>{const w=localStorage.getItem("icebreaker-used");return w?JSON.parse(w):[e.id]}),[h,m]=K.useState(!1),p=()=>{const w=[...a];if(w.length>=It.length){c([]);const W=Math.floor(Math.random()*It.length),ce=It[W];t(ce),r(yt=>[...yt,ce].slice(-10));return}const j=It.filter(W=>!w.includes(W.id));if(!j.length){c([]);return}const N=Math.floor(Math.random()*j.length),I=j[N];t(I),c(W=>[...W,I.id]),r(W=>[...W,I].slice(-10))};K.useEffect(()=>{localStorage.setItem("icebreaker-used",JSON.stringify(a))},[a]);const[k,x]=K.useState(()=>localStorage.getItem("has-ever-favorited")==="true"),S=()=>{o.some(j=>j.id===e.id)?l(o.filter(j=>j.id!==e.id)):(l([...o,e]),k||setTimeout(()=>{u(!0),x(!0),localStorage.setItem("has-ever-favorited","true")},300))};K.useEffect(()=>{localStorage.setItem("icebreaker-favorites",JSON.stringify(o))},[o]);const M=w=>{l(j=>j.filter(N=>N.id!==w))},d=w=>{t(w),r(j=>[...j.filter(I=>I.id!==w.id),w].slice(-10))},s=()=>{l([]),localStorage.setItem("favorites",JSON.stringify([]))},f=()=>{r([])},y=w=>{m(w)},E=()=>{try{return localStorage.setItem("test","test"),localStorage.removeItem("test"),!0}catch{return!1}};return K.useEffect(()=>{E()&&localStorage.setItem("icebreaker-used",JSON.stringify(a))},[a]),v.jsxs(v.Fragment,{children:[v.jsx(Df,{onThemeChange:y,isDarkMode:h}),v.jsxs("main",{className:`fixed inset-0 overflow-hidden min-h-[600px] ${h?"bg-black":"bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20"}`,children:[v.jsx("h1",{className:"fixed top-16 left-1/2 -translate-x-1/2 text-3xl md:text-5xl text-white z-50 font-bold tracking-[0.15em] [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] flex items-center",children:v.jsxs("div",{className:"flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards]",children:[v.jsx("span",{className:"animate-[wordLeft_2s_ease_forwards]",children:"ice"}),v.jsx("span",{className:"relative text-white text-5xl font-black animate-slash-drop",children:"/"}),v.jsx("span",{className:"animate-[wordRight_2s_ease_forwards]",children:"breakers"})]})}),v.jsx("div",{className:`w-full transition-all duration-300 ease-in-out
           ${i?"h-[80vh] min-h-[400px]":"h-screen min-h-[600px]"}
           flex items-center justify-center`,children:v.jsxs("div",{className:"w-full flex flex-col opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]",children:[v.jsx(Uf,{}),v.jsx("div",{className:"w-[90vw] max-w-[1200px] mx-auto",children:v.jsx(Of,{icebreaker:e,isFavorite:o.some(w=>w.id===e.id),onToggleFavorite:S,onNext:p})})]})}),v.jsx("div",{className:`fixed bottom-0 left-0 right-0 
