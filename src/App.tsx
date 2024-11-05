@@ -181,7 +181,7 @@ function App() {
             >
               /
             </span>
-            <span className="animate-[wordRight_2s_ease_forwards]">breakerrr</span>
+            <span className="animate-[wordRight_2s_ease_forwards]">breakers</span>
           </div>
         </h1>
 

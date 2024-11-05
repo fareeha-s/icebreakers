@@ -24,13 +24,13 @@ module.exports = {
           '0%': {
             opacity: '0',
             transform: 'translateY(-200px)',
-            fontSize: '6em',
+            fontSize: '3em',
             fontWeight: '900'
           },
           '50%': {
             opacity: '1',
             transform: 'translateY(0)',
-            fontSize: '6em',
+            fontSize: '3em',
             fontWeight: '900'
           },
           '100%': {
