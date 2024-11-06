@@ -88,6 +88,8 @@ export default function IcebreakerCard({
   );
 }
 
+// Commenting out unused function
+/*
 function getCategoryColor(category: 'fun' | 'professional' | 'introspective' | 'creative') {
   switch (category) {
     case 'fun':
@@ -102,3 +104,4 @@ function getCategoryColor(category: 'fun' | 'professional' | 'introspective' | '
       return 'bg-gray-400';
   }
 }
+*/
