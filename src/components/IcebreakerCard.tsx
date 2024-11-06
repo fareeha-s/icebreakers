@@ -88,13 +88,13 @@ export default function IcebreakerCard({
   );
 }
 
-function getCategoryColor(category: 'fun' | 'professional' | 'deep' | 'creative') {
+function getCategoryColor(category: 'fun' | 'professional' | 'introspective' | 'creative') {
   switch (category) {
     case 'fun':
       return 'bg-emerald-400';
     case 'professional':
       return 'bg-blue-400';
-    case 'deep':
+    case 'introspective':
       return 'bg-purple-400';
     case 'creative':
       return 'bg-orange-400';

@@ -6,10 +6,23 @@ import ThemeToggle from './components/ThemeToggle';
 import Signature from './components/Signature';
 
 function App() {
-  const [currentIcebreaker, setCurrentIcebreaker] = useState<Icebreaker>(() => {
-    return icebreakers.find(ib => ib.id === '46') || icebreakers[0];
+  // Check if it's user's first visit
+  const [isFirstVisit] = useState(() => {
+    return !localStorage.getItem('has-visited-before');
   });
-  
+
+  // Initial icebreaker state (potato question for first visit)
+  const [currentIcebreaker, setCurrentIcebreaker] = useState<Icebreaker>(() => {
+    if (isFirstVisit) {
+      localStorage.setItem('has-visited-before', 'true');
+      return icebreakers.find(ib => ib.id === '1') || icebreakers[0];
+    }
+    const randomIndex = Math.floor(Math.random() * icebreakers.length);
+    return icebreakers[randomIndex];
+  });
+
+  const [questionCount, setQuestionCount] = useState(1);
+
   // First, clear the history in localStorage
   useEffect(() => {
     localStorage.removeItem('icebreaker-history');
@@ -44,13 +57,11 @@ function App() {
 
   // Get next icebreaker
   const getNextIcebreaker = () => {
-    // First, get current state
     const currentUsedQuestions = [...usedQuestions];
     
-    // Reset if we've used all questions
     if (currentUsedQuestions.length >= icebreakers.length) {
       setUsedQuestions([]);
-      // Get a random icebreaker after reset
+      setQuestionCount(1);
       const randomIndex = Math.floor(Math.random() * icebreakers.length);
       const nextIcebreaker = icebreakers[randomIndex];
       setCurrentIcebreaker(nextIcebreaker);
@@ -58,25 +69,46 @@ function App() {
       return;
     }
 
-    // Get available icebreakers
     const availableIcebreakers = icebreakers.filter(
       ib => !currentUsedQuestions.includes(ib.id)
     );
 
-    // Safety check
     if (!availableIcebreakers.length) {
       setUsedQuestions([]);
+      setQuestionCount(1);
       return;
     }
 
-    // Get next icebreaker
-    const randomIndex = Math.floor(Math.random() * availableIcebreakers.length);
-    const nextIcebreaker = availableIcebreakers[randomIndex];
+    let nextIcebreaker: Icebreaker;
+
+    // Only apply special vibe rules for first-time visitors
+    if (isFirstVisit) {
+      // For questions 2-4, ensure vibe questions
+      if (questionCount >= 1 && questionCount <= 3) {
+        const availableVibeIcebreakers = availableIcebreakers.filter(ib => ib.vibe);
+        if (availableVibeIcebreakers.length > 0) {
+          const randomIndex = Math.floor(Math.random() * availableVibeIcebreakers.length);
+          nextIcebreaker = availableVibeIcebreakers[randomIndex];
+        } else {
+          const randomIndex = Math.floor(Math.random() * availableIcebreakers.length);
+          nextIcebreaker = availableIcebreakers[randomIndex];
+        }
+      } else {
+        // After first 4 questions, completely random
+        const randomIndex = Math.floor(Math.random() * availableIcebreakers.length);
+        nextIcebreaker = availableIcebreakers[randomIndex];
+      }
+    } else {
+      // For returning visitors, completely random selection
+      const randomIndex = Math.floor(Math.random() * availableIcebreakers.length);
+      nextIcebreaker = availableIcebreakers[randomIndex];
+    }
 
     // Update state
     setCurrentIcebreaker(nextIcebreaker);
     setUsedQuestions(prev => [...prev, nextIcebreaker.id]);
     setHistory(prev => [...prev, nextIcebreaker].slice(-10));
+    setQuestionCount(prev => prev + 1);
   };
 
   // Save used questions to localStorage
