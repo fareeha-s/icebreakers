@@ -166,7 +166,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '25',
     question: "What's something you're trying to improve?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -178,19 +178,19 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '27',
     question: "What's something you've learned about yourself recently?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
     id: '28',
     question: "What's your favorite thing to cook?",
-    category: 'fun',
+    category: 'creative',
     mode: 'journal'
   },
   {
     id: '29',
     question: "What's a random thing you're an expert in?",
-    category: 'fun',
+    category: 'creative',
     mode: 'journal'
   },
   {
@@ -208,7 +208,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '32',
     question: "What's something you do differently than everyone else?",
-    category: 'fun',
+    category: 'creative',
     mode: 'journal'
   },
   {
@@ -220,7 +220,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '34',
     question: "What's something you've completely changed your mind about?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -262,7 +262,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '41',
     question: "What's something you're surprisingly passionate about?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -274,13 +274,13 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '43',
     question: "What's a random thing you're picky about?",
-    category: 'fun',
+    category: 'creative',
     mode: 'journal'
   },
   {
     id: '44',
     question: "What's the best advice you've ignored?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -298,7 +298,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '47',
     question: "What's something you're irrationally afraid of?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -310,7 +310,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '49',
     question: "What's something you're surprisingly competitive about?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -322,7 +322,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '51',
     question: "What's something you thought would be easy until you tried it?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -363,7 +363,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '57',
     question: "What's the most recent rabbit hole you fell into?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -396,13 +396,13 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '62',
     question: "What's something you wish you could tell your younger self?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
     id: '63',
     question: "What's a book that changed how you see the world?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -716,7 +716,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '113',
     question: "What's your go-to karaoke song?",
-    category: 'fun',
+    category: 'creative',
     mode: 'journal'
   },
   {
@@ -1164,7 +1164,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '186',
     question: "What's something that surprised you about growing up?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -1248,7 +1248,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '200',
     question: "What's something that changed your perspective?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -1260,7 +1260,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '202',
     question: "What's something you're trying to figure out?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -1272,7 +1272,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '204',
     question: "What's something you wish you were better at?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
   },
   {
@@ -1335,8 +1335,8 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '214',
     question: "For what in your life do you feel most grateful?",
-    category: 'fun',
-    mode: 'journal',
+    category: 'introspective',
+    mode: 'journal'
   },
   {
     id: '215',
@@ -1348,7 +1348,7 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '216',
     question: "What's your most controversial design take?",
-    category: 'fun',
+    category: 'creative',
     mode: 'journal'
   },
   {
@@ -1388,8 +1388,8 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '222',
     question: "Fashion: trendy or classic?",
-    category: 'fun',
-    mode: 'popcorn',
+    category: 'creative',
+    mode: 'popcorn'
   },
   {
     id: '223',
@@ -1487,7 +1487,104 @@ export const icebreakers: Icebreaker[] = [
   {
     id: '237',
     question: "What's something you wish more people knew?",
-    category: 'fun',
+    category: 'introspective',
     mode: 'journal'
-  }
+  },
+  {
+    id: '238',
+    question: "If you were Iron Man for one day what would you build?",
+    category: 'creative',
+    mode: 'journal'
+  },
+  {
+    id: '239',
+    question: "What's your favorite thing about the person sitting next to you?",
+    category: 'introspective',
+    mode: 'journal'
+  },
+  {
+    id: '240',
+    question: "What's something you wish you had learned sooner?",
+    category: 'introspective',
+    mode: 'journal'
+  },
+  {
+    id: '241',
+    question: "What's your favorite tea?",
+    category: 'fun',
+    mode: 'popcorn'
+  },
+  {
+    id: '242',
+    question: "What's something you're still figuring out?",
+    category: 'introspective',
+    mode: 'journal'
+  },
+  {
+    id: '243',
+    question: "What's a compliment you'll never forget?",
+    category: 'introspective',
+    mode: 'journal'
+  },
+  {
+    id: '244',
+    question: "What's something you would change in an app you use regularly?",
+    category: 'creative',
+    mode: 'journal'
+  },
+  {
+    id: '245',
+    question: "What's something you would teach?",
+    category: 'introspective',
+    mode: 'journal'
+  },
+  {
+    id: '246',
+    question: "What's a belief you've recently challenged?",
+    category: 'introspective',
+    mode: 'journal'
+  },
+  {
+    id: '247',
+    question: "What's something you're working on accepting?",
+    category: 'introspective',
+    mode: 'journal'
+  },
+  {
+    id: '248',
+    question: "What's a recent realization you've had about yourself?",
+    category: 'introspective',
+    mode: 'journal'
+  },
+  {
+    id: '249',
+    question: "What's a quote that changed your perspective?",
+    category: 'introspective',
+    mode: 'journal'
+  },
+  {
+    id: '250',
+    question: "If you had to choose: life in a submarine or on a spaceship?",
+    category: 'fun',
+    mode: 'popcorn'
+  },
+  {
+    id: '251',
+    question: "Who is someone you take inspiration from?",
+    category: 'introspective',
+    mode: 'journal'
+  },
+  {
+    id: '252',
+    question: "If you had a podcast, what would it be about?",
+    category: 'creative',
+    mode: 'journal'
+  },
+  {
+    id: '253',
+    question: "If you could design a new holiday, what would it celebrate?",
+    category: 'creative',
+    mode: 'journal'
+  },
+
 ] as const;
