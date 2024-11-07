@@ -2,251 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: radial-gradient(circle at 85% 15%, #CCDDFF 0%, transparent 45%),
+              radial-gradient(circle at 15% 25%, #DDEEFF 0%, transparent 40%),
+              radial-gradient(circle at 75% 85%, #66CCAA 0%, transparent 60%),
+              radial-gradient(circle at 25% 65%, #88CCBB 0%, transparent 65%),
+              linear-gradient(145deg, #CCDDFF, #AADDEE, #99DDCC, #88CCBB, #66CCAA 16%, #88CCBB 24%, #DDDDAA 60%, #DDCCBB 72%, #EEBBAA, #FFAAAA 88%, #FFBBBB, #FFCCCC, #DDDDAA);
+  animation: gradientShift 120s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
+             gradientPulse 90s ease infinite;
+  background-size: 300% 300%, 200% 200%, 200% 200%, 200% 200%;
+  background-blend-mode: soft-light, overlay, overlay, normal;
+}
 
-@layer base {
-  body {
-    @apply min-h-screen overflow-x-hidden;
-    background: 
-      /* Top right blue pool */
-      radial-gradient(
-        circle at 85% 15%,
-        #CCDDFF 0%,
-        transparent 45%
-      ),
-      /* Top left blue area */
-      radial-gradient(
-        circle at 15% 25%,
-        #DDEEFF 0%,
-        transparent 40%
-      ),
-      /* Bottom right green pool - softened */
-      radial-gradient(
-        circle at 75% 85%,
-        #66CCAA 0%,      /* Lighter green */
-        transparent 60%   /* More gradual fade */
-      ),
-      /* Center-left green area - softened */
-      radial-gradient(
-        circle at 25% 65%,
-        #88CCBB 0%,      /* Much lighter green */
-        transparent 65%   /* More gradual fade */
-      ),
-      /* Main moving gradient - smoother transitions */
-      linear-gradient(
-        145deg,
-        #CCDDFF 0%,
-        #AADDEE 4%,      /* Softer transition */
-        #99DDCC 8%,      /* Gentler green */
-        #88CCBB 12%,     /* Lighter green */
-        #66CCAA 16%,     /* Removed dark green */
-        #88CCBB 24%,     /* Back to lighter */
-        #DDDDAA 60%,
-        #DDCCBB 72%,
-        #EEBBAA 80%,
-        #FFAAAA 88%,     /* Warm pinks instead of purples */
-        #FFBBBB 92%,     /* More pink */
-        #FFCCCC 96%,     /* Light pink */
-        #DDDDAA 100%     /* Back to blue */
-      );
-    animation: 
-      gradientShift 120s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-      gradientPulse 90s ease infinite;
-    background-size: 
-      300% 300%,
-      200% 200%,
-      200% 200%,
-      200% 200%;
-    background-blend-mode: soft-light, overlay, overlay, normal;
-  }
-
-  html {
-    font-family: 'Inter', system-ui, sans-serif;
-  }
+html {
+  font-family: Inter, system-ui, sans-serif;
 }
 
 @keyframes gradientShift {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes gradientPulse {
+  0% { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
+  50% { background-position: 100% 100%, 100% 0%, 0% 100%, 100% 100%; }
+  100% { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
 }
 
-@layer components {
-  .glass-card {
-    @apply rounded-3xl relative;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 
-      8px 8px 24px -8px rgba(0, 0, 0, 0.2);  /* Single shadow, offset to right and bottom */
-  }
-
-  .glass-button {
-    @apply bg-white/10
-      border border-white/20 
-      transition-all 
-      duration-200
-      select-none
-      outline-none;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-  
-  .glass-button:hover {
-    @apply bg-white/15;  /* Slightly brighter on hover */
-  }
-
-  .glass-button:active {
-    @apply bg-white/25;  /* Even brighter when clicked */
-    transform: scale(0.97);  /* Optional: slight scale down for click feedback */
-  }
-  
-  .glass-sidebar {
-    @apply bg-white/20 border-r border-white/20;
-  }
-  
-  .sidebar-item {
-    @apply bg-white/25 
-      border border-white/30 
-      hover:bg-white/35 
-      transition-colors 
-      duration-200;
-  }
-
-  .light-glass-card {
-    @apply rounded-3xl shadow-lg;
-    background: rgba(255, 255, 255, 0.8);  /* More opaque white */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.1);  /* Darker border */
-  }
-
-  /* Update button styles for light mode */
-  .theme-light .glass-button {
-    @apply bg-gray-100 text-gray-800 border-gray-200;
-  }
-
-  /* Update other elements for light mode */
-  .theme-light .category-tag {
-    @apply text-gray-600 bg-gray-100;
-  }
+@keyframes subtleFloat {
+  0%, 100% { transform: translate(-50%, 0px); }
+  50% { transform: translate(-50%, -10px); }
 }
 
-@layer utilities {
-  .scrollbar-hide {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
+.glass-card {
+  position: relative;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 8px 8px 24px -8px rgba(0, 0, 0, 0.2);
+}
+
+.glass-button {
+  user-select: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.glass-button:active {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: scale(0.97);
+}
+
+.glass-sidebar {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .floating-arrow-button {
-  @apply text-white/80 
-    hover:text-white 
-    hover:scale-105
-    active:scale-105
-    transition-all 
-    duration-200;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-arrow-button:hover {
+  transform: scale(1.05);
+  color: rgba(255, 255, 255, 1);
+}
+
+.floating-arrow-button:active {
+  transform: scale(1.05);
 }
 
 .engraved-text {
-  @apply font-medium tracking-wide;
+  font-weight: 500;
+  letter-spacing: 0.025em;
   color: transparent;
   background-color: rgba(255, 255, 255, 0.2);
-  text-shadow: 
-    0 1px 0 rgba(255, 255, 255, 0.15),
-    0 -1px 0 rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15),
+               0 -1px 0 rgba(0, 0, 0, 0.4);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Add this to prevent any default button behavior */
 button {
-  -webkit-tap-highlight-color: transparent;  /* Remove mobile tap highlight */
-  user-select: none;                         /* Prevent text selection */
-  -webkit-user-select: none;                 /* For Safari */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .text-shadow {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Or for stronger visibility */
 .text-shadow-strong {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-@media screen and (max-height: 600px) {
-  /* Add your small-screen adjustments here */
-}
-
-@keyframes gradientPulse {
-  0% {
-    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%, 100% 0%, 0% 100%, 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-  }
-}
-
-/* Add this to your existing CSS */
-@supports not (backdrop-filter: blur()) {
-  .glass-button-fallback {
-    @apply bg-black/20 !important;
-    background-color: rgba(0, 0, 0, 0.2) !important;  /* Explicit fallback */
-  }
-}
-
-/* Add specific Safari mobile fixes */
-@supports (-webkit-touch-callout: none) {
-  .glass-button-fallback {
-    @apply bg-black/20 !important;
-    background-color: rgba(0, 0, 0, 0.2) !important;
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
-  }
-}
-
-/* Only target Safari on iOS */
-@supports (-webkit-touch-callout: none) and (backdrop-filter: none) {
-  .glass-button-fallback {
-    @apply bg-white/10 !important;  /* Changed from black/20 to white/10 */
-    background-color: rgba(255, 255, 255, 0.1) !important;  /* Lighter, more translucent */
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;  /* Add subtle white border */
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1) !important;  /* Add subtle glow */
-  }
-
-  /* Add hover state */
-  .glass-button-fallback:active {
-    @apply bg-white/15 !important;
-    background-color: rgba(255, 255, 255, 0.15) !important;
-  }
 }

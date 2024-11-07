@@ -35,7 +35,7 @@ module.exports = {
           },
           '100%': {
             opacity: '1',
-            transform: 'translateY(0)',
+            transform: 'translateY(0) rotate(25deg)',
             fontSize: '1em',
             fontWeight: '300'
           }
@@ -61,6 +61,12 @@ module.exports = {
           '100%': {
             transform: 'translateX(0)'
           }
+        },
+        'shake': {
+          '0%, 100%': { transform: 'scaleX(1.2) rotate(-2deg)' },
+          '25%': { transform: 'scaleX(1.2) rotate(2deg)' },
+          '50%': { transform: 'scaleX(1.2) rotate(-1deg)' },
+          '75%': { transform: 'scaleX(1.2) rotate(1deg)' }
         }
       },
       animation: {
