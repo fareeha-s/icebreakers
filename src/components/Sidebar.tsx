@@ -47,25 +47,26 @@ export default function Sidebar({
                   </h2>
                 </div>
                 {favorites.length > 0 && (
-                  <button 
-                    onClick={onClearFavorites} 
-                    className="text-sm text-white/70 cursor-pointer hover:text-white/90"
-                  >
-                    <span className="hidden sm:inline">clear</span>
-                    <Trash2 className="w-4 h-4 inline sm:hidden" />
-                  </button>
+                  <span className="text-white/50 text-sm cursor-pointer" onClick={onClearFavorites}>
+                    clear
+                  </span>
                 )}
               </div>
             </div>
-            <div className="flex-1 overflow-y-auto scrollbar-hide">
+            <div className="flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]
+              [&::-webkit-scrollbar]:hidden">
               <div className="space-y-2">
                 {favorites.slice().reverse().map((item) => (
                   <button
                     key={item.id}
                     onClick={() => onCardClick(item)}
                     className="w-full text-left rounded-xl py-2 px-4
-                      glass-button
-                      transition-all duration-300"
+                      bg-[rgba(255,255,255,0.15)]
+                      border border-white/30
+                      transition-all duration-300
+                      hover:bg-white/20
+                      active:scale-95
+                      transform-gpu"
                   >
                     <p className="text-white text-sm">
                       {formatQuestion(item.question)}
@@ -90,25 +91,26 @@ export default function Sidebar({
                   </h2>
                 </div>
                 {history.length > 0 && (
-                  <button 
-                    onClick={onClearHistory} 
-                    className="text-sm text-white/70 cursor-pointer hover:text-white/90"
-                  >
-                    <span className="hidden sm:inline">clear</span>
-                    <Trash2 className="w-4 h-4 inline sm:hidden" />
-                  </button>
+                  <span className="text-white/50 text-sm cursor-pointer" onClick={onClearHistory}>
+                    clear
+                  </span>
                 )}
               </div>
             </div>
-            <div className="flex-1 overflow-y-auto scrollbar-hide">
+            <div className="flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]
+              [&::-webkit-scrollbar]:hidden">
               <div className="space-y-2">
                 {history.slice(-10).reverse().map((item) => (
                   <button
                     key={item.id}
                     onClick={() => onCardClick(item)}
                     className="w-full text-left rounded-xl py-2 px-4
-                      glass-button
-                      transition-all duration-300"
+                      bg-[rgba(255,255,255,0.15)]
+                      border border-white/30
+                      transition-all duration-300
+                      hover:bg-white/20
+                      active:scale-95
+                      transform-gpu"
                   >
                     <p className="text-white text-sm">
                       {formatQuestion(item.question)}

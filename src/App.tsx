@@ -207,12 +207,12 @@ function App() {
         {/* Title */}
         <h1 
           onClick={() => window.location.reload()} 
-          className="fixed top-16 left-1/2 text-4xl md:text-6xl lg:text-7xl text-white z-50 font-['Saira_Stencil_One'] tracking-[0.05em] [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] flex items-center hover:cursor-pointer [animation:subtleFloat_4s_ease-in-out_infinite]"
+          className="fixed top-16 left-1/2 text-4xl md:text-6xl lg:text-7xl text-white z-50 font-['Space_Grotesk'] tracking-[0.05em] [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] flex items-center hover:cursor-pointer [animation:subtleFloat_4s_ease-in-out_infinite]"
         >
           <div className="flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards]">
             <span className="animate-[wordLeft_2s_ease_forwards]">ice</span>
             <span 
-              className="relative text-white text-4xl md:text-6xl lg:text-7xl font-['Saira_Stencil_One'] animate-slash-drop"
+              className="relative text-white text-[1em] md:text-[1em] lg:text-[1em] font-['Space_Grotesk'] animate-slash-drop"
             >
               /
             </span>
@@ -262,19 +262,17 @@ function App() {
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className={`fixed z-50 bottom-8 left-1/2 -translate-x-1/2 
           px-3 py-3
-          bg-white/10
+          bg-[rgba(255,255,255,0.15)]
           backdrop-blur-md
           border border-white/20
           shadow-[0_0_15px_rgba(255,255,255,0.15)]
-          hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
           rounded-xl
           transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
+          transform-gpu
+          hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
           hover:bg-white/20
           hover:scale-105
           active:scale-100
-          transform-gpu
-          after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity
-          opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]
           ${isSidebarOpen ? 'rotate-45' : 'rotate-0'}`}
       >
         <svg 

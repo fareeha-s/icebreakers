@@ -15,8 +15,8 @@ export default function ThemeToggle({ onThemeChange, isDarkMode }: ThemeTogglePr
       onClick={toggleTheme}
       className="fixed z-50 top-8 right-8
         opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]
-        p-3
-        bg-white/10
+        px-3 py-3
+        bg-[rgba(255,255,255,0.15)]
         backdrop-blur-md
         border border-white/20
         shadow-[0_0_15px_rgba(255,255,255,0.15)]
@@ -26,13 +26,11 @@ export default function ThemeToggle({ onThemeChange, isDarkMode }: ThemeTogglePr
         hover:bg-white/20
         hover:scale-105
         active:scale-100
-        transform-gpu
-        after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-b after:from-white/15 after:to-transparent after:opacity-0 after:hover:opacity-100 after:transition-opacity
-        animate-card-entrance"
+        transform-gpu"
     >
       <svg 
         viewBox="0 0 24 24" 
-        className="w-5 h-5 text-white/80"
+        className="w-5 h-5 text-white hover:text-white/80"
         stroke="currentColor"
         strokeWidth="1.5"
         fill="none"

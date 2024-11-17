@@ -67,11 +67,21 @@ module.exports = {
           '25%': { transform: 'scaleX(1.2) rotate(2deg)' },
           '50%': { transform: 'scaleX(1.2) rotate(-1deg)' },
           '75%': { transform: 'scaleX(1.2) rotate(1deg)' }
+        },
+        heartPop: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.3)' }
+        },
+        heartRing: {
+          '0%': { transform: 'scale(0)', opacity: 1 },
+          '100%': { transform: 'scale(2)', opacity: 0 }
         }
       },
       animation: {
         'slash-drop': 'slash-drop 2s ease forwards',
-        'fadeIn': 'fadeIn 1.6s ease forwards'
+        'fadeIn': 'fadeIn 1.6s ease forwards',
+        heartPop: 'heartPop 0.3s ease-out',
+        heartRing: 'heartRing 0.5s ease-out'
       }
     },
   },

@@ -1,5 +1,6 @@
 import { Heart } from 'lucide-react';
 import type { Icebreaker } from '../data/icebreakers';
+import { useState, useEffect } from 'react';
 
 interface IcebreakerCardProps {
   icebreaker: Icebreaker;
@@ -14,6 +15,21 @@ export default function IcebreakerCard({
   onToggleFavorite,
   isFavorite,
 }: IcebreakerCardProps) {
+  const [lastTap, setLastTap] = useState(0);
+
+  const handleTap = (e: React.MouseEvent | React.TouchEvent) => {
+    e.stopPropagation();  // Prevent double-tap zoom on mobile
+    
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+    
+    if (tapLength < 300 && tapLength > 0) {
+      // Double tap detected
+      onToggleFavorite();
+    }
+    setLastTap(currentTime);
+  };
+
   return (
     <div className="w-full 
       h-[250px]
@@ -41,46 +57,53 @@ export default function IcebreakerCard({
           <button
             onClick={onToggleFavorite}
             className={`relative p-3.5 rounded-full
-              glass-button-fallback
-              bg-white/10 backdrop-blur-md
+              bg-[rgba(255,255,255,0.15)]
+              backdrop-blur-md
               border border-white/20
               shadow-[0_0_15px_rgba(255,255,255,0.15)]
-              hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-              hover:bg-rose-200/20
-              hover:scale-105
-              active:scale-100
               transform-gpu
-              isolate
-              z-[999]
+              hover:bg-white/20
+              -webkit-tap-highlight-color: transparent;
+              ${isFavorite 
+                ? 'hover:shadow-[0_0_20px_rgba(255,182,193,0.3)]'
+                : 'hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]'
+              }
+              active:scale-95
+              touch-action: manipulation;
+              ${window.CSS.supports('(-webkit-backdrop-filter: none)') || window.CSS.supports('(backdrop-filter: none)')
+                ? 'backdrop-blur-md bg-[rgba(255,255,255,0.15)]'
+                : 'bg-[rgba(255,255,255,0.5)]'  // Fallback for browsers that don't support backdrop-filter
+              }
             `}
           >
             <Heart 
-              className={`w-5 h-5 transition-all duration-300 relative
+              className={`w-5 h-5 transition-colors duration-75
                 ${isFavorite 
-                  ? 'text-white fill-white' 
-                  : 'text-white fill-none hover:text-rose-200 hover:fill-red-200'
-                }`} 
+                  ? 'text-rose-200 fill-rose-200'
+                  : 'text-white fill-none'
+                }`}
             />
           </button>
 
           <button
             onClick={onNext}
-            className="relative px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-white text-base
-              glass-button-fallback
-              bg-white/10 backdrop-blur-md
-              hover:bg-white/20
+            className="relative px-4 py-2.5 rounded-xl 
+              flex items-center gap-1.5 
+              bg-[rgba(255,255,255,0.15)]
+              backdrop-blur-md
               border border-white/20
               shadow-[0_0_15px_rgba(255,255,255,0.15)]
               hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
+              hover:bg-white/20
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-              hover:scale-105
-              active:scale-100
+              active:scale-95
               transform-gpu
-              isolate
+              -webkit-tap-highlight-color: transparent;
+              touch-action: manipulation;
               z-[999]"
           >
-            next →
+            <span className="text-white">next →</span>
           </button>
         </div>
       </div>
