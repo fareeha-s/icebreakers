@@ -57,17 +57,17 @@ Error generating stack: `+l.message+`
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const Mf=rc("History",[["path",{d:"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8",key:"1357e3"}],["path",{d:"M3 3v5h5",key:"1xhq8a"}],["path",{d:"M12 7v5l4 2",key:"1fdv2h"}]]);function Rf({icebreaker:e,onNext:t,onToggleFavorite:n,isFavorite:r}){return B.useState(0),w.jsx("div",{className:`w-full 
-      h-[250px]
-      sm:h-[300px]
-      md:h-[400px]
-      animate-card-entrance`,children:w.jsxs("div",{className:`glass-card w-full h-full 
-        px-6 pt-6 pb-24
-        sm:px-8 sm:pt-8 sm:pb-28
-        md:pb-32
-        max-w-[90vw] mx-auto
-        relative`,children:[w.jsxs("div",{className:"mb-4 sm:mb-8",children:[w.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),w.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.08)]",dangerouslySetInnerHTML:{__html:e.question}})]}),w.jsxs("div",{className:`absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 
-          flex items-center gap-3 md:gap-4
+ */const Mf=rc("History",[["path",{d:"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8",key:"1357e3"}],["path",{d:"M3 3v5h5",key:"1xhq8a"}],["path",{d:"M12 7v5l4 2",key:"1fdv2h"}]]);function Rf({icebreaker:e,onNext:t,onToggleFavorite:n,isFavorite:r}){return B.useState(0),w.jsx("div",{className:`w-full \r
+      h-[250px]\r
+      sm:h-[300px]\r
+      md:h-[400px]\r
+      animate-card-entrance`,children:w.jsxs("div",{className:`glass-card w-full h-full \r
+        px-6 pt-6 pb-24\r
+        sm:px-8 sm:pt-8 sm:pb-28\r
+        md:pb-32\r
+        max-w-[90vw] mx-auto\r
+        relative`,children:[w.jsxs("div",{className:"mb-4 sm:mb-8",children:[w.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),w.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.08)]",dangerouslySetInnerHTML:{__html:e.question}})]}),w.jsxs("div",{className:`absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 \r
+          flex items-center gap-3 md:gap-4\r
           z-[999]`,children:[w.jsx("button",{onClick:n,className:`relative p-3.5 rounded-full
               bg-[rgba(255,255,255,0.15)]
               backdrop-blur-md
@@ -82,46 +82,46 @@ Error generating stack: `+l.message+`
               touch-action: manipulation;
               ${window.CSS.supports("(-webkit-backdrop-filter: none)")||window.CSS.supports("(backdrop-filter: none)")?"backdrop-blur-md bg-[rgba(255,255,255,0.15)]":"bg-[rgba(255,255,255,0.5)]"}
             `,children:w.jsx(oc,{className:`w-5 h-5 transition-colors duration-75
-                ${r?"text-rose-200 fill-rose-200":"text-white fill-none"}`})}),w.jsx("button",{onClick:t,className:`relative px-4 py-2.5 rounded-xl 
-              flex items-center gap-1.5 
-              bg-[rgba(255,255,255,0.15)]
-              backdrop-blur-md
-              border border-white/20
-              shadow-[0_0_15px_rgba(255,255,255,0.15)]
-              hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
-              hover:bg-white/20
-              transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-              active:scale-95
-              transform-gpu
-              -webkit-tap-highlight-color: transparent;
-              touch-action: manipulation;
-              z-[999]`,children:w.jsx("span",{className:"text-white",children:"next →"})})]})]})})}const Hu=e=>e.includes("Superior way to eat potatoes?")?w.jsxs(w.Fragment,{children:["Superior way to eat potatoes?",w.jsx("br",{}),"(mashed, roasted, hashed, 🍟...)"]}):e;function Of({history:e,favorites:t,onRemoveFromFavorites:n,onCardClick:r,onClearFavorites:o,onClearHistory:l}){return w.jsx("div",{className:"h-full max-h-full overflow-hidden",children:w.jsx("div",{className:"px-6 pt-6 pb-4 h-full flex flex-col",children:w.jsxs("div",{className:"flex h-full overflow-hidden",children:[w.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[w.jsx("div",{className:"shrink-0 mb-4",children:w.jsxs("div",{className:"flex items-center justify-between",children:[w.jsxs("div",{className:"flex items-center gap-2",children:[w.jsx(oc,{className:"w-5 h-5 text-white/80"}),w.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"Favorites"})]}),t.length>0&&w.jsx("span",{className:"text-white/50 text-sm cursor-pointer",onClick:o,children:"clear"})]})}),w.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]
-              [&::-webkit-scrollbar]:hidden`,children:w.jsx("div",{className:"space-y-2",children:t.slice().reverse().map(i=>w.jsx("button",{onClick:()=>r(i),className:`w-full text-left rounded-xl py-2 px-4
-                      bg-[rgba(255,255,255,0.15)]
-                      border border-white/30
-                      transition-all duration-300
-                      hover:bg-white/20
-                      active:scale-95
-                      transform-gpu`,children:w.jsx("p",{className:"text-white text-sm",children:Hu(i.question)})},i.id))})})]}),w.jsx("div",{className:"w-px bg-white/20 mx-6"}),w.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[w.jsx("div",{className:"mb-4 px-2",children:w.jsxs("div",{className:"flex items-center justify-between",children:[w.jsxs("div",{className:"flex items-center gap-2",children:[w.jsx(Mf,{className:"w-5 h-5 text-white/80"}),w.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"History"})]}),e.length>0&&w.jsx("span",{className:"text-white/50 text-sm cursor-pointer",onClick:l,children:"clear"})]})}),w.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]
-              [&::-webkit-scrollbar]:hidden`,children:w.jsx("div",{className:"space-y-2",children:e.slice(-10).reverse().map(i=>w.jsx("button",{onClick:()=>r(i),className:`w-full text-left rounded-xl py-2 px-4
-                      bg-[rgba(255,255,255,0.15)]
-                      border border-white/30
-                      transition-all duration-300
-                      hover:bg-white/20
-                      active:scale-95
-                      transform-gpu`,children:w.jsx("p",{className:"text-white text-sm",children:Hu(i.question)})},i.id))})})]})]})})})}function Ff({onThemeChange:e,isDarkMode:t}){const n=()=>{e==null||e(!t)};return w.jsx("button",{onClick:n,className:`fixed z-50 top-8 right-8
-        opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]
-        px-3 py-3
-        bg-[rgba(255,255,255,0.15)]
-        backdrop-blur-md
-        border border-white/20
-        shadow-[0_0_15px_rgba(255,255,255,0.15)]
-        hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
-        rounded-xl
-        transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-        hover:bg-white/20
-        hover:scale-105
-        active:scale-100
+                ${r?"text-rose-200 fill-rose-200":"text-white fill-none"}`})}),w.jsx("button",{onClick:t,className:`relative px-4 py-2.5 rounded-xl \r
+              flex items-center gap-1.5 \r
+              bg-[rgba(255,255,255,0.15)]\r
+              backdrop-blur-md\r
+              border border-white/20\r
+              shadow-[0_0_15px_rgba(255,255,255,0.15)]\r
+              hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]\r
+              hover:bg-white/20\r
+              transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]\r
+              active:scale-95\r
+              transform-gpu\r
+              -webkit-tap-highlight-color: transparent;\r
+              touch-action: manipulation;\r
+              z-[999]`,children:w.jsx("span",{className:"text-white",children:"next →"})})]})]})})}const Hu=e=>e.includes("Superior way to eat potatoes?")?w.jsxs(w.Fragment,{children:["Superior way to eat potatoes?",w.jsx("br",{}),"(mashed, roasted, hashed, 🍟...)"]}):e;function Of({history:e,favorites:t,onRemoveFromFavorites:n,onCardClick:r,onClearFavorites:o,onClearHistory:l}){return w.jsx("div",{className:"h-full max-h-full overflow-hidden",children:w.jsx("div",{className:"px-6 pt-6 pb-4 h-full flex flex-col",children:w.jsxs("div",{className:"flex h-full overflow-hidden",children:[w.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[w.jsx("div",{className:"shrink-0 mb-4",children:w.jsxs("div",{className:"flex items-center justify-between",children:[w.jsxs("div",{className:"flex items-center gap-2",children:[w.jsx(oc,{className:"w-5 h-5 text-white/80"}),w.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"Favorites"})]}),t.length>0&&w.jsx("span",{className:"text-white/50 text-sm cursor-pointer",onClick:o,children:"clear"})]})}),w.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]\r
+              [&::-webkit-scrollbar]:hidden`,children:w.jsx("div",{className:"space-y-2",children:t.slice().reverse().map(i=>w.jsx("button",{onClick:()=>r(i),className:`w-full text-left rounded-xl py-2 px-4\r
+                      bg-[rgba(255,255,255,0.15)]\r
+                      border border-white/30\r
+                      transition-all duration-300\r
+                      hover:bg-white/20\r
+                      active:scale-95\r
+                      transform-gpu`,children:w.jsx("p",{className:"text-white text-sm",children:Hu(i.question)})},i.id))})})]}),w.jsx("div",{className:"w-px bg-white/20 mx-6"}),w.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[w.jsx("div",{className:"mb-4 px-2",children:w.jsxs("div",{className:"flex items-center justify-between",children:[w.jsxs("div",{className:"flex items-center gap-2",children:[w.jsx(Mf,{className:"w-5 h-5 text-white/80"}),w.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"History"})]}),e.length>0&&w.jsx("span",{className:"text-white/50 text-sm cursor-pointer",onClick:l,children:"clear"})]})}),w.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]\r
+              [&::-webkit-scrollbar]:hidden`,children:w.jsx("div",{className:"space-y-2",children:e.slice(-10).reverse().map(i=>w.jsx("button",{onClick:()=>r(i),className:`w-full text-left rounded-xl py-2 px-4\r
+                      bg-[rgba(255,255,255,0.15)]\r
+                      border border-white/30\r
+                      transition-all duration-300\r
+                      hover:bg-white/20\r
+                      active:scale-95\r
+                      transform-gpu`,children:w.jsx("p",{className:"text-white text-sm",children:Hu(i.question)})},i.id))})})]})]})})})}function Ff({onThemeChange:e,isDarkMode:t}){const n=()=>{e==null||e(!t)};return w.jsx("button",{onClick:n,className:`fixed z-50 top-8 right-8\r
+        opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]\r
+        px-3 py-3\r
+        bg-[rgba(255,255,255,0.15)]\r
+        backdrop-blur-md\r
+        border border-white/20\r
+        shadow-[0_0_15px_rgba(255,255,255,0.15)]\r
+        hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]\r
+        rounded-xl\r
+        transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]\r
+        hover:bg-white/20\r
+        hover:scale-105\r
+        active:scale-100\r
         transform-gpu`,children:w.jsx("svg",{viewBox:"0 0 24 24",className:"w-5 h-5 text-white hover:text-white/80",stroke:"currentColor",strokeWidth:"1.5",fill:"none",children:t?w.jsxs(w.Fragment,{children:[w.jsx("circle",{cx:"12",cy:"12",r:"4"}),w.jsx("line",{x1:"12",y1:"3",x2:"12",y2:"5"}),w.jsx("line",{x1:"12",y1:"19",x2:"12",y2:"21"}),w.jsx("line",{x1:"5",y1:"12",x2:"3",y2:"12"}),w.jsx("line",{x1:"21",y1:"12",x2:"19",y2:"12"}),w.jsx("line",{x1:"7.05",y1:"7.05",x2:"5.636",y2:"5.636"}),w.jsx("line",{x1:"18.364",y1:"18.364",x2:"16.95",y2:"16.95"}),w.jsx("line",{x1:"16.95",y1:"7.05",x2:"18.364",y2:"5.636"}),w.jsx("line",{x1:"5.636",y1:"18.364",x2:"7.05",y2:"16.95"})]}):w.jsx("path",{d:"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"})})})}function Df(){return w.jsx("div",{className:"w-[90vw] max-w-[1225px] mx-auto px-4 mb-1",children:w.jsx("div",{className:"flex justify-end pr-4",children:w.jsx("a",{href:"https://www.linkedin.com/in/fareehas",target:"_blank",rel:"noopener noreferrer",className:"text-xs engraved-text hover:text-white/90 transition-colors duration-200",children:"sincerely, Fareeha"})})})}function Uf(){const[e]=B.useState(()=>!localStorage.getItem("has-visited-before")),[t,n]=B.useState(()=>{if(e)return localStorage.setItem("has-visited-before","true"),be.find(P=>P.id==="1")||be[0];const z=Math.floor(Math.random()*be.length);return be[z]}),[r,o]=B.useState(1);B.useEffect(()=>{localStorage.removeItem("icebreaker-history")},[]);const[l,i]=B.useState([]),[u,a]=B.useState(()=>{const z=localStorage.getItem("icebreaker-favorites");return z?JSON.parse(z):[]});B.useEffect(()=>{localStorage.setItem("icebreaker-favorites",JSON.stringify(u))},[u]),B.useEffect(()=>{localStorage.setItem("icebreaker-history",JSON.stringify(l))},[l]);const[c,m]=B.useState(!1),[h,p]=B.useState(()=>{const z=localStorage.getItem("icebreaker-used");return z?JSON.parse(z):[t.id]}),[v,k]=B.useState(!1),S=()=>{const z=[...h];if(z.length>=be.length){p([]),o(1);const O=Math.floor(Math.random()*be.length),fe=be[O];n(fe),i(er=>[...er,fe].slice(-10));return}const P=be.filter(O=>!z.includes(O.id));if(!P.length){p([]),o(1);return}let V;if(e)if(r>=1&&r<=3){const O=P.filter(fe=>fe.vibe);if(O.length>0){const fe=Math.floor(Math.random()*O.length);V=O[fe]}else{const fe=Math.floor(Math.random()*P.length);V=P[fe]}}else{const O=Math.floor(Math.random()*P.length);V=P[O]}else{const O=Math.floor(Math.random()*P.length);V=P[O]}n(V),p(O=>[...O,V.id]),i(O=>[...O,V].slice(-10)),o(O=>O+1)};B.useEffect(()=>{localStorage.setItem("icebreaker-used",JSON.stringify(h))},[h]);const[M,d]=B.useState(()=>localStorage.getItem("has-ever-favorited")==="true"),s=()=>{u.some(P=>P.id===t.id)?a(u.filter(P=>P.id!==t.id)):(a([...u,t]),M||setTimeout(()=>{m(!0),d(!0),localStorage.setItem("has-ever-favorited","true")},300))};B.useEffect(()=>{localStorage.setItem("icebreaker-favorites",JSON.stringify(u))},[u]);const f=z=>{a(P=>P.filter(V=>V.id!==z))},y=z=>{n(z),i(P=>[...P.filter(O=>O.id!==z.id),z].slice(-10))},x=()=>{a([]),localStorage.setItem("favorites",JSON.stringify([]))},_=()=>{i([])},C=z=>{k(z)},N=()=>{try{return localStorage.setItem("test","test"),localStorage.removeItem("test"),!0}catch{return!1}};return B.useEffect(()=>{N()&&localStorage.setItem("icebreaker-used",JSON.stringify(h))},[h]),w.jsxs(w.Fragment,{children:[w.jsx(Ff,{onThemeChange:C,isDarkMode:v}),w.jsxs("main",{className:`fixed inset-0 overflow-hidden min-h-[600px] ${v?"bg-black":"bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20"}`,children:[w.jsx("h1",{onClick:()=>window.location.reload(),className:"fixed top-16 left-1/2 text-4xl md:text-6xl lg:text-7xl text-white z-50 font-['Space_Grotesk'] tracking-[0.05em] [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] flex items-center hover:cursor-pointer [animation:subtleFloat_4s_ease-in-out_infinite]",children:w.jsxs("div",{className:"flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards]",children:[w.jsx("span",{className:"animate-[wordLeft_2s_ease_forwards]",children:"ice"}),w.jsx("span",{className:"relative text-white text-[1em] md:text-[1em] lg:text-[1em] font-['Space_Grotesk'] animate-slash-drop",children:"/"}),w.jsx("span",{className:"animate-[wordRight_2s_ease_forwards]",children:"breakers"})]})}),w.jsx("div",{className:`w-full transition-all duration-300 ease-in-out
           ${c?"h-[80vh] min-h-[400px]":"h-screen min-h-[600px]"}
           flex items-center justify-center`,children:w.jsxs("div",{className:"w-full flex flex-col opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]",children:[w.jsx(Df,{}),w.jsx("div",{className:"w-[90vw] max-w-[1200px] mx-auto",children:w.jsx(Rf,{icebreaker:t,isFavorite:u.some(z=>z.id===t.id),onToggleFavorite:s,onNext:S})})]})}),w.jsx("div",{className:`fixed bottom-0 left-0 right-0 
