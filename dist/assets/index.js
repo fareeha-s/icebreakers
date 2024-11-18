@@ -65,23 +65,23 @@ Error generating stack: `+l.message+`
         relative`,children:[w.jsxs("div",{className:"mb-4 sm:mb-8",children:[w.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),w.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.08)]",dangerouslySetInnerHTML:{__html:e.question}})]}),w.jsxs("div",{className:`absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 \r
           flex items-center gap-3 md:gap-4\r
           z-[999]`,children:[w.jsx("button",{onClick:n,className:`relative p-3.5 rounded-full
-              bg-[rgba(255,255,255,0.15)]
-              backdrop-blur-md
+              bg-white/75
+              supports-[backdrop-filter]:bg-[rgba(255,255,255,0.15)]
+              supports-[backdrop-filter]:backdrop-blur-md
               border border-white/20
               shadow-[0_0_15px_rgba(255,255,255,0.15)]
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
               transform-gpu
               hover:bg-white/20
-              -webkit-tap-highlight-color: transparent;
+              -webkit-tap-highlight-color-transparent
               ${r?"hover:shadow-[0_0_20px_rgba(255,182,193,0.3)]":"hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]"}
               active:scale-95
-              touch-action: manipulation;
-              ${window.CSS.supports("(-webkit-backdrop-filter: none)")||window.CSS.supports("(backdrop-filter: none)")?"backdrop-blur-md bg-[rgba(255,255,255,0.15)]":"bg-[rgba(255,255,255,0.5)]"}
-            `,children:w.jsx(oc,{className:`w-5 h-5 transition-colors duration-75
+              touch-action-manipulation`,children:w.jsx(oc,{className:`w-5 h-5 transition-colors duration-75
                 ${r?"text-rose-200 fill-rose-200":"text-white fill-none"}`})}),w.jsx("button",{onClick:t,className:`relative px-4 py-2.5 rounded-xl \r
               flex items-center gap-1.5 \r
-              bg-[rgba(255,255,255,0.15)]\r
-              backdrop-blur-md\r
+              bg-white/75\r
+              supports-[backdrop-filter]:bg-[rgba(255,255,255,0.15)]\r
+              supports-[backdrop-filter]:backdrop-blur-md\r
               border border-white/20\r
               shadow-[0_0_15px_rgba(255,255,255,0.15)]\r
               hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]\r
@@ -89,8 +89,8 @@ Error generating stack: `+l.message+`
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]\r
               active:scale-95\r
               transform-gpu\r
-              -webkit-tap-highlight-color: transparent;\r
-              touch-action: manipulation;\r
+              -webkit-tap-highlight-color-transparent\r
+              touch-action-manipulation\r
               z-[999]`,children:w.jsx("span",{className:"text-white",children:"next →"})})]})]})})}const Hu=e=>e.includes("Superior way to eat potatoes?")?w.jsxs(w.Fragment,{children:["Superior way to eat potatoes?",w.jsx("br",{}),"(mashed, roasted, hashed, 🍟...)"]}):e;function Rf({history:e,favorites:t,onCardClick:n,onClearFavorites:r,onClearHistory:o}){return w.jsx("div",{className:"h-full max-h-full overflow-hidden",children:w.jsx("div",{className:"px-6 pt-6 pb-4 h-full flex flex-col",children:w.jsxs("div",{className:"flex h-full overflow-hidden",children:[w.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[w.jsx("div",{className:"shrink-0 mb-4",children:w.jsxs("div",{className:"flex items-center justify-between",children:[w.jsxs("div",{className:"flex items-center gap-2",children:[w.jsx(oc,{className:"w-5 h-5 text-white/80"}),w.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"Favorites"})]}),t.length>0&&w.jsx("span",{className:"text-white/50 text-sm cursor-pointer",onClick:r,children:"clear"})]})}),w.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]\r
               [&::-webkit-scrollbar]:hidden`,children:w.jsx("div",{className:"space-y-2",children:t.slice().reverse().map(l=>w.jsx("button",{onClick:()=>n(l),className:`w-full text-left rounded-xl py-2 px-4\r
                       bg-[rgba(255,255,255,0.15)]\r

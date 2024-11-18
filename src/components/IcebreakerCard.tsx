@@ -1,6 +1,6 @@
 import { Heart } from 'lucide-react';
 import type { Icebreaker } from '../data/icebreakers';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface IcebreakerCardProps {
   icebreaker: Icebreaker;
@@ -16,6 +16,14 @@ export default function IcebreakerCard({
   isFavorite,
 }: IcebreakerCardProps) {
   const [lastTap, setLastTap] = useState(0);
+  const [isIOSSafari, setIsIOSSafari] = useState(false);
+
+  useEffect(() => {
+    // Detect iOS Safari
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    setIsIOSSafari(isIOS && isSafari);
+  }, []);
 
   const handleTap = (e: React.MouseEvent | React.TouchEvent) => {
     e.stopPropagation();  // Prevent double-tap zoom on mobile
@@ -29,6 +37,81 @@ export default function IcebreakerCard({
     }
     setLastTap(currentTime);
   };
+
+  // Separate button components for different platforms
+  const BrowserButtons = () => (
+    <div className="flex items-center gap-3 md:gap-4">
+      {/* Original glass-effect buttons for desktop/other browsers */}
+      <button
+        onClick={onToggleFavorite}
+        className={`relative p-3.5 rounded-full
+          bg-[rgba(255,255,255,0.15)]
+          backdrop-blur-md
+          border border-white/20
+          transition-colors
+          ${isFavorite 
+            ? 'hover:shadow-[0_0_20px_rgba(255,182,193,0.3)]'
+            : 'hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]'
+          }
+          active:scale-95`}
+      >
+        <Heart 
+          className={`w-5 h-5 transition-colors
+            ${isFavorite 
+              ? 'text-rose-200 fill-rose-200'
+              : 'text-white fill-none'
+            }`}
+        />
+      </button>
+
+      <button
+        onClick={onNext}
+        className="relative px-4 py-2.5 rounded-xl 
+          flex items-center gap-1.5 
+          bg-[rgba(255,255,255,0.15)]
+          backdrop-blur-md
+          border border-white/20
+          transition-colors
+          active:scale-95"
+      >
+        <span className="text-white">next →</span>
+      </button>
+    </div>
+  );
+
+  const IOSSafariButtons = () => (
+    <div className="flex items-center gap-3">
+      {/* Clean, simple buttons specifically for iOS Safari */}
+      <button
+        onClick={onToggleFavorite}
+        className={`relative p-3.5 rounded-full
+          ${isFavorite 
+            ? 'bg-rose-500/90' 
+            : 'bg-white/90'
+          }
+          active:opacity-80
+          transition-opacity`}
+      >
+        <Heart 
+          className={`w-5 h-5
+            ${isFavorite 
+              ? 'text-white fill-white'
+              : 'text-gray-800 fill-none'
+            }`}
+        />
+      </button>
+
+      <button
+        onClick={onNext}
+        className="relative px-5 py-2.5 rounded-xl 
+          bg-white/90
+          active:opacity-80
+          transition-opacity"
+      >
+        <span className="text-gray-800 font-medium">next →</span>
+      </button>
+    </div>
+  );
 
   return (
     <div 
@@ -54,54 +137,7 @@ export default function IcebreakerCard({
         <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 
           flex items-center gap-3 md:gap-4
           z-[999]">
-          <button
-            onClick={onToggleFavorite}
-            className={`relative p-3.5 rounded-full
-              bg-white/75
-              supports-[backdrop-filter]:bg-[rgba(255,255,255,0.15)]
-              supports-[backdrop-filter]:backdrop-blur-md
-              border border-white/20
-              shadow-[0_0_15px_rgba(255,255,255,0.15)]
-              transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-              transform-gpu
-              hover:bg-white/20
-              -webkit-tap-highlight-color-transparent
-              ${isFavorite 
-                ? 'hover:shadow-[0_0_20px_rgba(255,182,193,0.3)]'
-                : 'hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]'
-              }
-              active:scale-95
-              touch-action-manipulation`}
-          >
-            <Heart 
-              className={`w-5 h-5 transition-colors duration-75
-                ${isFavorite 
-                  ? 'text-rose-200 fill-rose-200'
-                  : 'text-white fill-none'
-                }`}
-            />
-          </button>
-
-          <button
-            onClick={onNext}
-            className="relative px-4 py-2.5 rounded-xl 
-              flex items-center gap-1.5 
-              bg-white/75
-              supports-[backdrop-filter]:bg-[rgba(255,255,255,0.15)]
-              supports-[backdrop-filter]:backdrop-blur-md
-              border border-white/20
-              shadow-[0_0_15px_rgba(255,255,255,0.15)]
-              hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
-              hover:bg-white/20
-              transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-              active:scale-95
-              transform-gpu
-              -webkit-tap-highlight-color-transparent
-              touch-action-manipulation
-              z-[999]"
-          >
-            <span className="text-white">next →</span>
-          </button>
+          {isIOSSafari ? <IOSSafariButtons /> : <BrowserButtons />}
         </div>
       </div>
     </div>
