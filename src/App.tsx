@@ -201,16 +201,19 @@ function App() {
 
   return (
     <>
-      <ThemeToggle onThemeChange={handleThemeChange} isDarkMode={isMonochrome} />
+      <ThemeToggle 
+        onThemeChange={handleThemeChange} 
+        isDarkMode={isMonochrome} 
+      />
       <main className={`fixed inset-0 overflow-hidden min-h-[600px] ${
         isMonochrome 
           ? 'bg-black' 
           : 'bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20'
       }`}>
-        {/* Title */}
+        {/* Title - adjust top spacing */}
         <h1 
           onClick={() => window.location.reload()} 
-          className="fixed top-24 sm:top-16 left-1/2 text-4xl md:text-6xl lg:text-7xl text-white z-50 font-['Space_Grotesk'] tracking-[0.05em] [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] flex items-center hover:cursor-pointer [animation:subtleFloat_4s_ease-in-out_infinite] -translate-x-1/2"
+          className="fixed top-[calc(env(safe-area-inset-top)+6rem)] sm:top-[calc(env(safe-area-inset-top)+4rem)] left-1/2 text-4xl md:text-6xl lg:text-7xl text-white z-50 font-['Space_Grotesk'] tracking-[0.05em] [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] flex items-center hover:cursor-pointer [animation:subtleFloat_4s_ease-in-out_infinite] -translate-x-1/2"
         >
           <div className="flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards]">
             <span className="animate-[wordLeft_2s_ease_forwards]">ice</span>
