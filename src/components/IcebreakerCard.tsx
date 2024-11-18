@@ -1,6 +1,6 @@
 import { Heart } from 'lucide-react';
 import type { Icebreaker } from '../data/icebreakers';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 interface IcebreakerCardProps {
   icebreaker: Icebreaker;
@@ -31,11 +31,11 @@ export default function IcebreakerCard({
   };
 
   return (
-    <div className="w-full 
-      h-[250px]
-      sm:h-[300px]
-      md:h-[400px]
-      animate-card-entrance">
+    <div 
+      className="w-full h-[250px] sm:h-[300px] md:h-[400px] animate-card-entrance"
+      onTouchStart={handleTap}
+      onClick={handleTap}
+    >
       <div className="glass-card w-full h-full 
         px-6 pt-6 pb-24
         sm:px-8 sm:pt-8 sm:pb-28

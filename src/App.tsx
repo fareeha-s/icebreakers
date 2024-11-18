@@ -146,10 +146,6 @@ function App() {
     localStorage.setItem('icebreaker-favorites', JSON.stringify(favorites));
   }, [favorites]);
 
-  const removeFromFavorites = (id: string) => {
-    setFavorites((prev) => prev.filter((fav) => fav.id !== id));
-  };
-
   // When clicking a history/favorite item
   const handleCardClick = (icebreaker: Icebreaker) => {
     setCurrentIcebreaker(icebreaker);
@@ -249,7 +245,6 @@ function App() {
           <Sidebar
             history={history}
             favorites={favorites}
-            onRemoveFromFavorites={removeFromFavorites}
             onCardClick={handleCardClick}
             onClearFavorites={clearFavorites}
             onClearHistory={clearHistory}

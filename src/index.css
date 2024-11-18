@@ -5,15 +5,37 @@
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background: radial-gradient(circle at 85% 15%, #CCDDFF 0%, transparent 45%),
-              radial-gradient(circle at 15% 25%, #DDEEFF 0%, transparent 40%),
-              radial-gradient(circle at 75% 85%, #66CCAA 0%, transparent 60%),
-              radial-gradient(circle at 25% 65%, #88CCBB 0%, transparent 65%),
-              linear-gradient(145deg, #CCDDFF, #AADDEE, #99DDCC, #88CCBB, #66CCAA 16%, #88CCBB 24%, #DDDDAA 60%, #DDCCBB 72%, #EEBBAA, #FFAAAA 88%, #FFBBBB, #FFCCCC, #DDDDAA);
-  animation: gradientShift 120s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-             gradientPulse 90s ease infinite;
-  background-size: 300% 300%, 200% 200%, 200% 200%, 200% 200%;
-  background-blend-mode: soft-light, overlay, overlay, normal;
+}
+
+/* Mobile styles (screens smaller than md breakpoint) */
+@media (max-width: 767px) {
+  body {
+    @apply bg-gradient-to-br from-[#CCDDFF] via-[#AADDEE] to-[#66CCAA];
+    background-size: 200% 200%;
+    animation: simpleGradientShift 30s ease infinite;
+  }
+}
+
+/* Desktop styles (md and larger screens) */
+@media (min-width: 768px) {
+  body {
+    background: radial-gradient(circle at 85% 15%, #CCDDFF 0%, transparent 45%),
+                radial-gradient(circle at 15% 25%, #DDEEFF 0%, transparent 40%),
+                radial-gradient(circle at 75% 85%, #66CCAA 0%, transparent 60%),
+                radial-gradient(circle at 25% 65%, #88CCBB 0%, transparent 65%),
+                linear-gradient(145deg, #CCDDFF, #AADDEE, #99DDCC, #88CCBB, #66CCAA 16%, #88CCBB 24%, #DDDDAA 60%, #DDCCBB 72%, #EEBBAA, #FFAAAA 88%, #FFBBBB, #FFCCCC, #DDDDAA);
+    animation: gradientShift 120s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
+               gradientPulse 90s ease infinite;
+    background-size: 300% 300%, 200% 200%, 200% 200%, 200% 200%;
+    background-blend-mode: soft-light, overlay, overlay, normal;
+  }
+}
+
+/* Add new simple animation for mobile */
+@keyframes simpleGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 html {

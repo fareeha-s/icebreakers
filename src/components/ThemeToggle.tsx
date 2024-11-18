@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 interface ThemeToggleProps {
   onThemeChange?: (isDark: boolean) => void;
   isDarkMode: boolean;

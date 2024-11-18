@@ -1,10 +1,9 @@
-import { Heart, History, Trash2 } from 'lucide-react';
+import { Heart, History } from 'lucide-react';
 import type { Icebreaker } from '../data/icebreakers';
 
 interface SidebarProps {
   history: Icebreaker[];
   favorites: Icebreaker[];
-  onRemoveFromFavorites: (id: string) => void;
   onCardClick: (icebreaker: Icebreaker) => void;
   onClearFavorites: () => void;
   onClearHistory: () => void;
@@ -26,7 +25,6 @@ const formatQuestion = (question: string) => {
 export default function Sidebar({ 
   history, 
   favorites, 
-  onRemoveFromFavorites, 
   onCardClick,
   onClearFavorites,
   onClearHistory 
