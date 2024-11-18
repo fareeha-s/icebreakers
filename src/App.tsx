@@ -200,7 +200,7 @@ function App() {
   }, [usedQuestions]);
 
   return (
-    <>
+    <div className="[@supports(-webkit-touch-callout:none)_and_(display:standalone)]:min-h-[calc(100vh+env(safe-area-inset-bottom))]">
       <ThemeToggle 
         onThemeChange={handleThemeChange} 
         isDarkMode={isMonochrome} 
@@ -292,7 +292,7 @@ function App() {
           <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </button>
-    </>
+    </div>
   );
 }
 

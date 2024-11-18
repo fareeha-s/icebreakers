@@ -153,19 +153,21 @@ export default function IcebreakerCard({
   return (
     <div className="w-full h-[250px] sm:h-[300px] md:h-[400px] animate-card-entrance">
       <div className="glass-card w-full h-full 
-        px-6 pt-6 pb-24
-        sm:px-8 sm:pt-8 sm:pb-28
+        px-6 sm:px-8 md:px-12 lg:px-16 
+        pt-6 pb-24
+        sm:pt-8 sm:pb-28
         md:pb-32
         max-w-[90vw] mx-auto
         relative">
-        {/* Share button - aligned with category text */}
-        <div className="flex items-center justify-between">
+        {/* Top section with category and send */}
+        <div className="flex items-center justify-between mb-4 sm:mb-8">
           <span className="text-base text-white/80 uppercase tracking-wider font-medium">
             {icebreaker.category}
           </span>
           <button
             onClick={handleShare}
-            className="p-2.5
+            className="p-2.5 md:p-3.5
+              -mr-2.5 md:-mr-3.5
               transition-colors
               hover:opacity-80
               active:scale-95"
