@@ -126,13 +126,14 @@ function App() {
     const isFavorite = favorites.some(fav => fav.id === currentIcebreaker.id);
     
     if (isFavorite) {
-      setFavorites(favorites.filter(fav => fav.id !== currentIcebreaker.id));
+      // Remove from favorites
+      setFavorites(prev => prev.filter(fav => fav.id !== currentIcebreaker.id));
     } else {
-      setFavorites([...favorites, currentIcebreaker]);
+      // Add to favorites
+      setFavorites(prev => [...prev, currentIcebreaker]);
       
-      // If this is their first favorite ever, show the sidebar
       if (!hasEverFavorited) {
-        setTimeout(() => {  // Add a small delay so the heart animation finishes first
+        setTimeout(() => {
           setIsSidebarOpen(true);
           setHasEverFavorited(true);
           localStorage.setItem('has-ever-favorited', 'true');
@@ -150,13 +151,19 @@ function App() {
   const handleCardClick = (icebreaker: Icebreaker) => {
     setCurrentIcebreaker(icebreaker);
     
-    // Remove the clicked item from its current position and add it to the end
+    // Reorder in history
     setHistory(prev => {
-      // Remove the clicked item if it exists
       const filteredHistory = prev.filter(item => item.id !== icebreaker.id);
-      // Add it to the end
       return [...filteredHistory, icebreaker].slice(-10);
     });
+
+    // If it's a favorite, reorder in favorites too
+    if (favorites.some(fav => fav.id === icebreaker.id)) {
+      setFavorites(prev => {
+        const filteredFavorites = prev.filter(fav => fav.id !== icebreaker.id);
+        return [...filteredFavorites, icebreaker];
+      });
+    }
   };
 
   // Add clearFavorites function

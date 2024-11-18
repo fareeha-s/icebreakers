@@ -74,7 +74,7 @@ export default function IcebreakerCard({
         className={`relative p-3.5 rounded-full
           ${!isDarkMode              
             ? 'bg-[#AADDEE]/90'      
-            : 'bg-gray-500/90'       
+            : 'bg-[rgba(255,255,255,0.15)]'
           }
           active:opacity-80
           transition-opacity`}
@@ -83,8 +83,8 @@ export default function IcebreakerCard({
           className={`w-5 h-5
             ${isFavorite 
               ? isDarkMode
-                ? 'text-white fill-white'      // Dark mode: white fill
-                : 'text-rose-200 fill-rose-200'  // Light mode: rose fill
+                ? 'text-white fill-white'
+                : 'text-rose-200 fill-rose-200'
               : 'text-white fill-none'
             }`}
         />
@@ -95,7 +95,7 @@ export default function IcebreakerCard({
         className={`relative px-5 py-2.5 rounded-xl 
           ${!isDarkMode               
             ? 'bg-[#AADDEE]/90'      
-            : 'bg-gray-500/90'       
+            : 'bg-[rgba(255,255,255,0.15)]'
           }
           active:opacity-80
           transition-opacity`}

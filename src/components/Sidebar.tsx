@@ -45,8 +45,9 @@ export default function Sidebar({
                   </h2>
                 </div>
                 {favorites.length > 0 && (
-                  <span className="text-white/50 text-sm cursor-pointer" onClick={onClearFavorites}>
-                    clear
+                  <span className="text-white/50 cursor-pointer" onClick={onClearFavorites}>
+                    <span className="sm:inline hidden text-sm">clear</span>
+                    <span className="sm:hidden inline text-xl px-2">×</span>
                   </span>
                 )}
               </div>
@@ -91,8 +92,9 @@ export default function Sidebar({
                   </h2>
                 </div>
                 {history.length > 0 && (
-                  <span className="text-white/50 text-sm cursor-pointer" onClick={onClearHistory}>
-                    clear
+                  <span className="text-white/50 cursor-pointer" onClick={onClearHistory}>
+                    <span className="sm:inline hidden text-sm">clear</span>
+                    <span className="sm:hidden inline text-xl px-2">×</span>
                   </span>
                 )}
               </div>

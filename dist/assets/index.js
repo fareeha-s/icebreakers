@@ -71,11 +71,11 @@ Error generating stack: `+l.message+`
           border border-white/20\r
           transition-colors\r
           active:scale-95`,children:v.jsx("span",{className:"text-white",children:"next →"})})]}),s=()=>v.jsxs("div",{className:"flex items-center gap-3",children:[v.jsx("button",{onClick:n,className:`relative p-3.5 rounded-full
-          ${r?"bg-rose-500/90":o?"bg-[#AADDEE]/90":"bg-gray-500/90"}
+          ${o?"bg-gray-500/90":"bg-[#AADDEE]/90"}
           active:opacity-80
           transition-opacity`,children:v.jsx(Fl,{className:`w-5 h-5
-            ${r?"text-white fill-white":"text-white fill-none"}`})}),v.jsx("button",{onClick:t,className:`relative px-5 py-2.5 rounded-xl 
-          ${o?"bg-[#AADDEE]/90":"bg-gray-500/90"}
+            ${r?o?"text-white fill-white":"text-rose-200 fill-rose-200":"text-white fill-none"}`})}),v.jsx("button",{onClick:t,className:`relative px-5 py-2.5 rounded-xl 
+          ${o?"bg-gray-500/90":"bg-[#AADDEE]/90"}
           active:opacity-80
           transition-opacity`,children:v.jsx("span",{className:"text-white font-medium",children:"next →"})})]});return v.jsx("div",{className:"w-full h-[250px] sm:h-[300px] md:h-[400px] animate-card-entrance",children:v.jsxs("div",{className:`glass-card w-full h-full \r
         px-6 pt-6 pb-24\r
