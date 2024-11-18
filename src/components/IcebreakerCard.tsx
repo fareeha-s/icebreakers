@@ -15,7 +15,6 @@ export default function IcebreakerCard({
   onToggleFavorite,
   isFavorite,
 }: IcebreakerCardProps) {
-  const [lastTap, setLastTap] = useState(0);
   const [isIOSSafari, setIsIOSSafari] = useState(false);
 
   useEffect(() => {
@@ -24,19 +23,6 @@ export default function IcebreakerCard({
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     setIsIOSSafari(isIOS && isSafari);
   }, []);
-
-  const handleTap = (e: React.MouseEvent | React.TouchEvent) => {
-    e.stopPropagation();  // Prevent double-tap zoom on mobile
-    
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - lastTap;
-    
-    if (tapLength < 300 && tapLength > 0) {
-      // Double tap detected
-      onToggleFavorite();
-    }
-    setLastTap(currentTime);
-  };
 
   // Separate button components for different platforms
   const BrowserButtons = () => (
@@ -87,7 +73,7 @@ export default function IcebreakerCard({
         className={`relative p-3.5 rounded-full
           ${isFavorite 
             ? 'bg-rose-500/90' 
-            : 'bg-white/90'
+            : 'bg-[#AADDEE]/90'
           }
           active:opacity-80
           transition-opacity`}
@@ -96,7 +82,7 @@ export default function IcebreakerCard({
           className={`w-5 h-5
             ${isFavorite 
               ? 'text-white fill-white'
-              : 'text-gray-800 fill-none'
+              : 'text-white fill-none'
             }`}
         />
       </button>
@@ -104,11 +90,11 @@ export default function IcebreakerCard({
       <button
         onClick={onNext}
         className="relative px-5 py-2.5 rounded-xl 
-          bg-white/90
+          bg-[#AADDEE]/90
           active:opacity-80
           transition-opacity"
       >
-        <span className="text-gray-800 font-medium">next →</span>
+        <span className="text-white font-medium">next →</span>
       </button>
     </div>
   );
@@ -116,8 +102,6 @@ export default function IcebreakerCard({
   return (
     <div 
       className="w-full h-[250px] sm:h-[300px] md:h-[400px] animate-card-entrance"
-      onTouchStart={handleTap}
-      onClick={handleTap}
     >
       <div className="glass-card w-full h-full 
         px-6 pt-6 pb-24

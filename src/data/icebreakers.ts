@@ -586,7 +586,7 @@ export const icebreakers: Icebreaker[] = [
   },
   {
     id: '92',
-    question: "Would you rather: every traffic light always green for you, or always have the best parking spot?",
+    question: "Every traffic light always green, or always best parking spot?",
     category: 'fun',
     mode: 'journal'
   },
