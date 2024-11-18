@@ -74,9 +74,9 @@ export default function IcebreakerCard({
         className={`relative p-3.5 rounded-full
           ${isFavorite 
             ? 'bg-rose-500/90' 
-            : isDarkMode 
-              ? 'bg-[#AADDEE]/90'   // Dark mode: keep existing blue
-              : 'bg-gray-500/90'     // Light mode: grey color
+            : !isDarkMode              // Flip this condition
+              ? 'bg-[#AADDEE]/90'      // Blue in light mode
+              : 'bg-gray-500/90'       // Grey in dark mode
           }
           active:opacity-80
           transition-opacity`}
@@ -85,9 +85,7 @@ export default function IcebreakerCard({
           className={`w-5 h-5
             ${isFavorite 
               ? 'text-white fill-white'
-              : isDarkMode
-                ? 'text-white fill-none'
-                : 'text-white fill-none'  // You can adjust this color if needed
+              : 'text-white fill-none'
             }`}
         />
       </button>
@@ -95,9 +93,9 @@ export default function IcebreakerCard({
       <button
         onClick={onNext}
         className={`relative px-5 py-2.5 rounded-xl 
-          ${isDarkMode 
-            ? 'bg-[#AADDEE]/90'   // Dark mode: keep existing blue
-            : 'bg-gray-500/90'     // Light mode: grey color
+          ${!isDarkMode               // Flip this condition
+            ? 'bg-[#AADDEE]/90'      // Blue in light mode
+            : 'bg-gray-500/90'       // Grey in dark mode
           }
           active:opacity-80
           transition-opacity`}
