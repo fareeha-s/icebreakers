@@ -64,9 +64,11 @@ export default function Sidebar({
                       transition-all duration-300
                       hover:bg-white/20
                       active:scale-95
-                      transform-gpu"
+                      transform-gpu
+                      [-webkit-tap-highlight-color:transparent]
+                      [color-scheme:light]"
                   >
-                    <p className="text-white text-sm">
+                    <p className="text-white text-sm [-webkit-text-fill-color:white]">
                       {formatQuestion(item.question)}
                     </p>
                   </button>
@@ -108,9 +110,11 @@ export default function Sidebar({
                       transition-all duration-300
                       hover:bg-white/20
                       active:scale-95
-                      transform-gpu"
+                      transform-gpu
+                      [-webkit-tap-highlight-color:transparent]
+                      [color-scheme:light]"
                   >
-                    <p className="text-white text-sm">
+                    <p className="text-white text-sm [-webkit-text-fill-color:white]">
                       {formatQuestion(item.question)}
                     </p>
                   </button>
