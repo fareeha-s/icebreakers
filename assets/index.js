@@ -64,12 +64,12 @@ Error generating stack: `+l.message+`
           transition-colors
           ${r?"hover:shadow-[0_0_20px_rgba(255,182,193,0.3)]":"hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]"}
           active:scale-95`,children:v.jsx(Dl,{className:`w-5 h-5 transition-colors
-            ${r?"text-rose-200 fill-rose-200":"text-white fill-none"}`})}),v.jsx("button",{onClick:t,className:`relative px-4 py-2.5 rounded-xl 
-          flex items-center gap-1.5 
-          bg-[rgba(255,255,255,0.15)]
-          backdrop-blur-md
-          border border-white/20
-          transition-colors
+            ${r?"text-rose-200 fill-rose-200":"text-white fill-none"}`})}),v.jsx("button",{onClick:t,className:`relative px-4 py-2.5 rounded-xl \r
+          flex items-center gap-1.5 \r
+          bg-[rgba(255,255,255,0.15)]\r
+          backdrop-blur-md\r
+          border border-white/20\r
+          transition-colors\r
           active:scale-95`,children:v.jsx("span",{className:"text-white",children:"next →"})})]}),s=()=>v.jsxs("div",{className:"flex items-center gap-3",children:[v.jsx("button",{onClick:n,className:`relative p-3.5 rounded-full
           ${o?"bg-[rgba(255,255,255,0.15)]":"bg-[#AADDEE]/90"}
           active:opacity-80
@@ -77,44 +77,44 @@ Error generating stack: `+l.message+`
             ${r?o?"text-white fill-white":"text-rose-200 fill-rose-200":"text-white fill-none"}`})}),v.jsx("button",{onClick:t,className:`relative px-5 py-2.5 rounded-xl 
           ${o?"bg-[rgba(255,255,255,0.15)]":"bg-[#AADDEE]/90"}
           active:opacity-80
-          transition-opacity`,children:v.jsx("span",{className:"text-white font-medium",children:"next →"})})]});return v.jsx("div",{className:"w-full h-[250px] sm:h-[300px] md:h-[400px] animate-card-entrance",children:v.jsxs("div",{className:`glass-card w-full h-full 
-        px-6 pt-6 pb-24
-        sm:px-8 sm:pt-8 sm:pb-28
-        md:pb-32
-        max-w-[90vw] mx-auto
-        relative`,children:[v.jsxs("div",{className:"mb-4 sm:mb-8",children:[v.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),v.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.08)]",dangerouslySetInnerHTML:{__html:e.question}})]}),v.jsx("div",{className:`absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 
-          flex items-center gap-3 md:gap-4
-          z-[999]`,children:l?v.jsx(s,{}):v.jsx(u,{})})]})})}const Bu=e=>e.includes("Superior way to eat potatoes?")?v.jsxs(v.Fragment,{children:["Superior way to eat potatoes?",v.jsx("br",{}),"(mashed, roasted, hashed, 🍟...)"]}):e;function Rf({history:e,favorites:t,onCardClick:n,onClearFavorites:r,onClearHistory:o}){return v.jsx("div",{className:"h-full max-h-full overflow-hidden",children:v.jsx("div",{className:"px-6 pt-6 pb-4 h-full flex flex-col",children:v.jsxs("div",{className:"flex h-full overflow-hidden",children:[v.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[v.jsx("div",{className:"shrink-0 mb-4",children:v.jsxs("div",{className:"flex items-center justify-between",children:[v.jsxs("div",{className:"flex items-center gap-2",children:[v.jsx(Dl,{className:"w-5 h-5 text-white/80 active:[&>path]:fill-red-500"}),v.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"Favorites"})]}),t.length>0&&v.jsxs("span",{className:"text-white/50 cursor-pointer",onClick:r,children:[v.jsx("span",{className:"sm:inline hidden text-sm",children:"clear"}),v.jsx("span",{className:"sm:hidden inline text-xl px-2",children:"×"})]})]})}),v.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]
-              [&::-webkit-scrollbar]:hidden`,children:v.jsx("div",{className:"space-y-2",children:t.slice().reverse().map(l=>v.jsx("button",{onClick:()=>n(l),className:`w-full text-left rounded-xl py-2 px-4
-                      bg-[rgba(255,255,255,0.15)]
-                      border border-white/30
-                      transition-all duration-300
-                      hover:bg-white/20
-                      active:scale-95
-                      transform-gpu
-                      [-webkit-tap-highlight-color:transparent]
-                      [color-scheme:light]`,children:v.jsx("p",{className:"text-white text-sm [-webkit-text-fill-color:white]",children:Bu(l.question)})},l.id))})})]}),v.jsx("div",{className:"w-px bg-white/20 mx-6"}),v.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[v.jsx("div",{className:"mb-4 px-2",children:v.jsxs("div",{className:"flex items-center justify-between",children:[v.jsxs("div",{className:"flex items-center gap-2",children:[v.jsx(Mf,{className:"w-5 h-5 text-white/80"}),v.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"History"})]}),e.length>0&&v.jsxs("span",{className:"text-white/50 cursor-pointer",onClick:o,children:[v.jsx("span",{className:"sm:inline hidden text-sm",children:"clear"}),v.jsx("span",{className:"sm:hidden inline text-xl px-2",children:"×"})]})]})}),v.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]
-              [&::-webkit-scrollbar]:hidden`,children:v.jsx("div",{className:"space-y-2",children:e.slice(-10).reverse().map(l=>v.jsx("button",{onClick:()=>n(l),className:`w-full text-left rounded-xl py-2 px-4
-                      bg-[rgba(255,255,255,0.15)]
-                      border border-white/30
-                      transition-all duration-300
-                      hover:bg-white/20
-                      active:scale-95
-                      transform-gpu
-                      [-webkit-tap-highlight-color:transparent]
-                      [color-scheme:light]`,children:v.jsx("p",{className:"text-white text-sm [-webkit-text-fill-color:white]",children:Bu(l.question)})},l.id))})})]})]})})})}function Ff({onThemeChange:e,isDarkMode:t}){const n=()=>{e==null||e(!t)};return v.jsx("button",{onClick:n,className:`fixed z-50 top-8 right-8
-        opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]
-        px-3 py-3
-        bg-[rgba(255,255,255,0.15)]
-        backdrop-blur-md
-        border border-white/20
-        shadow-[0_0_15px_rgba(255,255,255,0.15)]
-        hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
-        rounded-xl
-        transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
-        hover:bg-white/20
-        hover:scale-105
-        active:scale-100
+          transition-opacity`,children:v.jsx("span",{className:"text-white font-medium",children:"next →"})})]});return v.jsx("div",{className:"w-full h-[250px] sm:h-[300px] md:h-[400px] animate-card-entrance",children:v.jsxs("div",{className:`glass-card w-full h-full \r
+        px-6 pt-6 pb-24\r
+        sm:px-8 sm:pt-8 sm:pb-28\r
+        md:pb-32\r
+        max-w-[90vw] mx-auto\r
+        relative`,children:[v.jsxs("div",{className:"mb-4 sm:mb-8",children:[v.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),v.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.08)]",dangerouslySetInnerHTML:{__html:e.question}})]}),v.jsx("div",{className:`absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 \r
+          flex items-center gap-3 md:gap-4\r
+          z-[999]`,children:l?v.jsx(s,{}):v.jsx(u,{})})]})})}const Bu=e=>e.includes("Superior way to eat potatoes?")?v.jsxs(v.Fragment,{children:["Superior way to eat potatoes?",v.jsx("br",{}),"(mashed, roasted, hashed, 🍟...)"]}):e;function Rf({history:e,favorites:t,onCardClick:n,onClearFavorites:r,onClearHistory:o}){return v.jsx("div",{className:"h-full max-h-full overflow-hidden",children:v.jsx("div",{className:"px-6 pt-6 pb-4 h-full flex flex-col",children:v.jsxs("div",{className:"flex h-full overflow-hidden",children:[v.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[v.jsx("div",{className:"shrink-0 mb-4",children:v.jsxs("div",{className:"flex items-center justify-between",children:[v.jsxs("div",{className:"flex items-center gap-2",children:[v.jsx(Dl,{className:"w-5 h-5 text-white/80 active:[&>path]:fill-red-500"}),v.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"Favorites"})]}),t.length>0&&v.jsxs("span",{className:"text-white/50 cursor-pointer",onClick:r,children:[v.jsx("span",{className:"sm:inline hidden text-sm",children:"clear"}),v.jsx("span",{className:"sm:hidden inline text-xl px-2",children:"×"})]})]})}),v.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]\r
+              [&::-webkit-scrollbar]:hidden`,children:v.jsx("div",{className:"space-y-2",children:t.slice().reverse().map(l=>v.jsx("button",{onClick:()=>n(l),className:`w-full text-left rounded-xl py-2 px-4\r
+                      bg-[rgba(255,255,255,0.15)]\r
+                      border border-white/30\r
+                      transition-all duration-300\r
+                      hover:bg-white/20\r
+                      active:scale-95\r
+                      transform-gpu\r
+                      [-webkit-tap-highlight-color:transparent]\r
+                      [color-scheme:light]`,children:v.jsx("p",{className:"text-white text-sm [-webkit-text-fill-color:white]",children:Bu(l.question)})},l.id))})})]}),v.jsx("div",{className:"w-px bg-white/20 mx-6"}),v.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[v.jsx("div",{className:"mb-4 px-2",children:v.jsxs("div",{className:"flex items-center justify-between",children:[v.jsxs("div",{className:"flex items-center gap-2",children:[v.jsx(Mf,{className:"w-5 h-5 text-white/80"}),v.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"History"})]}),e.length>0&&v.jsxs("span",{className:"text-white/50 cursor-pointer",onClick:o,children:[v.jsx("span",{className:"sm:inline hidden text-sm",children:"clear"}),v.jsx("span",{className:"sm:hidden inline text-xl px-2",children:"×"})]})]})}),v.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]\r
+              [&::-webkit-scrollbar]:hidden`,children:v.jsx("div",{className:"space-y-2",children:e.slice(-10).reverse().map(l=>v.jsx("button",{onClick:()=>n(l),className:`w-full text-left rounded-xl py-2 px-4\r
+                      bg-[rgba(255,255,255,0.15)]\r
+                      border border-white/30\r
+                      transition-all duration-300\r
+                      hover:bg-white/20\r
+                      active:scale-95\r
+                      transform-gpu\r
+                      [-webkit-tap-highlight-color:transparent]\r
+                      [color-scheme:light]`,children:v.jsx("p",{className:"text-white text-sm [-webkit-text-fill-color:white]",children:Bu(l.question)})},l.id))})})]})]})})})}function Ff({onThemeChange:e,isDarkMode:t}){const n=()=>{e==null||e(!t)};return v.jsx("button",{onClick:n,className:`fixed z-50 top-8 right-8\r
+        opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]\r
+        px-3 py-3\r
+        bg-[rgba(255,255,255,0.15)]\r
+        backdrop-blur-md\r
+        border border-white/20\r
+        shadow-[0_0_15px_rgba(255,255,255,0.15)]\r
+        hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]\r
+        rounded-xl\r
+        transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]\r
+        hover:bg-white/20\r
+        hover:scale-105\r
+        active:scale-100\r
         transform-gpu`,children:v.jsx("svg",{viewBox:"0 0 24 24",className:"w-5 h-5 text-white hover:text-white/80",stroke:"currentColor",strokeWidth:"1.5",fill:"none",children:t?v.jsxs(v.Fragment,{children:[v.jsx("circle",{cx:"12",cy:"12",r:"4"}),v.jsx("line",{x1:"12",y1:"3",x2:"12",y2:"5"}),v.jsx("line",{x1:"12",y1:"19",x2:"12",y2:"21"}),v.jsx("line",{x1:"5",y1:"12",x2:"3",y2:"12"}),v.jsx("line",{x1:"21",y1:"12",x2:"19",y2:"12"}),v.jsx("line",{x1:"7.05",y1:"7.05",x2:"5.636",y2:"5.636"}),v.jsx("line",{x1:"18.364",y1:"18.364",x2:"16.95",y2:"16.95"}),v.jsx("line",{x1:"16.95",y1:"7.05",x2:"18.364",y2:"5.636"}),v.jsx("line",{x1:"5.636",y1:"18.364",x2:"7.05",y2:"16.95"})]}):v.jsx("path",{d:"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"})})})}function Df(){return v.jsx("div",{className:"w-[90vw] max-w-[1225px] mx-auto px-4 mb-1",children:v.jsx("div",{className:"flex justify-end pr-4",children:v.jsx("a",{href:"https://www.linkedin.com/in/fareehas",target:"_blank",rel:"noopener noreferrer",className:"text-xs engraved-text hover:text-white/90 transition-colors duration-200",children:"sincerely, Fareeha"})})})}function Uf(){const[e]=$.useState(()=>!localStorage.getItem("has-visited-before")),[t,n]=$.useState(()=>{if(e)return localStorage.setItem("has-visited-before","true"),Je.find(W=>W.id==="1")||Je[0];const k=Math.floor(Math.random()*Je.length);return Je[k]}),[r,o]=$.useState(1);$.useEffect(()=>{localStorage.removeItem("icebreaker-history")},[]);const[l,i]=$.useState([]),[u,s]=$.useState(()=>{const k=localStorage.getItem("icebreaker-favorites");return k?JSON.parse(k):[]});$.useEffect(()=>{localStorage.setItem("icebreaker-favorites",JSON.stringify(u))},[u]),$.useEffect(()=>{localStorage.setItem("icebreaker-history",JSON.stringify(l))},[l]);const[c,m]=$.useState(!1),[h,p]=$.useState(()=>{const k=localStorage.getItem("icebreaker-used");return k?JSON.parse(k):[t.id]}),[w,x]=$.useState(!1),S=()=>{const k=[...h];if(k.length>=Je.length){p([]),o(1);const L=Math.floor(Math.random()*Je.length),de=Je[L];n(de),i(vt=>[...vt,de].slice(-10));return}const W=Je.filter(L=>!k.includes(L.id));if(!W.length){p([]),o(1);return}let P;if(e)if(r>=1&&r<=3){const L=W.filter(de=>de.vibe);if(L.length>0){const de=Math.floor(Math.random()*L.length);P=L[de]}else{const de=Math.floor(Math.random()*W.length);P=W[de]}}else{const L=Math.floor(Math.random()*W.length);P=W[L]}else{const L=Math.floor(Math.random()*W.length);P=W[L]}n(P),p(L=>[...L,P.id]),i(L=>[...L,P].slice(-10)),o(L=>L+1)};$.useEffect(()=>{localStorage.setItem("icebreaker-used",JSON.stringify(h))},[h]);const[O,d]=$.useState(()=>localStorage.getItem("has-ever-favorited")==="true"),a=()=>{u.some(W=>W.id===t.id)?s(W=>W.filter(P=>P.id!==t.id)):(s(W=>[...W,t]),O||setTimeout(()=>{m(!0),d(!0),localStorage.setItem("has-ever-favorited","true")},300))};$.useEffect(()=>{localStorage.setItem("icebreaker-favorites",JSON.stringify(u))},[u]);const f=k=>{n(k),i(W=>[...W.filter(L=>L.id!==k.id),k].slice(-10)),u.some(W=>W.id===k.id)&&s(W=>[...W.filter(L=>L.id!==k.id),k])},y=()=>{s([]),localStorage.setItem("favorites",JSON.stringify([]))},j=()=>{i([])},C=k=>{x(k)},N=()=>{try{return localStorage.setItem("test","test"),localStorage.removeItem("test"),!0}catch{return!1}};return $.useEffect(()=>{N()&&localStorage.setItem("icebreaker-used",JSON.stringify(h))},[h]),v.jsxs(v.Fragment,{children:[v.jsx(Ff,{onThemeChange:C,isDarkMode:w}),v.jsxs("main",{className:`fixed inset-0 overflow-hidden min-h-[600px] ${w?"bg-black":"bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20"}`,children:[v.jsx("h1",{onClick:()=>window.location.reload(),className:"fixed top-24 sm:top-16 left-1/2 text-4xl md:text-6xl lg:text-7xl text-white z-50 font-['Space_Grotesk'] tracking-[0.05em] [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] flex items-center hover:cursor-pointer [animation:subtleFloat_4s_ease-in-out_infinite] -translate-x-1/2",children:v.jsxs("div",{className:"flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards]",children:[v.jsx("span",{className:"animate-[wordLeft_2s_ease_forwards]",children:"ice"}),v.jsx("span",{className:"relative text-white text-[1em] md:text-[1em] lg:text-[1em] font-['Space_Grotesk'] animate-slash-drop",children:"/"}),v.jsx("span",{className:"animate-[wordRight_2s_ease_forwards]",children:"breakers"})]})}),v.jsx("div",{className:`w-full transition-all duration-300 ease-in-out
           ${c?"h-[80vh] min-h-[400px]":"h-screen min-h-[600px]"}
           flex items-center justify-center`,children:v.jsxs("div",{className:"w-full flex flex-col opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]",children:[v.jsx(Df,{}),v.jsx("div",{className:"w-[90vw] max-w-[1200px] mx-auto",children:v.jsx(Of,{icebreaker:t,isFavorite:u.some(k=>k.id===t.id),onToggleFavorite:a,onNext:S,isDarkMode:w})})]})}),v.jsx("div",{className:`fixed bottom-0 left-0 right-0 
