@@ -9,26 +9,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      manifest: {
-        name: 'icebreakers',
-        short_name: 'icebreakers',
-        description: 'conversation starters ✨',
-        theme_color: '#000000',
-        background_color: '#000000',
-        display: 'standalone',
-        icons: [
-          {
-            src: 'icebreakers-logo.png',
-            sizes: '192x192',
-            type: 'image/png'
-          },
-          {
-            src: 'icebreakers-logo.png',
-            sizes: '512x512',
-            type: 'image/png'
-          }
-        ]
-      },
+      manifest: false,
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
         runtimeCaching: [
