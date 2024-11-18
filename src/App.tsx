@@ -200,16 +200,19 @@ function App() {
   }, [usedQuestions]);
 
   return (
-    <div className="[@supports(-webkit-touch-callout:none)_and_(display:standalone)]:min-h-[calc(100vh+env(safe-area-inset-bottom))]">
+    <div className="fixed inset-0 [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:pb-[env(safe-area-inset-bottom)]">
       <ThemeToggle 
         onThemeChange={handleThemeChange} 
         isDarkMode={isMonochrome} 
       />
-      <main className={`fixed inset-0 overflow-hidden min-h-[600px] ${
-        isMonochrome 
+      <main className={`fixed inset-0 
+        overflow-hidden 
+        min-h-[100vh]
+        [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:min-h-[calc(100vh+env(safe-area-inset-bottom))] 
+        ${isMonochrome 
           ? 'bg-black' 
           : 'bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20'
-      }`}>
+        }`}>
         {/* Title - adjust top spacing */}
         <h1 
           onClick={() => window.location.reload()} 
