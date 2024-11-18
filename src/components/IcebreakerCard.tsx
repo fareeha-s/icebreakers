@@ -57,25 +57,21 @@ export default function IcebreakerCard({
           <button
             onClick={onToggleFavorite}
             className={`relative p-3.5 rounded-full
-              bg-[rgba(255,255,255,0.15)]
-              backdrop-blur-md
+              bg-white/75
+              supports-[backdrop-filter]:bg-[rgba(255,255,255,0.15)]
+              supports-[backdrop-filter]:backdrop-blur-md
               border border-white/20
               shadow-[0_0_15px_rgba(255,255,255,0.15)]
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
               transform-gpu
               hover:bg-white/20
-              -webkit-tap-highlight-color: transparent;
+              -webkit-tap-highlight-color-transparent
               ${isFavorite 
                 ? 'hover:shadow-[0_0_20px_rgba(255,182,193,0.3)]'
                 : 'hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]'
               }
               active:scale-95
-              touch-action: manipulation;
-              ${window.CSS.supports('(-webkit-backdrop-filter: none)') || window.CSS.supports('(backdrop-filter: none)')
-                ? 'backdrop-blur-md bg-[rgba(255,255,255,0.15)]'
-                : 'bg-[rgba(255,255,255,0.5)]'  // Fallback for browsers that don't support backdrop-filter
-              }
-            `}
+              touch-action-manipulation`}
           >
             <Heart 
               className={`w-5 h-5 transition-colors duration-75
@@ -90,8 +86,9 @@ export default function IcebreakerCard({
             onClick={onNext}
             className="relative px-4 py-2.5 rounded-xl 
               flex items-center gap-1.5 
-              bg-[rgba(255,255,255,0.15)]
-              backdrop-blur-md
+              bg-white/75
+              supports-[backdrop-filter]:bg-[rgba(255,255,255,0.15)]
+              supports-[backdrop-filter]:backdrop-blur-md
               border border-white/20
               shadow-[0_0_15px_rgba(255,255,255,0.15)]
               hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
@@ -99,8 +96,8 @@ export default function IcebreakerCard({
               transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
               active:scale-95
               transform-gpu
-              -webkit-tap-highlight-color: transparent;
-              touch-action: manipulation;
+              -webkit-tap-highlight-color-transparent
+              touch-action-manipulation
               z-[999]"
           >
             <span className="text-white">next →</span>
