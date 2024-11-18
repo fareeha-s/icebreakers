@@ -7,6 +7,7 @@ interface IcebreakerCardProps {
   onNext: () => void;
   onToggleFavorite: () => void;
   isFavorite: boolean;
+  isDarkMode: boolean;
 }
 
 export default function IcebreakerCard({
@@ -14,6 +15,7 @@ export default function IcebreakerCard({
   onNext,
   onToggleFavorite,
   isFavorite,
+  isDarkMode,
 }: IcebreakerCardProps) {
   const [isIOSSafari, setIsIOSSafari] = useState(false);
 
@@ -67,13 +69,14 @@ export default function IcebreakerCard({
 
   const IOSSafariButtons = () => (
     <div className="flex items-center gap-3">
-      {/* Clean, simple buttons specifically for iOS Safari */}
       <button
         onClick={onToggleFavorite}
         className={`relative p-3.5 rounded-full
           ${isFavorite 
             ? 'bg-rose-500/90' 
-            : 'bg-[#AADDEE]/90'
+            : isDarkMode 
+              ? 'bg-[#AADDEE]/90'   // Dark mode: keep existing blue
+              : 'bg-gray-500/90'     // Light mode: grey color
           }
           active:opacity-80
           transition-opacity`}
@@ -82,17 +85,22 @@ export default function IcebreakerCard({
           className={`w-5 h-5
             ${isFavorite 
               ? 'text-white fill-white'
-              : 'text-white fill-none'
+              : isDarkMode
+                ? 'text-white fill-none'
+                : 'text-white fill-none'  // You can adjust this color if needed
             }`}
         />
       </button>
 
       <button
         onClick={onNext}
-        className="relative px-5 py-2.5 rounded-xl 
-          bg-[#AADDEE]/90
+        className={`relative px-5 py-2.5 rounded-xl 
+          ${isDarkMode 
+            ? 'bg-[#AADDEE]/90'   // Dark mode: keep existing blue
+            : 'bg-gray-500/90'     // Light mode: grey color
+          }
           active:opacity-80
-          transition-opacity"
+          transition-opacity`}
       >
         <span className="text-white font-medium">next →</span>
       </button>

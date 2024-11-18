@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 body {
   min-height: 100vh;
@@ -10,7 +10,7 @@ body {
 /* Mobile styles (screens smaller than md breakpoint) */
 @media (max-width: 767px) {
   body {
-    @apply bg-gradient-to-br from-[#CCDDFF] via-[#AADDEE] to-[#66CCAA];
+    background-image: linear-gradient(to bottom right, #CCDDFF, #AADDEE, #66CCAA);
     background-size: 200% 200%;
     animation: simpleGradientShift 30s ease infinite;
   }

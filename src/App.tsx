@@ -229,6 +229,7 @@ function App() {
                 isFavorite={favorites.some((fav) => fav.id === currentIcebreaker.id)}
                 onToggleFavorite={toggleFavorite}
                 onNext={getNextIcebreaker}
+                isDarkMode={isMonochrome}
               />
             </div>
           </div>

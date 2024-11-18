@@ -39,7 +39,7 @@ export default function Sidebar({
             <div className="shrink-0 mb-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Heart className="w-5 h-5 text-white/80" />
+                  <Heart className="w-5 h-5 text-white/80 active:[&>path]:fill-red-500" />
                   <h2 className="text-base text-white/80 uppercase tracking-wider font-medium">
                     Favorites
                   </h2>
