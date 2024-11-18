@@ -1,9 +1,0 @@
-[33m94cf374[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Fix TypeScript errors in Sidebar component
-[33m24b9daa[m feat: improved history/favorites UI with consistent glass button effects, fixed history sorting and duplicates
-[33mdd941af[m Fix icebreaker questions: sequential IDs, consistent modes, and categories
-[33mcc96c5b[m Update files and add icebreaker questions
-[33m3297686[m your message here
-[33mfbe1e4e[m Add CNAME for custom domain
-[33mf7432cf[m Setup for GitHub Pages deployment
-[33mfbffe92[m Ready for deployment
-[33m1b8deaf[m[33m ([m[1;32mmaster[m[33m)[m Initial commit

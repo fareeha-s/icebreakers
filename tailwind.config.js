@@ -11,6 +11,10 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
+      opacity: {
+        '80': '0.8',
+        '90': '0.9',
+      },
       keyframes: {
         'fadeIn': {
           '0%': {
@@ -86,4 +90,11 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    'bg-rose-500',
+    'text-gray-800',
+    {
+      pattern: /opacity-(80|90)/,
+    },
+  ],
 }
