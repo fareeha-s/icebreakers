@@ -71,6 +71,7 @@ export default function IcebreakerCard({
 
   const IOSSafariButtons = () => (
     <div className="flex items-center gap-3">
+      {/* Only Heart button */}
       <button
         onClick={onToggleFavorite}
         className={`relative p-3.5 rounded-full
@@ -92,19 +93,7 @@ export default function IcebreakerCard({
         />
       </button>
 
-      <button
-        onClick={handleShare}
-        className={`relative p-3.5 rounded-full
-          ${!isDarkMode               
-            ? 'bg-[#AADDEE]/90'      
-            : 'bg-[rgba(255,255,255,0.15)]'
-          }
-          active:opacity-80
-          transition-opacity`}
-      >
-        <Send className="w-5 h-5 text-white" />
-      </button>
-
+      {/* Next button */}
       <button
         onClick={onNext}
         className={`relative px-5 py-2.5 rounded-xl 
