@@ -3,10 +3,29 @@ interface ThemeToggleProps {
   isDarkMode: boolean;
 }
 
+import { useEffect } from 'react';
+
+interface ThemeToggleProps {
+  onThemeChange?: (isDark: boolean) => void;
+  isDarkMode: boolean;
+}
+
 export default function ThemeToggle({ onThemeChange, isDarkMode }: ThemeToggleProps) {
   const toggleTheme = () => {
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute('content', !isDarkMode ? '#000000' : '#CCDDFF');
+    }
+    
     onThemeChange?.(!isDarkMode);
   };
+
+  useEffect(() => {
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute('content', isDarkMode ? '#000000' : '#CCDDFF');
+    }
+  }, [isDarkMode]);
 
   return (
     <button

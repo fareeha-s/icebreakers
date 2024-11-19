@@ -258,3 +258,17 @@ body::before {
     }
   }
 }
+
+/* Desktop PWA styles */
+@media (display: standalone) and (min-width: 768px) {
+  body {
+    /* Ensure gradient extends to top of window */
+    padding-top: 0;
+    background: linear-gradient(145deg, #CCDDFF, #AADDEE, #99DDCC, #88CCBB, #66CCAA);
+    background-size: 200% 200%;
+    
+    &.dark-theme {
+      background: black;
+    }
+  }
+}

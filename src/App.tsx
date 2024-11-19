@@ -208,7 +208,7 @@ function App() {
       <main className={`fixed inset-0 
         overflow-hidden 
         min-h-[100vh]
-        [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:min-h-[calc(100vh+env(safe-area-inset-bottom))] 
+        [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:min-h-[calc(100vh+env(safe-area-inset-top)+env(safe-area-inset-bottom))]
         ${isMonochrome 
           ? 'bg-black' 
           : 'bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20'
