@@ -12,7 +12,6 @@ body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
   background: linear-gradient(145deg, #CCDDFF, #AADDEE, #99DDCC, #88CCBB, #66CCAA);
-  padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
 }
 
@@ -157,16 +156,9 @@ button {
 
 /* Add specific PWA mode adjustments */
 @supports (-webkit-touch-callout: none) and (display: standalone) {
-  h1.title-text {
+  .title-text {
     position: fixed !important;
-    top: calc(env(safe-area-inset-top) + 2rem) !important;
-    transform-origin: center !important;
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  button[class*="bottom-8"] {
-    bottom: calc(env(safe-area-inset-bottom) + 4rem) !important;
+    top: calc(env(safe-area-inset-top) + 4rem) !important;
   }
 }
 
@@ -200,5 +192,36 @@ body::before {
   
   body::before {
     display: none; /* Hide complex gradient */
+  }
+}
+
+/* iOS Safari specific styles */
+@supports (-webkit-touch-callout: none) {
+  /* General iOS Safari */
+  html {
+    height: -webkit-fill-available;
+  }
+  
+  body {
+    min-height: -webkit-fill-available;
+  }
+
+  /* Title specific for iOS Safari */
+  .title-text {
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    /* Ensure consistent top spacing */
+    top: calc(env(safe-area-inset-top) + 4rem) !important;
+    /* Prevent any webkit rendering issues */
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+/* PWA specific styles (these will override iOS Safari styles when in PWA mode) */
+@supports (-webkit-touch-callout: none) and (display: standalone) {
+  .title-text {
+    top: calc(env(safe-area-inset-top) + 4rem) !important;
   }
 }

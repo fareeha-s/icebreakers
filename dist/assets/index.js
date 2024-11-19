@@ -85,17 +85,17 @@ Error generating stack: `+l.message+`
           transition-opacity`,children:g.jsx("span",{className:"text-white font-medium",children:"next →"})})]}),h=async()=>{try{const p=`Today's team question:
 ${e.question}
 
-https://icebreakers.wiki`;if(!window.matchMedia("(min-width: 1024px)").matches&&navigator.share)await navigator.share({text:p});else{try{await navigator.clipboard.writeText(p),console.log("Copied using clipboard API")}catch{const k=document.createElement("textarea");k.value=p,k.style.cssText="position:fixed;top:0;left:0;opacity:0;",document.body.appendChild(k),k.focus(),k.select(),document.execCommand("copy"),document.body.removeChild(k),console.log("Copied using execCommand")}s(!0),setTimeout(()=>s(!1),2e3)}}catch(p){console.error("Share error:",p)}};return g.jsxs("div",{className:"w-full h-[300px] sm:h-[300px] md:h-[400px] animate-card-entrance",children:[g.jsxs("div",{className:`glass-card w-full h-full \r
+https://icebreakers.wiki`;if(!window.matchMedia("(min-width: 1024px)").matches&&navigator.share)await navigator.share({text:p});else{try{await navigator.clipboard.writeText(p),console.log("Copied using clipboard API")}catch{const k=document.createElement("textarea");k.value=p,k.style.cssText="position:fixed;top:0;left:0;opacity:0;",document.body.appendChild(k),k.focus(),k.select(),document.execCommand("copy"),document.body.removeChild(k),console.log("Copied using execCommand")}s(!0),setTimeout(()=>s(!1),2e3)}}catch(p){console.error("Share error:",p)}};return g.jsxs("div",{className:"w-full h-[275px] sm:h-[300px] md:h-[400px] animate-card-entrance",children:[g.jsxs("div",{className:`glass-card w-full h-full \r
         px-6 sm:px-8 md:px-12 lg:px-16 \r
         pt-6 pb-28\r
         sm:pt-8 sm:pb-28\r
         md:pb-32\r
         max-w-[90vw] mx-auto\r
-        relative`,children:[g.jsxs("div",{className:"flex items-center justify-between mb-4 sm:mb-8",children:[g.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),g.jsx("button",{onClick:h,className:`p-2.5 md:p-3.5\r
+        relative`,children:[g.jsxs("div",{className:"flex items-center justify-between mb-2 sm:mb-8",children:[g.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),g.jsx("button",{onClick:h,className:`p-2.5 md:p-3.5\r
               -mr-2.5 md:-mr-3.5\r
               transition-colors\r
               hover:opacity-80\r
-              active:scale-95`,children:g.jsx(Of,{className:"w-5 h-5 text-white/60"})})]}),g.jsx("div",{className:"mb-4 sm:mb-8",children:g.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium",children:e.question})}),g.jsx("div",{className:`absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 \r
+              active:scale-95`,children:g.jsx(Of,{className:"w-5 h-5 text-white/60"})})]}),g.jsx("div",{className:"mb-2 sm:mb-8",children:g.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-3 text-white font-medium",children:e.question})}),g.jsx("div",{className:`absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 \r
           flex items-center gap-3 md:gap-4\r
           z-[999]`,children:l?g.jsx(m,{}):g.jsx(c,{})})]}),g.jsx("div",{className:`
         fixed bottom-24 left-1/2 -translate-x-1/2

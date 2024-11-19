@@ -216,16 +216,14 @@ function App() {
         {/* Title - adjust top spacing */}
         <h1 
           onClick={() => window.location.reload()} 
-          className="fixed 
+          className="title-text fixed 
+            left-1/2 -translate-x-1/2
             top-[calc(env(safe-area-inset-top)+6rem)] sm:top-[calc(env(safe-area-inset-top)+4rem)] 
-            left-1/2 
-            -translate-x-1/2
             text-4xl md:text-6xl lg:text-7xl 
             text-white z-50 
             font-['Space_Grotesk'] 
             tracking-[0.05em] 
             [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] 
-            flex items-center 
             hover:cursor-pointer 
             [animation:subtleFloat_4s_ease-in-out_infinite]"
         >
