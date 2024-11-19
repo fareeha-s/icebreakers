@@ -4,8 +4,8 @@
     "description": "conversation starters ✨",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#000000",
+    "background_color": "#CCDDFF",
+    "theme_color": "#CCDDFF",
     "orientation": "portrait",
     "icons": [
       {
