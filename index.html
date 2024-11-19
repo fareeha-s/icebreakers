@@ -66,10 +66,24 @@
     <!-- Update or add this meta tag -->
     <meta name="theme-color" content="#CCDDFF" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
+    <!-- Add this right after your first meta charset tag -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" as="style">
     <script type="module" crossorigin src="/assets/index.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index.css">
   <script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
   <body>
     <div id="root"></div>
+    <script>
+      if ("fonts" in document) {
+        Promise.all([
+          document.fonts.load("600 1em Space Grotesk")
+        ]).then(() => {
+          document.documentElement.classList.add("font-loaded");
+        });
+      } else {
+        document.documentElement.classList.add("font-loaded");
+      }
+    </script>
   </body>
 </html>
