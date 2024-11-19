@@ -272,3 +272,13 @@ body::before {
     }
   }
 }
+
+/* Add near the top of your file */
+.title-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.font-loaded .title-text {
+  opacity: 1;
+}

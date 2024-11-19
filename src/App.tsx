@@ -225,9 +225,10 @@ function App() {
             tracking-[0.05em] 
             [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] 
             hover:cursor-pointer 
-            [animation:subtleFloat_4s_ease-in-out_infinite]"
+            [animation:subtleFloat_4s_ease-in-out_infinite]
+            opacity-0"
         >
-          <div className="flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards]">
+          <div className="flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards] [animation-delay:0.1s]">
             <span className="animate-[wordLeft_2s_ease_forwards]">ice</span>
             <span className="relative text-white text-[1em] md:text-[1em] lg:text-[1em] font-['Space_Grotesk'] animate-slash-drop">/</span>
             <span className="animate-[wordRight_2s_ease_forwards]">breakers</span>

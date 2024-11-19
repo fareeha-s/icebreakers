@@ -18,13 +18,21 @@ export default function IcebreakerCard({
   isDarkMode,
 }: IcebreakerCardProps) {
   const [isIOSSafari, setIsIOSSafari] = useState(false);
+  const [isInAppBrowser, setIsInAppBrowser] = useState(false);
   const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
-    // Detect iOS Safari
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const userAgent = navigator.userAgent || navigator.vendor;
+    
+    // Keep existing iOS Safari detection exactly as is
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+    const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
     setIsIOSSafari(isIOS && isSafari);
+
+    // Add in-app browser detection
+    const isInstagram = /Instagram/.test(userAgent);
+    const isFacebook = /FBAN|FBAV/.test(userAgent);
+    setIsInAppBrowser(isInstagram || isFacebook);
   }, []);
 
   // Separate button components for different platforms
@@ -187,7 +195,7 @@ export default function IcebreakerCard({
         <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 
           flex items-center gap-3 md:gap-4
           z-[999]">
-          {isIOSSafari ? <IOSSafariButtons /> : <BrowserButtons />}
+          {(isIOSSafari || isInAppBrowser) ? <IOSSafariButtons /> : <BrowserButtons />}
         </div>
       </div>
       {/* Toast notification */}
