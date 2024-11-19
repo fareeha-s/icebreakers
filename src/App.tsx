@@ -203,7 +203,8 @@ function App() {
     <div className="fixed inset-0 
       [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:h-[100vh] 
       [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:pb-[env(safe-area-inset-bottom)]
-      [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:bg-black"  // Only apply black in PWA mode
+      [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:pt-[env(safe-area-inset-top)]  // Add top padding
+      [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:bg-white"  // Changed to white
     >
       <ThemeToggle 
         onThemeChange={handleThemeChange} 
@@ -220,15 +221,22 @@ function App() {
         {/* Title - adjust top spacing */}
         <h1 
           onClick={() => window.location.reload()} 
-          className="fixed top-[calc(env(safe-area-inset-top)+6rem)] sm:top-[calc(env(safe-area-inset-top)+4rem)] left-1/2 text-4xl md:text-6xl lg:text-7xl text-white z-50 font-['Space_Grotesk'] tracking-[0.05em] [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] flex items-center hover:cursor-pointer [animation:subtleFloat_4s_ease-in-out_infinite] -translate-x-1/2"
+          className="fixed 
+            top-[calc(env(safe-area-inset-top)+6rem)] sm:top-[calc(env(safe-area-inset-top)+4rem)] 
+            left-1/2 
+            -translate-x-1/2
+            text-4xl md:text-6xl lg:text-7xl 
+            text-white z-50 
+            font-['Space_Grotesk'] 
+            tracking-[0.05em] 
+            [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] 
+            flex items-center 
+            hover:cursor-pointer 
+            [animation:subtleFloat_4s_ease-in-out_infinite]"
         >
           <div className="flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards]">
             <span className="animate-[wordLeft_2s_ease_forwards]">ice</span>
-            <span 
-              className="relative text-white text-[1em] md:text-[1em] lg:text-[1em] font-['Space_Grotesk'] animate-slash-drop"
-            >
-              /
-            </span>
+            <span className="relative text-white text-[1em] md:text-[1em] lg:text-[1em] font-['Space_Grotesk'] animate-slash-drop">/</span>
             <span className="animate-[wordRight_2s_ease_forwards]">breakers</span>
           </div>
         </h1>
