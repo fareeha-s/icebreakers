@@ -12,7 +12,7 @@ export default function ThemeToggle({ onThemeChange, isDarkMode }: ThemeTogglePr
     <button
       onClick={toggleTheme}
       className="fixed z-50 top-8 right-8
-        [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:top-[calc(env(safe-area-inset-top)+3.5rem)]
+        [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:top-[calc(env(safe-area-inset-top)+4.5rem)]
         opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]
         px-3 py-3
         bg-[rgba(255,255,255,0.15)]

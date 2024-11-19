@@ -201,10 +201,9 @@ function App() {
 
   return (
     <div className="fixed inset-0 
-      [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:h-[100vh] 
-      [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:pb-[env(safe-area-inset-bottom)]
-      [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:pt-[env(safe-area-inset-top)]  // Add top padding
-      [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:bg-white"  // Changed to white
+      [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:min-h-[calc(100vh+env(safe-area-inset-bottom)+env(safe-area-inset-top))]
+      [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:bg-white  // White background as requested
+      overflow-hidden"
     >
       <ThemeToggle 
         onThemeChange={handleThemeChange} 
@@ -213,7 +212,7 @@ function App() {
       <main className={`fixed inset-0 
         overflow-hidden 
         min-h-[100vh]
-        [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:h-[calc(100vh+env(safe-area-inset-bottom))]
+        [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:min-h-[calc(100vh+env(safe-area-inset-bottom)+env(safe-area-inset-top))]
         ${isMonochrome 
           ? 'bg-black' 
           : 'bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20'
