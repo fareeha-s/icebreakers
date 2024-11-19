@@ -69,12 +69,12 @@ Error generating stack: `+l.message+`
           transition-colors
           ${r?"hover:shadow-[0_0_20px_rgba(255,182,193,0.3)]":"hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]"}
           active:scale-95`,children:g.jsx(Fl,{className:`w-5 h-5 transition-colors
-            ${r?"text-rose-200 fill-rose-200":"text-white fill-none"}`})}),g.jsx("button",{onClick:t,className:`relative px-4 py-2.5 rounded-xl \r
-          flex items-center gap-1.5 \r
-          bg-[rgba(255,255,255,0.15)]\r
-          backdrop-blur-md\r
-          border border-white/20\r
-          transition-colors\r
+            ${r?"text-rose-200 fill-rose-200":"text-white fill-none"}`})}),g.jsx("button",{onClick:t,className:`relative px-4 py-2.5 rounded-xl 
+          flex items-center gap-1.5 
+          bg-[rgba(255,255,255,0.15)]
+          backdrop-blur-md
+          border border-white/20
+          transition-colors
           active:scale-95`,children:g.jsx("span",{className:"text-white",children:"next →"})})]}),m=()=>g.jsxs("div",{className:"flex items-center gap-3",children:[g.jsx("button",{onClick:n,className:`relative p-3.5 rounded-full
           ${o?"bg-[rgba(255,255,255,0.15)]":"bg-[#AADDEE]/90"}
           active:opacity-80
@@ -85,18 +85,18 @@ Error generating stack: `+l.message+`
           transition-opacity`,children:g.jsx("span",{className:"text-white font-medium",children:"next →"})})]}),h=async()=>{try{const p=`Today's team question:
 ${e.question}
 
-https://icebreakers.wiki`;if(!window.matchMedia("(min-width: 1024px)").matches&&navigator.share)await navigator.share({text:p});else{try{await navigator.clipboard.writeText(p),console.log("Copied using clipboard API")}catch{const k=document.createElement("textarea");k.value=p,k.style.cssText="position:fixed;top:0;left:0;opacity:0;",document.body.appendChild(k),k.focus(),k.select(),document.execCommand("copy"),document.body.removeChild(k),console.log("Copied using execCommand")}s(!0),setTimeout(()=>s(!1),2e3)}}catch(p){console.error("Share error:",p)}};return g.jsxs("div",{className:"w-full h-[275px] sm:h-[300px] md:h-[400px] animate-card-entrance",children:[g.jsxs("div",{className:`glass-card w-full h-full \r
-        px-6 sm:px-8 md:px-12 lg:px-16 \r
-        pt-6 pb-28\r
-        sm:pt-8 sm:pb-28\r
-        md:pb-32\r
-        max-w-[90vw] mx-auto\r
-        relative`,children:[g.jsxs("div",{className:"flex items-center justify-between mb-2 sm:mb-8",children:[g.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),g.jsx("button",{onClick:h,className:`p-2.5 md:p-3.5\r
-              -mr-2.5 md:-mr-3.5\r
-              transition-colors\r
-              hover:opacity-80\r
-              active:scale-95`,children:g.jsx(Of,{className:"w-5 h-5 text-white/60"})})]}),g.jsx("div",{className:"mb-2 sm:mb-8",children:g.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-3 text-white font-medium",children:e.question})}),g.jsx("div",{className:`absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 \r
-          flex items-center gap-3 md:gap-4\r
+https://icebreakers.wiki`;if(!window.matchMedia("(min-width: 1024px)").matches&&navigator.share)await navigator.share({text:p});else{try{await navigator.clipboard.writeText(p),console.log("Copied using clipboard API")}catch{const k=document.createElement("textarea");k.value=p,k.style.cssText="position:fixed;top:0;left:0;opacity:0;",document.body.appendChild(k),k.focus(),k.select(),document.execCommand("copy"),document.body.removeChild(k),console.log("Copied using execCommand")}s(!0),setTimeout(()=>s(!1),2e3)}}catch(p){console.error("Share error:",p)}};return g.jsxs("div",{className:"w-full h-[275px] sm:h-[300px] md:h-[400px] animate-card-entrance",children:[g.jsxs("div",{className:`glass-card w-full h-full 
+        px-6 sm:px-8 md:px-12 lg:px-16 
+        pt-6 pb-28
+        sm:pt-8 sm:pb-28
+        md:pb-32
+        max-w-[90vw] mx-auto
+        relative`,children:[g.jsxs("div",{className:"flex items-center justify-between mb-2 sm:mb-8",children:[g.jsx("span",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:e.category}),g.jsx("button",{onClick:h,className:`p-2.5 md:p-3.5
+              -mr-2.5 md:-mr-3.5
+              transition-colors
+              hover:opacity-80
+              active:scale-95`,children:g.jsx(Of,{className:"w-5 h-5 text-white/60"})})]}),g.jsx("div",{className:"mb-2 sm:mb-8",children:g.jsx("h2",{className:"text-2xl md:text-4xl lg:text-5xl mt-3 text-white font-medium",children:e.question})}),g.jsx("div",{className:`absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-6 sm:right-8 md:right-12 lg:right-16 
+          flex items-center gap-3 md:gap-4
           z-[999]`,children:l?g.jsx(m,{}):g.jsx(c,{})})]}),g.jsx("div",{className:`
         fixed bottom-24 left-1/2 -translate-x-1/2
         px-4 py-2 rounded-lg
@@ -105,53 +105,51 @@ https://icebreakers.wiki`;if(!window.matchMedia("(min-width: 1024px)").matches&&
         text-white text-sm
         transition-all duration-300
         ${u?"opacity-100 translate-y-0":"opacity-0 translate-y-4"}
-      `,children:"Copied to clipboard! ✨"})]})}const Vu=e=>e.includes("Superior way to eat potatoes?")?g.jsxs(g.Fragment,{children:["Superior way to eat potatoes?",g.jsx("br",{}),"(mashed, roasted, hashed, 🍟...)"]}):e;function Df({history:e,favorites:t,onCardClick:n,onClearFavorites:r,onClearHistory:o}){return g.jsx("div",{className:"h-full max-h-full overflow-hidden",children:g.jsx("div",{className:"px-6 pt-6 pb-4 h-full flex flex-col",children:g.jsxs("div",{className:"flex h-full overflow-hidden",children:[g.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[g.jsx("div",{className:"shrink-0 mb-4",children:g.jsxs("div",{className:"flex items-center justify-between",children:[g.jsxs("div",{className:"flex items-center gap-2",children:[g.jsx(Fl,{className:"w-5 h-5 text-white/80 active:[&>path]:fill-red-500"}),g.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"Favorites"})]}),t.length>0&&g.jsxs("span",{className:"text-white/50 cursor-pointer",onClick:r,children:[g.jsx("span",{className:"sm:inline hidden text-sm",children:"clear"}),g.jsx("span",{className:"sm:hidden inline text-xl px-2",children:"×"})]})]})}),g.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]\r
-              [&::-webkit-scrollbar]:hidden`,children:g.jsx("div",{className:"space-y-2",children:t.slice().reverse().map(l=>g.jsx("button",{onClick:()=>n(l),className:`w-full text-left rounded-xl py-2 px-4\r
-                      bg-[rgba(255,255,255,0.15)]\r
-                      border border-white/30\r
-                      transition-all duration-300\r
-                      hover:bg-white/20\r
-                      active:scale-95\r
-                      transform-gpu\r
-                      [-webkit-tap-highlight-color:transparent]\r
-                      [color-scheme:light]`,children:g.jsx("p",{className:"text-white text-sm [-webkit-text-fill-color:white]",children:Vu(l.question)})},l.id))})})]}),g.jsx("div",{className:"w-px bg-white/20 mx-6"}),g.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[g.jsx("div",{className:"mb-4 px-2",children:g.jsxs("div",{className:"flex items-center justify-between",children:[g.jsxs("div",{className:"flex items-center gap-2",children:[g.jsx(Mf,{className:"w-5 h-5 text-white/80"}),g.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"History"})]}),e.length>0&&g.jsxs("span",{className:"text-white/50 cursor-pointer",onClick:o,children:[g.jsx("span",{className:"sm:inline hidden text-sm",children:"clear"}),g.jsx("span",{className:"sm:hidden inline text-xl px-2",children:"×"})]})]})}),g.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]\r
-              [&::-webkit-scrollbar]:hidden`,children:g.jsx("div",{className:"space-y-2",children:e.slice(-10).reverse().map(l=>g.jsx("button",{onClick:()=>n(l),className:`w-full text-left rounded-xl py-2 px-4\r
-                      bg-[rgba(255,255,255,0.15)]\r
-                      border border-white/30\r
-                      transition-all duration-300\r
-                      hover:bg-white/20\r
-                      active:scale-95\r
-                      transform-gpu\r
-                      [-webkit-tap-highlight-color:transparent]\r
-                      [color-scheme:light]`,children:g.jsx("p",{className:"text-white text-sm [-webkit-text-fill-color:white]",children:Vu(l.question)})},l.id))})})]})]})})})}function Ff({onThemeChange:e,isDarkMode:t}){const n=()=>{e==null||e(!t)};return g.jsx("button",{onClick:n,className:`fixed z-50 top-8 right-8\r
-        [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:top-[calc(env(safe-area-inset-top)+4.5rem)]\r
-        opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]\r
-        px-3 py-3\r
-        bg-[rgba(255,255,255,0.15)]\r
-        backdrop-blur-md\r
-        border border-white/20\r
-        shadow-[0_0_15px_rgba(255,255,255,0.15)]\r
-        hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]\r
-        rounded-xl\r
-        transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]\r
-        hover:bg-white/20\r
-        hover:scale-105\r
-        active:scale-100\r
+      `,children:"Copied to clipboard! ✨"})]})}const Vu=e=>e.includes("Superior way to eat potatoes?")?g.jsxs(g.Fragment,{children:["Superior way to eat potatoes?",g.jsx("br",{}),"(mashed, roasted, hashed, 🍟...)"]}):e;function Df({history:e,favorites:t,onCardClick:n,onClearFavorites:r,onClearHistory:o}){return g.jsx("div",{className:"h-full max-h-full overflow-hidden",children:g.jsx("div",{className:"px-6 pt-6 pb-4 h-full flex flex-col",children:g.jsxs("div",{className:"flex h-full overflow-hidden",children:[g.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[g.jsx("div",{className:"shrink-0 mb-4",children:g.jsxs("div",{className:"flex items-center justify-between",children:[g.jsxs("div",{className:"flex items-center gap-2",children:[g.jsx(Fl,{className:"w-5 h-5 text-white/80 active:[&>path]:fill-red-500"}),g.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"Favorites"})]}),t.length>0&&g.jsxs("span",{className:"text-white/50 cursor-pointer",onClick:r,children:[g.jsx("span",{className:"sm:inline hidden text-sm",children:"clear"}),g.jsx("span",{className:"sm:hidden inline text-xl px-2",children:"×"})]})]})}),g.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]
+              [&::-webkit-scrollbar]:hidden`,children:g.jsx("div",{className:"space-y-2",children:t.slice().reverse().map(l=>g.jsx("button",{onClick:()=>n(l),className:`w-full text-left rounded-xl py-2 px-4
+                      bg-[rgba(255,255,255,0.15)]
+                      border border-white/30
+                      transition-all duration-300
+                      hover:bg-white/20
+                      active:scale-95
+                      transform-gpu
+                      [-webkit-tap-highlight-color:transparent]
+                      [color-scheme:light]`,children:g.jsx("p",{className:"text-white text-sm [-webkit-text-fill-color:white]",children:Vu(l.question)})},l.id))})})]}),g.jsx("div",{className:"w-px bg-white/20 mx-6"}),g.jsxs("div",{className:"flex-1 min-w-0 flex flex-col overflow-hidden",children:[g.jsx("div",{className:"mb-4 px-2",children:g.jsxs("div",{className:"flex items-center justify-between",children:[g.jsxs("div",{className:"flex items-center gap-2",children:[g.jsx(Mf,{className:"w-5 h-5 text-white/80"}),g.jsx("h2",{className:"text-base text-white/80 uppercase tracking-wider font-medium",children:"History"})]}),e.length>0&&g.jsxs("span",{className:"text-white/50 cursor-pointer",onClick:o,children:[g.jsx("span",{className:"sm:inline hidden text-sm",children:"clear"}),g.jsx("span",{className:"sm:hidden inline text-xl px-2",children:"×"})]})]})}),g.jsx("div",{className:`flex-1 overflow-y-auto scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]
+              [&::-webkit-scrollbar]:hidden`,children:g.jsx("div",{className:"space-y-2",children:e.slice(-10).reverse().map(l=>g.jsx("button",{onClick:()=>n(l),className:`w-full text-left rounded-xl py-2 px-4
+                      bg-[rgba(255,255,255,0.15)]
+                      border border-white/30
+                      transition-all duration-300
+                      hover:bg-white/20
+                      active:scale-95
+                      transform-gpu
+                      [-webkit-tap-highlight-color:transparent]
+                      [color-scheme:light]`,children:g.jsx("p",{className:"text-white text-sm [-webkit-text-fill-color:white]",children:Vu(l.question)})},l.id))})})]})]})})})}function Ff({onThemeChange:e,isDarkMode:t}){const n=()=>{e==null||e(!t)};return g.jsx("button",{onClick:n,className:`fixed z-50 top-8 right-8
+        [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:top-[calc(env(safe-area-inset-top)+4.5rem)]
+        opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]
+        px-3 py-3
+        bg-[rgba(255,255,255,0.15)]
+        backdrop-blur-md
+        border border-white/20
+        shadow-[0_0_15px_rgba(255,255,255,0.15)]
+        hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
+        rounded-xl
+        transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
+        hover:bg-white/20
+        hover:scale-105
+        active:scale-100
         transform-gpu`,children:g.jsx("svg",{viewBox:"0 0 24 24",className:"w-5 h-5 text-white hover:text-white/80",stroke:"currentColor",strokeWidth:"1.5",fill:"none",children:t?g.jsxs(g.Fragment,{children:[g.jsx("circle",{cx:"12",cy:"12",r:"4"}),g.jsx("line",{x1:"12",y1:"3",x2:"12",y2:"5"}),g.jsx("line",{x1:"12",y1:"19",x2:"12",y2:"21"}),g.jsx("line",{x1:"5",y1:"12",x2:"3",y2:"12"}),g.jsx("line",{x1:"21",y1:"12",x2:"19",y2:"12"}),g.jsx("line",{x1:"7.05",y1:"7.05",x2:"5.636",y2:"5.636"}),g.jsx("line",{x1:"18.364",y1:"18.364",x2:"16.95",y2:"16.95"}),g.jsx("line",{x1:"16.95",y1:"7.05",x2:"18.364",y2:"5.636"}),g.jsx("line",{x1:"5.636",y1:"18.364",x2:"7.05",y2:"16.95"})]}):g.jsx("path",{d:"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"})})})}function Uf(){return g.jsx("div",{className:"w-[90vw] max-w-[1225px] mx-auto px-4 mb-1",children:g.jsx("div",{className:"flex justify-end pr-4",children:g.jsx("a",{href:"https://www.linkedin.com/in/fareehas",target:"_blank",rel:"noopener noreferrer",className:"text-xs engraved-text hover:text-white/90 transition-colors duration-200",children:"sincerely, Fareeha"})})})}function $f(){const[e]=U.useState(()=>!localStorage.getItem("has-visited-before")),[t,n]=U.useState(()=>{if(e)return localStorage.setItem("has-visited-before","true"),Je.find(W=>W.id==="1")||Je[0];const x=Math.floor(Math.random()*Je.length);return Je[x]}),[r,o]=U.useState(1);U.useEffect(()=>{localStorage.removeItem("icebreaker-history")},[]);const[l,i]=U.useState([]),[u,s]=U.useState(()=>{const x=localStorage.getItem("icebreaker-favorites");return x?JSON.parse(x):[]});U.useEffect(()=>{localStorage.setItem("icebreaker-favorites",JSON.stringify(u))},[u]),U.useEffect(()=>{localStorage.setItem("icebreaker-history",JSON.stringify(l))},[l]);const[c,m]=U.useState(!1),[h,p]=U.useState(()=>{const x=localStorage.getItem("icebreaker-used");return x?JSON.parse(x):[t.id]}),[w,S]=U.useState(!1),k=()=>{const x=[...h];if(x.length>=Je.length){p([]),o(1);const L=Math.floor(Math.random()*Je.length),de=Je[L];n(de),i(vt=>[...vt,de].slice(-10));return}const W=Je.filter(L=>!x.includes(L.id));if(!W.length){p([]),o(1);return}let P;if(e)if(r>=1&&r<=3){const L=W.filter(de=>de.vibe);if(L.length>0){const de=Math.floor(Math.random()*L.length);P=L[de]}else{const de=Math.floor(Math.random()*W.length);P=W[de]}}else{const L=Math.floor(Math.random()*W.length);P=W[L]}else{const L=Math.floor(Math.random()*W.length);P=W[L]}n(P),p(L=>[...L,P.id]),i(L=>[...L,P].slice(-10)),o(L=>L+1)};U.useEffect(()=>{localStorage.setItem("icebreaker-used",JSON.stringify(h))},[h]);const[O,d]=U.useState(()=>localStorage.getItem("has-ever-favorited")==="true"),a=()=>{u.some(W=>W.id===t.id)?s(W=>W.filter(P=>P.id!==t.id)):(s(W=>[...W,t]),O||setTimeout(()=>{m(!0),d(!0),localStorage.setItem("has-ever-favorited","true")},300))};U.useEffect(()=>{localStorage.setItem("icebreaker-favorites",JSON.stringify(u))},[u]);const f=x=>{n(x),i(W=>[...W.filter(L=>L.id!==x.id),x].slice(-10)),u.some(W=>W.id===x.id)&&s(W=>[...W.filter(L=>L.id!==x.id),x])},y=()=>{s([]),localStorage.setItem("favorites",JSON.stringify([]))},j=()=>{i([])},C=x=>{S(x)},N=()=>{try{return localStorage.setItem("test","test"),localStorage.removeItem("test"),!0}catch{return!1}};return U.useEffect(()=>{N()&&localStorage.setItem("icebreaker-used",JSON.stringify(h))},[h]),g.jsxs("div",{className:"fixed inset-0",children:[g.jsx(Ff,{onThemeChange:C,isDarkMode:w}),g.jsxs("main",{className:`fixed inset-0 
         overflow-hidden 
         min-h-[100vh]
         [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:min-h-[calc(100vh+env(safe-area-inset-bottom))] 
-        ${w?"bg-black":"bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20"}`,children:[g.jsx("h1",{onClick:()=>window.location.reload(),className:`fixed \r
-            top-[calc(env(safe-area-inset-top)+6rem)] sm:top-[calc(env(safe-area-inset-top)+4rem)] \r
-            left-1/2 \r
-            -translate-x-1/2\r
-            text-4xl md:text-6xl lg:text-7xl \r
-            text-white z-50 \r
-            font-['Space_Grotesk'] \r
-            tracking-[0.05em] \r
-            [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] \r
-            flex items-center \r
-            hover:cursor-pointer \r
+        ${w?"bg-black":"bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20"}`,children:[g.jsx("h1",{onClick:()=>window.location.reload(),className:`title-text fixed 
+            left-1/2 -translate-x-1/2
+            top-[calc(env(safe-area-inset-top)+6rem)] sm:top-[calc(env(safe-area-inset-top)+4rem)] 
+            text-4xl md:text-6xl lg:text-7xl 
+            text-white z-50 
+            font-['Space_Grotesk'] 
+            tracking-[0.05em] 
+            [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] 
+            hover:cursor-pointer 
             [animation:subtleFloat_4s_ease-in-out_infinite]`,children:g.jsxs("div",{className:"flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards]",children:[g.jsx("span",{className:"animate-[wordLeft_2s_ease_forwards]",children:"ice"}),g.jsx("span",{className:"relative text-white text-[1em] md:text-[1em] lg:text-[1em] font-['Space_Grotesk'] animate-slash-drop",children:"/"}),g.jsx("span",{className:"animate-[wordRight_2s_ease_forwards]",children:"breakers"})]})}),g.jsx("div",{className:`w-full transition-all duration-300 ease-in-out
           ${c?"h-[80vh] min-h-[400px]":"h-screen min-h-[600px]"}
           flex items-center justify-center`,children:g.jsxs("div",{className:"w-full flex flex-col opacity-0 animate-[fadeIn_1s_ease_forwards] [animation-delay:1.5s]",children:[g.jsx(Uf,{}),g.jsx("div",{className:"w-[90vw] max-w-[1200px] mx-auto",children:g.jsx(Rf,{icebreaker:t,isFavorite:u.some(x=>x.id===t.id),onToggleFavorite:a,onNext:k,isDarkMode:w})})]})}),g.jsx("div",{className:`fixed bottom-0 left-0 right-0 
