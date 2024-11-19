@@ -40,8 +40,12 @@ html {
 }
 
 @keyframes subtleFloat {
-  0%, 100% { transform: translate(-50%, 0px); }
-  50% { transform: translate(-50%, -10px); }
+  0%, 100% { 
+    transform: translate(-50%, 0px); 
+  }
+  50% { 
+    transform: translate(-50%, -10px); 
+  }
 }
 
 .glass-card {
@@ -159,16 +163,6 @@ button {
     transform-origin: center !important;
     width: 100% !important;
     text-align: center !important;
-  }
-
-  /* Adjust the animation for PWA mode */
-  @keyframes subtleFloat {
-    0%, 100% { 
-      transform: translate(-50%, 0px); 
-    }
-    50% { 
-      transform: translate(-50%, -10px); 
-    }
   }
 
   button[class*="bottom-8"] {
