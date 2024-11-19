@@ -218,7 +218,7 @@ function App() {
           onClick={() => window.location.reload()} 
           className="title-text fixed 
             left-1/2 -translate-x-1/2
-            top-[calc(env(safe-area-inset-top)+6rem)] sm:top-[calc(env(safe-area-inset-top)+4rem)] 
+            top-[calc(env(safe-area-inset-top)+7rem)] sm:top-[calc(env(safe-area-inset-top)+4rem)] 
             text-4xl md:text-6xl lg:text-7xl 
             text-white z-50 
             font-['Space_Grotesk'] 

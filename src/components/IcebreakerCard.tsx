@@ -151,7 +151,7 @@ export default function IcebreakerCard({
   };
 
   return (
-    <div className="w-full h-[275px] sm:h-[300px] md:h-[400px] animate-card-entrance">
+    <div className="w-full h-[260px] sm:h-[300px] md:h-[400px] animate-card-entrance">
       <div className="glass-card w-full h-full 
         px-6 sm:px-8 md:px-12 lg:px-16 
         pt-6 pb-28

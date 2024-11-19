@@ -141,16 +141,14 @@ https://icebreakers.wiki`;if(!window.matchMedia("(min-width: 1024px)").matches&&
         overflow-hidden 
         min-h-[100vh]
         [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:min-h-[calc(100vh+env(safe-area-inset-bottom))] 
-        ${w?"bg-black":"bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20"}`,children:[g.jsx("h1",{onClick:()=>window.location.reload(),className:`fixed \r
+        ${w?"bg-black":"bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20"}`,children:[g.jsx("h1",{onClick:()=>window.location.reload(),className:`title-text fixed \r
+            left-1/2 -translate-x-1/2\r
             top-[calc(env(safe-area-inset-top)+6rem)] sm:top-[calc(env(safe-area-inset-top)+4rem)] \r
-            left-1/2 \r
-            -translate-x-1/2\r
             text-4xl md:text-6xl lg:text-7xl \r
             text-white z-50 \r
             font-['Space_Grotesk'] \r
             tracking-[0.05em] \r
             [text-shadow:_0_0_30px_rgba(255,255,255,0.15)] \r
-            flex items-center \r
             hover:cursor-pointer \r
             [animation:subtleFloat_4s_ease-in-out_infinite]`,children:g.jsxs("div",{className:"flex items-center opacity-0 animate-[fadeIn_1.6s_ease_forwards]",children:[g.jsx("span",{className:"animate-[wordLeft_2s_ease_forwards]",children:"ice"}),g.jsx("span",{className:"relative text-white text-[1em] md:text-[1em] lg:text-[1em] font-['Space_Grotesk'] animate-slash-drop",children:"/"}),g.jsx("span",{className:"animate-[wordRight_2s_ease_forwards]",children:"breakers"})]})}),g.jsx("div",{className:`w-full transition-all duration-300 ease-in-out
           ${c?"h-[80vh] min-h-[400px]":"h-screen min-h-[600px]"}
