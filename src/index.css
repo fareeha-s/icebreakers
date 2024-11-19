@@ -204,6 +204,7 @@ body::before {
   
   body {
     min-height: -webkit-fill-available;
+    padding-top: env(safe-area-inset-top);
   }
 
   /* Title specific for iOS Safari */
@@ -216,11 +217,44 @@ body::before {
     -webkit-transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
   }
+
+  /* Add this to handle the status bar background */
+  body::before {
+    padding-top: env(safe-area-inset-top);
+  }
 }
 
 /* PWA specific styles (these will override iOS Safari styles when in PWA mode) */
 @supports (-webkit-touch-callout: none) and (display: standalone) {
   .title-text {
     top: calc(env(safe-area-inset-top) + 7rem) !important;
+  }
+}
+
+/* Update the status bar color based on theme */
+@supports (-webkit-touch-callout: none) {
+  /* Default iOS Safari - use default status bar except in dark mode */
+  body {
+    /* ... existing code ... */
+    &.dark-theme {
+      /* Only apply black background in dark mode */
+      background: black;
+      color-scheme: dark;
+    }
+  }
+
+  /* PWA specific styles */
+  @media (display: standalone) {
+    body {
+      /* Make gradient extend to top in light mode */
+      padding-top: env(safe-area-inset-top);
+      background: linear-gradient(145deg, #CCDDFF, #AADDEE, #99DDCC, #88CCBB, #66CCAA);
+      background-size: 200% 200%;
+      
+      &.dark-theme {
+        /* Black background in dark mode */
+        background: black;
+      }
+    }
   }
 }

@@ -200,7 +200,7 @@ function App() {
   }, [usedQuestions]);
 
   return (
-    <div className="fixed inset-0">
+    <div className={`fixed inset-0 ${isMonochrome ? 'dark-theme' : ''}`}>
       <ThemeToggle 
         onThemeChange={handleThemeChange} 
         isDarkMode={isMonochrome} 
