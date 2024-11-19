@@ -85,9 +85,9 @@ Error generating stack: `+l.message+`
           transition-opacity`,children:g.jsx("span",{className:"text-white font-medium",children:"next →"})})]}),h=async()=>{try{const p=`Today's team question:
 ${e.question}
 
-https://icebreakers.wiki`;if(!window.matchMedia("(min-width: 1024px)").matches&&navigator.share)await navigator.share({text:p});else{try{await navigator.clipboard.writeText(p),console.log("Copied using clipboard API")}catch{const k=document.createElement("textarea");k.value=p,k.style.cssText="position:fixed;top:0;left:0;opacity:0;",document.body.appendChild(k),k.focus(),k.select(),document.execCommand("copy"),document.body.removeChild(k),console.log("Copied using execCommand")}s(!0),setTimeout(()=>s(!1),2e3)}}catch(p){console.error("Share error:",p)}};return g.jsxs("div",{className:"w-full h-[250px] sm:h-[300px] md:h-[400px] animate-card-entrance",children:[g.jsxs("div",{className:`glass-card w-full h-full \r
+https://icebreakers.wiki`;if(!window.matchMedia("(min-width: 1024px)").matches&&navigator.share)await navigator.share({text:p});else{try{await navigator.clipboard.writeText(p),console.log("Copied using clipboard API")}catch{const k=document.createElement("textarea");k.value=p,k.style.cssText="position:fixed;top:0;left:0;opacity:0;",document.body.appendChild(k),k.focus(),k.select(),document.execCommand("copy"),document.body.removeChild(k),console.log("Copied using execCommand")}s(!0),setTimeout(()=>s(!1),2e3)}}catch(p){console.error("Share error:",p)}};return g.jsxs("div",{className:"w-full h-[300px] sm:h-[300px] md:h-[400px] animate-card-entrance",children:[g.jsxs("div",{className:`glass-card w-full h-full \r
         px-6 sm:px-8 md:px-12 lg:px-16 \r
-        pt-6 pb-24\r
+        pt-6 pb-28\r
         sm:pt-8 sm:pb-28\r
         md:pb-32\r
         max-w-[90vw] mx-auto\r
@@ -141,7 +141,7 @@ https://icebreakers.wiki`;if(!window.matchMedia("(min-width: 1024px)").matches&&
         overflow-hidden 
         min-h-[100vh]
         [@supports(-webkit-touch-callout:none)_and_(display:standalone)]:min-h-[calc(100vh+env(safe-area-inset-bottom))] 
-        ${w?"bg-black":"bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20"}`,children:[g.jsx("h1",{onClick:()=>window.location.reload(),className:`title-text fixed \r
+        ${w?"bg-black":"bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20"}`,children:[g.jsx("h1",{onClick:()=>window.location.reload(),className:`fixed \r
             top-[calc(env(safe-area-inset-top)+6rem)] sm:top-[calc(env(safe-area-inset-top)+4rem)] \r
             left-1/2 \r
             -translate-x-1/2\r

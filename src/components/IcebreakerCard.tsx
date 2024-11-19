@@ -151,7 +151,7 @@ export default function IcebreakerCard({
   };
 
   return (
-    <div className="w-full h-[300px] sm:h-[300px] md:h-[400px] animate-card-entrance">
+    <div className="w-full h-[275px] sm:h-[300px] md:h-[400px] animate-card-entrance">
       <div className="glass-card w-full h-full 
         px-6 sm:px-8 md:px-12 lg:px-16 
         pt-6 pb-28
@@ -160,7 +160,7 @@ export default function IcebreakerCard({
         max-w-[90vw] mx-auto
         relative">
         {/* Top section with category and send */}
-        <div className="flex items-center justify-between mb-4 sm:mb-8">
+        <div className="flex items-center justify-between mb-2 sm:mb-8">
           <span className="text-base text-white/80 uppercase tracking-wider font-medium">
             {icebreaker.category}
           </span>
@@ -177,8 +177,8 @@ export default function IcebreakerCard({
         </div>
 
         {/* Rest of the card content */}
-        <div className="mb-4 sm:mb-8">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl mt-6 text-white font-medium">
+        <div className="mb-2 sm:mb-8">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl mt-3 text-white font-medium">
             {icebreaker.question}
           </h2>
         </div>
