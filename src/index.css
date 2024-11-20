@@ -214,8 +214,12 @@ body::before {
     transform: translateX(-50%) !important;
     /* Match App.tsx spacing of 7rem */
     top: calc(env(safe-area-inset-top) + 7rem) !important;
+    transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   /* Add this to handle the status bar background */

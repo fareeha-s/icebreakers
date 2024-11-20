@@ -24,15 +24,33 @@ export default function IcebreakerCard({
   useEffect(() => {
     const userAgent = navigator.userAgent || navigator.vendor;
     
-    // Keep existing iOS Safari detection exactly as is
+    // Keep existing iOS Safari detection
     const isIOS = /iPad|iPhone|iPod/.test(userAgent);
     const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
     setIsIOSSafari(isIOS && isSafari);
 
-    // Add in-app browser detection
+    // Expanded in-app browser detection
     const isInstagram = /Instagram/.test(userAgent);
     const isFacebook = /FBAN|FBAV/.test(userAgent);
-    setIsInAppBrowser(isInstagram || isFacebook);
+    const isLinkedIn = /LinkedInApp/.test(userAgent);
+    const isWeChat = /MicroMessenger/.test(userAgent);
+    const isLine = /Line/.test(userAgent);
+    const isTwitter = /Twitter/.test(userAgent);
+    const isSlack = /Slack/.test(userAgent);
+    const isDiscord = /Discord/.test(userAgent);
+    const isWebView = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Version)/i.test(userAgent);
+    
+    setIsInAppBrowser(
+      isInstagram || 
+      isFacebook || 
+      isLinkedIn || 
+      isWeChat || 
+      isLine || 
+      isTwitter || 
+      isSlack || 
+      isDiscord || 
+      isWebView
+    );
   }, []);
 
   // Separate button components for different platforms

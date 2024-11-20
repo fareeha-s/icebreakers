@@ -69,6 +69,13 @@
 
     <!-- Add this right after your first meta charset tag -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" as="style">
+
+    <!-- Add this line to force portrait orientation -->
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    
+    <!-- For iOS specifically, you might also want to add: -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-orientation" content="portrait">
   </head>
   <body>
     <div id="root"></div>
