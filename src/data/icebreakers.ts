@@ -566,7 +566,7 @@ export const icebreakers: Icebreaker[] = [
   },
   {
     id: '89',
-    question: "What song have you have in your head all week?",
+    question: "What song have you had in your head all week?",
     category: 'fun',
     mode: 'journal'
   },
