@@ -1,6 +1,7 @@
-import { Heart, Send } from 'lucide-react';
+import { Check, Copy, Heart, Loader2, Send, Slack, Users } from 'lucide-react';
 import type { Icebreaker } from '../data/icebreakers';
 import { useState, useEffect } from 'react';
+import { API_URL, SLACK_INSTALL_URL } from '../lib/rooms';
 
 interface IcebreakerCardProps {
   icebreaker: Icebreaker;
@@ -8,6 +9,7 @@ interface IcebreakerCardProps {
   onToggleFavorite: () => void;
   isFavorite: boolean;
   isDarkMode: boolean;
+  onStartRoom: () => Promise<void>;
 }
 
 export default function IcebreakerCard({
@@ -16,10 +18,13 @@ export default function IcebreakerCard({
   onToggleFavorite,
   isFavorite,
   isDarkMode,
+  onStartRoom,
 }: IcebreakerCardProps) {
   const [isIOSSafari, setIsIOSSafari] = useState(false);
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
-  const [showToast, setShowToast] = useState(false);
+  const [toast, setToast] = useState({ message: '', visible: false });
+  const [copied, setCopied] = useState(false);
+  const [startingRoom, setStartingRoom] = useState(false);
 
   useEffect(() => {
     const userAgent = navigator.userAgent || navigator.vendor;
@@ -135,46 +140,60 @@ export default function IcebreakerCard({
     </div>
   );
 
-  // Add the share handler inside the component
-  const handleShare = async () => {
+  const flash = (message: string) => {
+    setToast({ message, visible: true });
+    setTimeout(() => setToast(t => ({ ...t, visible: false })), 2000);
+  };
+
+  const copyText = async (text: string) => {
     try {
-      const shareText = `Today's team question:\n${icebreaker.question}\n\nhttps://icebreakers.wiki`;
-      
-      // Check if it's desktop
-      const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
-      
-      if (!isDesktop && navigator.share) {
-        // Mobile: use share sheet
-        await navigator.share({
-          text: shareText
-        });
-      } else {
-        // Desktop: try clipboard methods
-        try {
-          // Try modern clipboard API first
-          await navigator.clipboard.writeText(shareText);
-          console.log('Copied using clipboard API');
-        } catch (clipboardError) {
-          // Fallback to execCommand
-          const textArea = document.createElement('textarea');
-          textArea.value = shareText;
-          textArea.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
-          document.body.appendChild(textArea);
-          textArea.focus();
-          textArea.select();
-          document.execCommand('copy');
-          document.body.removeChild(textArea);
-          console.log('Copied using execCommand');
-        }
-        
-        // Show toast
-        setShowToast(true);
-        setTimeout(() => setShowToast(false), 2000);
-      }
-    } catch (error) {
-      console.error('Share error:', error);
+      await navigator.clipboard.writeText(text);
+    } catch {
+      // Older and in-app browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
     }
   };
+
+  const handleCopy = async () => {
+    await copyText(icebreaker.question);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+    flash('Copied ✨');
+  };
+
+  const handleShare = async () => {
+    const shareText = `Today's team question:\n${icebreaker.question}\n\nhttps://icebreakers.wiki`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ text: shareText });
+        return;
+      } catch (error) {
+        if ((error as Error).name === 'AbortError') return; // closed the share sheet
+      }
+    }
+    await copyText(shareText);
+    flash('Copied with a link ✨');
+  };
+
+  const handleStartRoom = async () => {
+    setStartingRoom(true);
+    try {
+      await onStartRoom();
+    } catch {
+      flash("Couldn't start a room. Try again?");
+    } finally {
+      setStartingRoom(false);
+    }
+  };
+
+  const iconButton = 'p-2.5 md:p-3 transition-colors hover:opacity-80 active:scale-95 text-white/60';
 
   return (
     <div className="w-full h-[260px] sm:h-[300px] md:h-[400px] animate-card-entrance">
@@ -185,21 +204,43 @@ export default function IcebreakerCard({
         md:pb-32
         max-w-[90vw] mx-auto
         relative">
-        {/* Top section with category and send */}
+        {/* Top section with category and actions */}
         <div className="flex items-center justify-between mb-2 sm:mb-8">
           <span className="text-base text-white/80 uppercase tracking-wider font-medium">
             {icebreaker.category}
           </span>
-          <button
-            onClick={handleShare}
-            className="p-2.5 md:p-3.5
-              -mr-2.5 md:-mr-3.5
-              transition-colors
-              hover:opacity-80
-              active:scale-95"
-          >
-            <Send className="w-5 h-5 text-white/60" />
-          </button>
+          <div className="flex items-center -mr-2.5 md:-mr-3">
+            {API_URL && (
+              <button
+                onClick={handleStartRoom}
+                disabled={startingRoom}
+                title="Start a live room: everyone answers on their phone, then reveal"
+                aria-label="Start a live room"
+                className={`${iconButton} flex items-center gap-1.5`}
+              >
+                {startingRoom ? <Loader2 className="w-5 h-5 animate-spin" /> : <Users className="w-5 h-5" />}
+                <span className="hidden sm:inline text-sm">live room</span>
+              </button>
+            )}
+            {SLACK_INSTALL_URL && (
+              <a
+                href={SLACK_INSTALL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Add icebreakers to Slack"
+                aria-label="Add icebreakers to Slack"
+                className={iconButton}
+              >
+                <Slack className="w-5 h-5" />
+              </a>
+            )}
+            <button onClick={handleCopy} title="Copy question" aria-label="Copy question" className={iconButton}>
+              {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
+            </button>
+            <button onClick={handleShare} title="Share" aria-label="Share" className={iconButton}>
+              <Send className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Rest of the card content */}
@@ -224,9 +265,10 @@ export default function IcebreakerCard({
         border border-white/20
         text-white text-sm
         transition-all duration-300
-        ${showToast ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+        pointer-events-none
+        ${toast.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
       `}>
-        Copied to clipboard! ✨
+        {toast.message}
       </div>
     </div>
   );

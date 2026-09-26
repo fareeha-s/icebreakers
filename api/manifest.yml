@@ -1,0 +1,32 @@
+# Paste into https://api.slack.com/apps → Create New App → From a manifest.
+# Replace YOUR-WORKER with your worker's URL (e.g. icebreakers-slack.you.workers.dev).
+display_information:
+  name: icebreakers
+  description: A good question for your team, whenever you need one.
+  background_color: "#6f8fd6"
+features:
+  bot_user:
+    display_name: icebreakers
+    always_online: true
+  slash_commands:
+    - command: /icebreaker
+      url: https://YOUR-WORKER/slack/commands
+      description: Get a conversation starter
+      usage_hint: "[fun | creative | deep | quick | tech | daily 9am | help]"
+      should_escape: false
+oauth_config:
+  redirect_urls:
+    - https://YOUR-WORKER/slack/oauth
+  scopes:
+    bot:
+      - commands
+      - chat:write
+      - chat:write.public
+      - users:read
+settings:
+  interactivity:
+    is_enabled: true
+    request_url: https://YOUR-WORKER/slack/interactions
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
