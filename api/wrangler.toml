@@ -10,7 +10,7 @@ crons = ["*/5 * * * *"]
 [[d1_databases]]
 binding = "DB"
 database_name = "icebreakers"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_id = "8b7ea285-24ae-4bbe-a0a3-b88f585a4c07"
 migrations_dir = "migrations"
 
 # Live rooms: one Durable Object per room code, holding its sockets and answers.
