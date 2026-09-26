@@ -4,6 +4,13 @@ import IcebreakerCard from './components/IcebreakerCard';
 import Sidebar from './components/Sidebar';
 import ThemeToggle from './components/ThemeToggle';
 import Signature from './components/Signature';
+import Room from './components/Room';
+import { API_URL, createRoom } from './lib/rooms';
+
+const roomFromUrl = () => {
+  const code = new URLSearchParams(window.location.search).get('room')?.toUpperCase();
+  return code && /^[A-Z0-9]{4}$/.test(code) ? code : null;
+};
 
 function App() {
   // Check if it's user's first visit
@@ -199,6 +206,30 @@ function App() {
     }
   }, [usedQuestions]);
 
+  // Live rooms: icebreakers.wiki/?room=ABCD
+  const [room, setRoom] = useState(() => ({ code: roomFromUrl(), justCreated: false }));
+
+  useEffect(() => {
+    const onPop = () => setRoom({ code: roomFromUrl(), justCreated: false });
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
+  const startRoom = async () => {
+    const code = await createRoom(currentIcebreaker.id);
+    window.history.pushState({}, '', `/?room=${code}`);
+    setRoom({ code, justCreated: true });
+  };
+
+  const leaveRoom = () => {
+    window.history.pushState({}, '', '/');
+    setRoom({ code: null, justCreated: false });
+  };
+
+  if (room.code && API_URL) {
+    return <Room code={room.code} isDarkMode={isMonochrome} justCreated={room.justCreated} onLeave={leaveRoom} />;
+  }
+
   return (
     <div className={`fixed inset-0 ${isMonochrome ? 'dark-theme' : ''}`}>
       <ThemeToggle 
@@ -249,6 +280,7 @@ function App() {
                 onToggleFavorite={toggleFavorite}
                 onNext={getNextIcebreaker}
                 isDarkMode={isMonochrome}
+                onStartRoom={startRoom}
               />
             </div>
           </div>
