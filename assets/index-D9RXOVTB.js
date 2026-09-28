@@ -130,7 +130,7 @@ Error generating stack: `+l.message+`
           transition-opacity`,children:y.jsx("span",{className:"text-white font-medium",children:"next →"})})]}),f=S=>{d({message:S,visible:!0}),setTimeout(()=>d(L=>({...L,visible:!1})),2e3)},h=async S=>{try{await navigator.clipboard.writeText(S)}catch{const L=document.createElement("textarea");L.value=S,L.style.cssText="position:fixed;top:0;left:0;opacity:0;",document.body.appendChild(L),L.focus(),L.select(),document.execCommand("copy"),document.body.removeChild(L)}},x=async()=>{await h(e.question),v(!0),setTimeout(()=>v(!1),1500),f("Copied ✨")},E=async()=>{const S=`Today's team question:
 ${e.question}
 
-https://icebreakers.wiki`;if(navigator.share)try{await navigator.share({text:S});return}catch(L){if(L.name==="AbortError")return}await h(S),f("Copied with a link ✨")},_=async()=>{w(!0);try{await l()}catch{f("Couldn't start a room. Try again?")}finally{w(!1)}},N="p-2.5 md:p-3 transition-colors hover:opacity-80 active:scale-95 text-white/60";return y.jsxs("div",{className:"w-full h-[260px] sm:h-[300px] md:h-[400px] animate-card-entrance",children:[y.jsxs("div",{className:`glass-card w-full h-full 
+https://icebreakers.best`;if(navigator.share)try{await navigator.share({text:S});return}catch(L){if(L.name==="AbortError")return}await h(S),f("Copied with a link ✨")},_=async()=>{w(!0);try{await l()}catch{f("Couldn't start a room. Try again?")}finally{w(!1)}},N="p-2.5 md:p-3 transition-colors hover:opacity-80 active:scale-95 text-white/60";return y.jsxs("div",{className:"w-full h-[260px] sm:h-[300px] md:h-[400px] animate-card-entrance",children:[y.jsxs("div",{className:`glass-card w-full h-full 
         px-6 sm:px-8 md:px-12 lg:px-16 
         pt-6 pb-28
         sm:pt-8 sm:pb-28
@@ -226,4 +226,4 @@ https://icebreakers.wiki`;if(navigator.share)try{await navigator.share({text:S})
           hover:scale-105
           active:scale-100
           ${s?"rotate-45":"rotate-0"}`,children:y.jsxs("svg",{viewBox:"0 0 24 24",className:"w-5 h-5 text-white/80",stroke:"currentColor",strokeWidth:"1.5",fill:"none",children:[y.jsx("line",{x1:"12",y1:"5",x2:"12",y2:"19"}),y.jsx("line",{x1:"5",y1:"12",x2:"19",y2:"12"})]})})]})}Ec(document.getElementById("root")).render(y.jsx(I.StrictMode,{children:y.jsx(Yp,{})}));
-//# sourceMappingURL=index-WvDxobnU.js.map
+//# sourceMappingURL=index-D9RXOVTB.js.map
