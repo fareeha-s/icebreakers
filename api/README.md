@@ -2,7 +2,7 @@
 
 One Cloudflare Worker that runs both new features. It reads the question list from `../src/data/icebreakers.ts`, so adding a question to the site adds it here too.
 
-**Live rooms** (`/rooms`). The host taps 👥 on a card and gets a 4-letter code with a QR. Everyone joins on their phone at `icebreakers.wiki/?room=CODE`, answers privately, and the host reveals all the answers at once. Answers can be shown with names or anonymously. Each room is a Durable Object, and a room with no activity for 24h is deleted.
+**Live rooms** (`/rooms`). The host taps 👥 on a card and gets a 4-letter code with a QR. Everyone joins on their phone at `icebreakers.best/?room=CODE`, answers privately, and the host reveals all the answers at once. Answers can be shown with names or anonymously. Each room is a Durable Object, and a room with no activity for 24h is deleted.
 
 **Slack** (`/slack/*`):
 ```

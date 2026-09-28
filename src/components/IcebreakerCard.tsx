@@ -169,7 +169,7 @@ export default function IcebreakerCard({
   };
 
   const handleShare = async () => {
-    const shareText = `Today's team question:\n${icebreaker.question}\n\nhttps://icebreakers.wiki`;
+    const shareText = `Today's team question:\n${icebreaker.question}\n\nhttps://icebreakers.best`;
     if (navigator.share) {
       try {
         await navigator.share({ text: shareText });

@@ -103,7 +103,7 @@ async function daily(args: string[], form: URLSearchParams, env: Env): Promise<s
   if (filter && !isFilter(filter)) return `Unknown kind "${filter}". Pick one of: ${FILTER_NAMES.join(', ')}.`;
 
   const token = await botToken(env, team);
-  if (!token) return 'icebreakers isn\'t fully installed in this workspace. Reinstall it from icebreakers.wiki and try again.';
+  if (!token) return 'icebreakers isn\'t fully installed in this workspace. Reinstall it from icebreakers.best and try again.';
 
   const info = await slackApi<{ user?: { tz?: string } }>('users.info', token, { user });
   const tz = info.user?.tz && isValidTimeZone(info.user.tz) ? info.user.tz : 'UTC';

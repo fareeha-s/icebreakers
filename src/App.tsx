@@ -206,7 +206,7 @@ function App() {
     }
   }, [usedQuestions]);
 
-  // Live rooms: icebreakers.wiki/?room=ABCD
+  // Live rooms: icebreakers.best/?room=ABCD
   const [room, setRoom] = useState(() => ({ code: roomFromUrl(), justCreated: false }));
 
   useEffect(() => {

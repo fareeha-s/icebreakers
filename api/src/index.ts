@@ -45,7 +45,7 @@ export default {
     // ---- slack ----
     if (req.method === 'GET' && path === '/slack/install') return install(url, env);
     if (req.method === 'GET' && path === '/slack/oauth') return oauthCallback(req, url, env);
-    if (req.method === 'GET' && path === '/') return Response.redirect('https://icebreakers.wiki', 302);
+    if (req.method === 'GET' && path === '/') return Response.redirect('https://icebreakers.best', 302);
 
     if (req.method === 'POST' && path.startsWith('/slack/')) {
       const body = await req.text();

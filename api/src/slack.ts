@@ -80,7 +80,7 @@ export function questionMessage(ib: Icebreaker, askedBy?: string) {
       { type: 'section', text: { type: 'mrkdwn', text: `*${escape(ib.question)}*` } },
       {
         type: 'context',
-        elements: [{ type: 'mrkdwn', text: `🧵 answer in the thread · ${label(ib)} · <https://icebreakers.wiki|icebreakers.wiki>` }],
+        elements: [{ type: 'mrkdwn', text: `🧵 answer in the thread · ${label(ib)} · <https://icebreakers.best|icebreakers.best>` }],
       },
     ],
   };
